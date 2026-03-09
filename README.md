@@ -1,6 +1,6 @@
 # NLPercep Analysis Pipeline
 
-Analysis code for the paper *"When Perceivers Disagree: Theory of Mind as the Missing Mechanism in Social Perception NLP"*.
+Analysis code for the paper *"Social Perception as Theory of Mind: Evidence from Annotator Disagreement in Sexism Detection"*.
 
 This pipeline analyzes the [EXIST 2025](http://nlp.uned.es/exist2025/) dataset (tweets, memes, and TikTok videos) to study annotator disagreement through a Theory of Mind (ToM) lens. The core finding is a **detection-interpretation dissociation**: annotators converge on *whether* content is sexist but diverge on *what kind* of sexism they perceive and *what intent* they attribute to the author.
 
