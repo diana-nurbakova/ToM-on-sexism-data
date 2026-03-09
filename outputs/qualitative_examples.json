@@ -1,0 +1,2200 @@
+{
+  "description": "Qualitative examples for the NLPercep paper",
+  "type1_detection_interpretation_dissociation": {
+    "description": "Strong detection agreement (≥5/6 YES) with intent disagreement (≥2 labels) and category divergence (≥3 categories). English preferred.",
+    "count": 10,
+    "examples": [
+      {
+        "id": "200626",
+        "lang": "en",
+        "text": "People shaming women for riding the cock carousel but idk that sounds like that might be a fun attraction at some gay carnival or smth",
+        "yes_count": 6,
+        "example_type": "detection_interpretation_dissociation",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "UNKNOWN",
+            "task1_3": [
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE",
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "STEREOTYPING-DOMINANCE",
+              "OBJECTIFICATION"
+            ]
+          }
+        ],
+        "n_distinct_intents": 4,
+        "n_distinct_categories": 5,
+        "entropy_1_2": 1.9183,
+        "jaccard_1_3": 0.2078
+      },
+      {
+        "id": "202654",
+        "lang": "en",
+        "text": "@DesignationSix @ccollins43 Celebration of the completion of his initiation  into the boys club. He'd have more points had his victims been black tho.",
+        "yes_count": 5,
+        "example_type": "detection_interpretation_dissociation",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "SEXUAL-VIOLENCE",
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "UNKNOWN",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "STEREOTYPING-DOMINANCE",
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE",
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          }
+        ],
+        "n_distinct_intents": 4,
+        "n_distinct_categories": 5,
+        "entropy_1_2": 1.9219,
+        "jaccard_1_3": 0.2
+      },
+      {
+        "id": "202884",
+        "lang": "en",
+        "text": "@BernieSanders Its also quite common in agri pastoral societies for mothers to be back working on the fields 72 hrs - 1 week after giving birth.What America has is too many pressure groups talking down to the most vulnerable (like, mothers, children, teens) in a bid to tell them what to do.",
+        "yes_count": 5,
+        "example_type": "detection_interpretation_dissociation",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "UNKNOWN"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "UNKNOWN",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          }
+        ],
+        "n_distinct_intents": 4,
+        "n_distinct_categories": 4,
+        "entropy_1_2": 1.9219,
+        "jaccard_1_3": 0.2
+      },
+      {
+        "id": "201411",
+        "lang": "en",
+        "text": "@libsoftiktok Wait, I thought there was a war against the white male hegemony. Looks like whites man is still in power 🤔",
+        "yes_count": 5,
+        "example_type": "detection_interpretation_dissociation",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "UNKNOWN",
+            "task1_3": [
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE",
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY"
+            ]
+          }
+        ],
+        "n_distinct_intents": 4,
+        "n_distinct_categories": 3,
+        "entropy_1_2": 1.9219,
+        "jaccard_1_3": 0.2
+      },
+      {
+        "id": "202854",
+        "lang": "en",
+        "text": "@Muskrat__ @TheGreenNewDill @disclosetv “She brought a very short skirt across state lines”",
+        "yes_count": 6,
+        "example_type": "detection_interpretation_dissociation",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "UNKNOWN",
+            "task1_3": [
+              "SEXUAL-VIOLENCE",
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          }
+        ],
+        "n_distinct_intents": 4,
+        "n_distinct_categories": 3,
+        "entropy_1_2": 1.9183,
+        "jaccard_1_3": 0.5556
+      },
+      {
+        "id": "203067",
+        "lang": "en",
+        "text": "@CeciliaBTory @ZunJoniga But you're OK with trafficking women for sex?",
+        "yes_count": 6,
+        "example_type": "detection_interpretation_dissociation",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "UNKNOWN",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE",
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE",
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE"
+            ]
+          }
+        ],
+        "n_distinct_intents": 4,
+        "n_distinct_categories": 3,
+        "entropy_1_2": 1.9183,
+        "jaccard_1_3": 0.5889
+      },
+      {
+        "id": "200109",
+        "lang": "en",
+        "text": "@afrodykee Blackness is not a shield for men to protect themselves from criticism. Especially men ignorant of all the patriarchy in non white countries. Female babies are aborted in China. Women are isolated in menstruation huts. Breast ironing. FGM. POC know what sex is.",
+        "yes_count": 6,
+        "example_type": "detection_interpretation_dissociation",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "STEREOTYPING-DOMINANCE",
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE",
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE",
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "SEXUAL-VIOLENCE",
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "UNKNOWN",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "STEREOTYPING-DOMINANCE",
+              "SEXUAL-VIOLENCE",
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          }
+        ],
+        "n_distinct_intents": 3,
+        "n_distinct_categories": 5,
+        "entropy_1_2": 1.4591,
+        "jaccard_1_3": 0.4111
+      },
+      {
+        "id": "200112",
+        "lang": "en",
+        "text": "@clairlemon @Brooks_Rob Yes. Because a controlled supply of sex is a good thing, ya heathens.No one is happier about open sex and easy women than the patriarchy. I’ll tell you that much.",
+        "yes_count": 6,
+        "example_type": "detection_interpretation_dissociation",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE",
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE",
+              "OBJECTIFICATION",
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "SEXUAL-VIOLENCE"
+            ]
+          }
+        ],
+        "n_distinct_intents": 3,
+        "n_distinct_categories": 5,
+        "entropy_1_2": 1.4591,
+        "jaccard_1_3": 0.2333
+      },
+      {
+        "id": "200186",
+        "lang": "en",
+        "text": "I’m bringing this discussion back up today because women have been marginalized and physically taken advantage of. It’s time we fight and vote to speak once again for: #WomensRights #WomensEqualPay  **AllVoteBlueIn2022** https://t.co/w2m6o5SLJb https://t.co/3PTq0yTTfR",
+        "yes_count": 5,
+        "example_type": "detection_interpretation_dissociation",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "UNKNOWN",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE",
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE",
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "STEREOTYPING-DOMINANCE",
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "F",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          }
+        ],
+        "n_distinct_intents": 3,
+        "n_distinct_categories": 5,
+        "entropy_1_2": 1.371,
+        "jaccard_1_3": 0.25
+      },
+      {
+        "id": "200417",
+        "lang": "en",
+        "text": "@StanManGundy1 @SeanRossSapp https://t.co/CAUmJFnEnC awaiting your tweet to Jon Silver condemning him for daring to use Jades nickname \"that bitch\", since you came down on me for using it. 1 minute 40 seconds.",
+        "yes_count": 5,
+        "example_type": "detection_interpretation_dissociation",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "STEREOTYPING-DOMINANCE",
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE",
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          }
+        ],
+        "n_distinct_intents": 3,
+        "n_distinct_categories": 5,
+        "entropy_1_2": 1.371,
+        "jaccard_1_3": 0.2583
+      }
+    ]
+  },
+  "type2_gender_differential_categorization": {
+    "description": "Both genders agree sexist (≥5/6 YES) but F annotators assign harm categories while M assign cognitive categories (or vice versa). English preferred.",
+    "count": 10,
+    "examples": [
+      {
+        "id": "200643",
+        "lang": "en",
+        "text": "$LUNABROOOOO😂 such a cock tease😂 I'v been watching this chart all day waiting for you to break out ffs😂 https://t.co/Hg64HohfyB https://t.co/ljllgMEncJ",
+        "yes_count": 5,
+        "example_type": "gender_differential_categorization",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION",
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "UNKNOWN",
+            "task1_3": [
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE"
+            ]
+          }
+        ],
+        "divergence_score": 4,
+        "direction": "F_harm_M_cognitive",
+        "f_categories": [
+          "MISOGYNY-NON-SEXUAL-VIOLENCE",
+          "OBJECTIFICATION",
+          "SEXUAL-VIOLENCE"
+        ],
+        "m_categories": [
+          "IDEOLOGICAL-INEQUALITY",
+          "STEREOTYPING-DOMINANCE"
+        ]
+      },
+      {
+        "id": "203184",
+        "lang": "en",
+        "text": "Imagine doing this plus more for ya woman to play you and make you look like a bitch to millions of ppl on social media https://t.co/D8CZh9QwH4",
+        "yes_count": 5,
+        "example_type": "gender_differential_categorization",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "SEXUAL-VIOLENCE",
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          }
+        ],
+        "divergence_score": 4,
+        "direction": "M_harm_F_cognitive",
+        "f_categories": [
+          "IDEOLOGICAL-INEQUALITY",
+          "OBJECTIFICATION",
+          "STEREOTYPING-DOMINANCE"
+        ],
+        "m_categories": [
+          "MISOGYNY-NON-SEXUAL-VIOLENCE",
+          "OBJECTIFICATION",
+          "SEXUAL-VIOLENCE"
+        ]
+      },
+      {
+        "id": "400235",
+        "lang": "en",
+        "text": "@NickBuckleyMBE I'm pretty sure it does exist, Nick. Most serial killers are men who soley kill women.",
+        "yes_count": 5,
+        "example_type": "gender_differential_categorization",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "SEXUAL-VIOLENCE",
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "SEXUAL-VIOLENCE"
+            ]
+          }
+        ],
+        "divergence_score": 4,
+        "direction": "M_harm_F_cognitive",
+        "f_categories": [
+          "IDEOLOGICAL-INEQUALITY",
+          "STEREOTYPING-DOMINANCE"
+        ],
+        "m_categories": [
+          "MISOGYNY-NON-SEXUAL-VIOLENCE",
+          "SEXUAL-VIOLENCE"
+        ]
+      },
+      {
+        "id": "400374",
+        "lang": "en",
+        "text": "@gnasty999 @thatguyloreto Der I literally took it last night slutbag",
+        "yes_count": 6,
+        "example_type": "gender_differential_categorization",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "STEREOTYPING-DOMINANCE",
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          }
+        ],
+        "divergence_score": 4,
+        "direction": "M_harm_F_cognitive",
+        "f_categories": [
+          "IDEOLOGICAL-INEQUALITY",
+          "OBJECTIFICATION",
+          "STEREOTYPING-DOMINANCE"
+        ],
+        "m_categories": [
+          "MISOGYNY-NON-SEXUAL-VIOLENCE",
+          "OBJECTIFICATION",
+          "SEXUAL-VIOLENCE"
+        ]
+      },
+      {
+        "id": "200442",
+        "lang": "en",
+        "text": "@TruecelLife @stevenb21 @Interstella4L @IncelsCo You’re the one who’s planning on going on a murderous rampage because you blame all women for not sleeping with you, which is your fault",
+        "yes_count": 6,
+        "example_type": "gender_differential_categorization",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "SEXUAL-VIOLENCE",
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          }
+        ],
+        "divergence_score": 3,
+        "direction": "F_harm_M_cognitive",
+        "f_categories": [
+          "MISOGYNY-NON-SEXUAL-VIOLENCE",
+          "OBJECTIFICATION",
+          "SEXUAL-VIOLENCE"
+        ],
+        "m_categories": [
+          "IDEOLOGICAL-INEQUALITY",
+          "MISOGYNY-NON-SEXUAL-VIOLENCE",
+          "STEREOTYPING-DOMINANCE"
+        ]
+      },
+      {
+        "id": "200532",
+        "lang": "en",
+        "text": "@jcslattery Is she wearing a hospital gown? Call me sexist then.",
+        "yes_count": 6,
+        "example_type": "gender_differential_categorization",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          }
+        ],
+        "divergence_score": 3,
+        "direction": "M_harm_F_cognitive",
+        "f_categories": [
+          "IDEOLOGICAL-INEQUALITY",
+          "STEREOTYPING-DOMINANCE"
+        ],
+        "m_categories": [
+          "MISOGYNY-NON-SEXUAL-VIOLENCE"
+        ]
+      },
+      {
+        "id": "200610",
+        "lang": "en",
+        "text": "if you don’t want me but your friend do, DONT FUCKING COCK BLOCK BITCH .",
+        "yes_count": 5,
+        "example_type": "gender_differential_categorization",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE",
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "F",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          }
+        ],
+        "divergence_score": 3,
+        "direction": "M_harm_F_cognitive",
+        "f_categories": [
+          "IDEOLOGICAL-INEQUALITY",
+          "MISOGYNY-NON-SEXUAL-VIOLENCE",
+          "OBJECTIFICATION",
+          "STEREOTYPING-DOMINANCE"
+        ],
+        "m_categories": [
+          "OBJECTIFICATION",
+          "SEXUAL-VIOLENCE"
+        ]
+      },
+      {
+        "id": "200623",
+        "lang": "en",
+        "text": "@hyperboreanterf Even most women who are having trouble because they put off kids for too long weren't riding the cock carousel, they were hyperfocused on their careers. Often were married the whole time.",
+        "yes_count": 5,
+        "example_type": "gender_differential_categorization",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "STEREOTYPING-DOMINANCE",
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "STEREOTYPING-DOMINANCE",
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          }
+        ],
+        "divergence_score": 3,
+        "direction": "M_harm_F_cognitive",
+        "f_categories": [
+          "IDEOLOGICAL-INEQUALITY",
+          "OBJECTIFICATION",
+          "STEREOTYPING-DOMINANCE"
+        ],
+        "m_categories": [
+          "OBJECTIFICATION",
+          "SEXUAL-VIOLENCE"
+        ]
+      },
+      {
+        "id": "201059",
+        "lang": "en",
+        "text": "I always get really amused when men are giving feminism lectures To Women. Like not that I dont appreciate men being educated about feminism but I'm always so confused over what information they think the woman is learning in that interaction.",
+        "yes_count": 5,
+        "example_type": "gender_differential_categorization",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "SEXUAL-VIOLENCE",
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "REPORTED",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "F",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          }
+        ],
+        "divergence_score": 3,
+        "direction": "M_harm_F_cognitive",
+        "f_categories": [
+          "IDEOLOGICAL-INEQUALITY",
+          "STEREOTYPING-DOMINANCE"
+        ],
+        "m_categories": [
+          "MISOGYNY-NON-SEXUAL-VIOLENCE",
+          "SEXUAL-VIOLENCE",
+          "STEREOTYPING-DOMINANCE"
+        ]
+      },
+      {
+        "id": "201207",
+        "lang": "en",
+        "text": "@strwbrymlk420 I Wanna fuck that cunt and bhole 🤤🔥🔥 https://t.co/BrxMInEG16",
+        "yes_count": 6,
+        "example_type": "gender_differential_categorization",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE",
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE",
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          }
+        ],
+        "divergence_score": 3,
+        "direction": "M_harm_F_cognitive",
+        "f_categories": [
+          "OBJECTIFICATION",
+          "STEREOTYPING-DOMINANCE"
+        ],
+        "m_categories": [
+          "MISOGYNY-NON-SEXUAL-VIOLENCE",
+          "OBJECTIFICATION",
+          "SEXUAL-VIOLENCE"
+        ]
+      }
+    ]
+  },
+  "type3_meme_objectification_gender_split": {
+    "description": "Majority-YES memes where F annotators assign OBJECTIFICATION at higher rates than M annotators. English preferred.",
+    "count": 10,
+    "examples": [
+      {
+        "id": "210286",
+        "lang": "en",
+        "text": "HER: \"STOP IT! I'M TRYING TO PUT A LOAD IN THE DISHWASHER.\" HIM: \"YEAH... ME TOO!\"  ",
+        "yes_count": 4,
+        "example_type": "meme_objectification_gender_split",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE",
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE",
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "UNKNOWN",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE",
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "M",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          }
+        ],
+        "f_objectification_count": 2,
+        "m_objectification_count": 0,
+        "f_objectification_rate": 1.0,
+        "m_objectification_rate": 0.0,
+        "rate_gap": 1.0
+      },
+      {
+        "id": "210561",
+        "lang": "en",
+        "text": "A girl becomes 100 times more beautiful when she opens up her hair Meet Luthra A guy becomes 100 times more handsome when he opens up his wallet 10 hours and Like Reply 04027  ",
+        "yes_count": 5,
+        "example_type": "meme_objectification_gender_split",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE",
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY"
+            ]
+          }
+        ],
+        "f_objectification_count": 2,
+        "m_objectification_count": 0,
+        "f_objectification_rate": 1.0,
+        "m_objectification_rate": 0.0,
+        "rate_gap": 1.0
+      },
+      {
+        "id": "210790",
+        "lang": "en",
+        "text": "My husband has a cold so I'm officially on the market again  ",
+        "yes_count": 4,
+        "example_type": "meme_objectification_gender_split",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "M",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          }
+        ],
+        "f_objectification_count": 3,
+        "m_objectification_count": 0,
+        "f_objectification_rate": 1.0,
+        "m_objectification_rate": 0.0,
+        "rate_gap": 1.0
+      },
+      {
+        "id": "210866",
+        "lang": "en",
+        "text": "SO TELL ME... IF YOU WE'RE A GIRL FOR A DAY, WHAT PART OF YOUR BODY WOULD YOU TOUCH FIRST? imgflip.com  ",
+        "yes_count": 4,
+        "example_type": "meme_objectification_gender_split",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "STEREOTYPING-DOMINANCE",
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE",
+              "SEXUAL-VIOLENCE"
+            ]
+          }
+        ],
+        "f_objectification_count": 3,
+        "m_objectification_count": 0,
+        "f_objectification_rate": 1.0,
+        "m_objectification_rate": 0.0,
+        "rate_gap": 1.0
+      },
+      {
+        "id": "210907",
+        "lang": "en",
+        "text": "I LIKE MY WOMEN LIKE I LIKE MY PANCAKES DarrenCarter WELL STACKED AND NEXT TO MY SAUSAGE frankieleal.com  ",
+        "yes_count": 6,
+        "example_type": "meme_objectification_gender_split",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY"
+            ]
+          }
+        ],
+        "f_objectification_count": 3,
+        "m_objectification_count": 0,
+        "f_objectification_rate": 1.0,
+        "m_objectification_rate": 0.0,
+        "rate_gap": 1.0
+      },
+      {
+        "id": "210998",
+        "lang": "en",
+        "text": "THE CAN'T MEMF @Internet TLCM \"You think there are biological The Left Can't Meme differences between men and women? Here is my straw man, take that!\" TALL! MEN ARE TALL!!!!!!! average men is 7'5 FO BIGFOOT ● bigger jaw (manly <3) ● Female spines are curvy!!! Very important! BIG HANDS Men don/ t like a flat ass! Another important! Females wear high heels so their feet have speficilly evolved for that small uwu (it's rude to ask woman's height!) O+ 7:40 AM 05 Sep 22 Twitter for Android smol hands women are shorter than men but they still have long legs nice legs daisy dukes make a man go oh god, that's hot ifunny.co  ",
+        "yes_count": 6,
+        "example_type": "meme_objectification_gender_split",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE"
+            ]
+          }
+        ],
+        "f_objectification_count": 3,
+        "m_objectification_count": 0,
+        "f_objectification_rate": 1.0,
+        "m_objectification_rate": 0.0,
+        "rate_gap": 1.0
+      },
+      {
+        "id": "211015",
+        "lang": "en",
+        "text": "When you get catcalled on the street and you want to be one of those cool feminists who clap back but you're kind of scared and tired and have a weird guilt because you're a gentrifier so you smile sweetly and tweet about it instead then a male professional acquaintance who's much older than you slides into your DMs to condemn the catcallers and add \"but you do look great though.\" >>> GIR  ",
+        "yes_count": 4,
+        "example_type": "meme_objectification_gender_split",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "F",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY",
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "IDEOLOGICAL-INEQUALITY"
+            ]
+          }
+        ],
+        "f_objectification_count": 1,
+        "m_objectification_count": 0,
+        "f_objectification_rate": 1.0,
+        "m_objectification_rate": 0.0,
+        "rate_gap": 1.0
+      },
+      {
+        "id": "211086",
+        "lang": "en",
+        "text": "LOOK A NAKED GIRL BILLA BE 00000000000000000000000000 makeameme.org  ",
+        "yes_count": 4,
+        "example_type": "meme_objectification_gender_split",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "UNKNOWN",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "STEREOTYPING-DOMINANCE"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "M",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          }
+        ],
+        "f_objectification_count": 3,
+        "m_objectification_count": 0,
+        "f_objectification_rate": 1.0,
+        "m_objectification_rate": 0.0,
+        "rate_gap": 1.0
+      },
+      {
+        "id": "211209",
+        "lang": "en",
+        "text": "*Female character breathes* *Rule 34 artists* HUMAN ORGAN I CAN MAKE THIS WORK  ",
+        "yes_count": 5,
+        "example_type": "meme_objectification_gender_split",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE",
+              "MISOGYNY-NON-SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "JUDGEMENTAL",
+            "task1_3": [
+              "SEXUAL-VIOLENCE"
+            ]
+          }
+        ],
+        "f_objectification_count": 3,
+        "m_objectification_count": 0,
+        "f_objectification_rate": 1.0,
+        "m_objectification_rate": 0.0,
+        "rate_gap": 1.0
+      },
+      {
+        "id": "211215",
+        "lang": "en",
+        "text": "HOOKERS YOU GET WHAT YOU PAY FOR impflin.com  ",
+        "yes_count": 5,
+        "example_type": "meme_objectification_gender_split",
+        "annotators": [
+          {
+            "annotator_index": 0,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 1,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION",
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 2,
+            "gender": "F",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "OBJECTIFICATION"
+            ]
+          },
+          {
+            "annotator_index": 3,
+            "gender": "M",
+            "task1_1": "NO",
+            "task1_2": "-",
+            "task1_3": [
+              "-"
+            ]
+          },
+          {
+            "annotator_index": 4,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "SEXUAL-VIOLENCE"
+            ]
+          },
+          {
+            "annotator_index": 5,
+            "gender": "M",
+            "task1_1": "YES",
+            "task1_2": "DIRECT",
+            "task1_3": [
+              "SEXUAL-VIOLENCE"
+            ]
+          }
+        ],
+        "f_objectification_count": 3,
+        "m_objectification_count": 0,
+        "f_objectification_rate": 1.0,
+        "m_objectification_rate": 0.0,
+        "rate_gap": 1.0
+      }
+    ]
+  }
+}

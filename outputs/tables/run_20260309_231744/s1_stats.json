@@ -1,0 +1,20 @@
+{
+  "entropy_stats": {
+    "mean": 0.5471449922209102,
+    "median": 0.6500224216483541,
+    "std": 0.40178647167022785
+  },
+  "agreement_proportions": {
+    "full_agreement_n": 2615,
+    "full_agreement_pct": 32.86001507916562,
+    "any_disagreement_n": 5343,
+    "any_disagreement_pct": 67.13998492083438
+  },
+  "conditional_disagreement": {
+    "n_majority_yes": 3152,
+    "entropy_1_2_mean": 0.8763989970037256,
+    "entropy_1_2_median": 0.9182958340544896,
+    "jaccard_1_3_mean": 0.3823685138183869,
+    "jaccard_1_3_median": 0.3333333333333333
+  }
+}

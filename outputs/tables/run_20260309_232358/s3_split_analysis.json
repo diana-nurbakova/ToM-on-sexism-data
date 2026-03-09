@@ -1,0 +1,8 @@
+{
+  "n_splits": 960,
+  "n_gender_aligned": 97,
+  "pct_gender_aligned": 10.104166666666666,
+  "n_3F_yes_3M_no": 35,
+  "n_3F_no_3M_yes": 62,
+  "n_mixed": 863
+}

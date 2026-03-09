@@ -1,0 +1,10 @@
+Measure,Value,Interpretation
+Instances with disagreement,67.1%,Social perception disagreement is the norm
+Detection entropy (Task 1.1),mean 0.547,Moderate disagreement at detection level
+Intent entropy among YES (Task 1.2),mean 0.876,Near-maximum disagreement at interpretation level
+Categorization Jaccard among YES (Task 1.3),mean 0.382,Low overlap in category assignment
+Gender effect on detection,p = 0.142,No gender difference at detection level
+Gender effect on MISOGYNY-NON-SEXUAL-VIOLENCE,"p = 0.001, OR = 1.11",Female annotators perceive more misogyny non sexual violence
+Gender effect on SEXUAL-VIOLENCE,"p = 0.016, OR = 1.09",Female annotators perceive more sexual violence
+Gender effect on OBJECTIFICATION,"p = 0.053, OR = 1.06",Female annotators perceive more objectification
+Gender-aligned 3-3 splits,10.1%,Gender accounts for little of the detection disagreement

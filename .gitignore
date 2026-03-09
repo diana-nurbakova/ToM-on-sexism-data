@@ -1,0 +1,19 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# data
+EXIST 2025 Dataset V0.1/
+
+# specs
+specs/
+
+# Claude Code local settings
+.claude/

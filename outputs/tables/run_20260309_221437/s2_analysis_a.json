@@ -1,0 +1,42 @@
+{
+  "ambiguity_groups": {
+    "implicit": 4941,
+    "no_yes": 1637,
+    "explicit": 1380
+  },
+  "overall": {
+    "n_explicit": 1380,
+    "n_implicit": 4941,
+    "entropy_explicit_mean": 0.6855745740925309,
+    "entropy_explicit_median": 0.6500224216483541,
+    "entropy_implicit_mean": 0.6897565140348737,
+    "entropy_implicit_median": 0.6500224216483541,
+    "mann_whitney_U": 3191273.0,
+    "p_value": 6.751332235639937e-05,
+    "rank_biserial_r": 0.06394791877487693
+  },
+  "by_language": {
+    "en": {
+      "n_explicit": 636,
+      "n_implicit": 2239,
+      "entropy_explicit_mean": 0.7145008037271046,
+      "entropy_explicit_median": 0.6500224216483541,
+      "entropy_implicit_mean": 0.7048720034950056,
+      "entropy_implicit_median": 0.9182958340544896,
+      "mann_whitney_U": 668534.5,
+      "p_value": 0.006620871262840301,
+      "rank_biserial_r": 0.06104968806267397
+    },
+    "es": {
+      "n_explicit": 744,
+      "n_implicit": 2702,
+      "entropy_explicit_mean": 0.6608473132758792,
+      "entropy_explicit_median": 0.6500224216483541,
+      "entropy_implicit_mean": 0.6772311325022182,
+      "entropy_implicit_median": 0.6500224216483541,
+      "mann_whitney_U": 936738.5,
+      "p_value": 0.0014398130094107117,
+      "rank_biserial_r": 0.06805542290457889
+    }
+  }
+}
