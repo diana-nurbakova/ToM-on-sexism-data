@@ -17,3 +17,5 @@ specs/
 
 # Claude Code local settings
 .claude/
+
+soa/
