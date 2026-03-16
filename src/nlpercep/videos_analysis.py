@@ -17,6 +17,8 @@ import pandas as pd
 import numpy as np
 from scipy import stats
 
+from nlpercep.correction import holm_bonferroni, rank_biserial_signed, cohens_h
+
 
 HEADER = "VIDEOS (TikTok)"
 
@@ -187,12 +189,13 @@ def section3a(df: pd.DataFrame) -> dict:
     f_mean = sub["f_yes_ratio"].mean()
     m_mean = sub["m_yes_ratio"].mean()
 
-    diffs = sub["f_yes_ratio"] - sub["m_yes_ratio"]
+    diffs = (sub["f_yes_ratio"] - sub["m_yes_ratio"]).values
     nonzero = diffs[diffs != 0]
     if len(nonzero) > 0:
         w_stat, p_value = stats.wilcoxon(nonzero)
+        r_rb = rank_biserial_signed(diffs, w_stat)
     else:
-        w_stat, p_value = np.nan, np.nan
+        w_stat, p_value, r_rb = np.nan, np.nan, np.nan
 
     result = {
         "f_yes_mean": f_mean,
@@ -200,6 +203,7 @@ def section3a(df: pd.DataFrame) -> dict:
         "difference": f_mean - m_mean,
         "wilcoxon_W": w_stat,
         "p_value": p_value,
+        "rank_biserial_r": r_rb,
         "n_both_genders": len(sub),
         "n_total": len(df),
     }
@@ -211,7 +215,7 @@ def section3a(df: pd.DataFrame) -> dict:
     print(f"  Female YES rate: {f_mean:.4f}")
     print(f"  Male YES rate:   {m_mean:.4f}")
     print(f"  Difference (F-M): {result['difference']:.4f}")
-    print(f"  Wilcoxon W = {w_stat}, p = {p_value:.6f}")
+    print(f"  Wilcoxon W = {w_stat}, p = {p_value:.6f}, r = {r_rb:.4f}")
     sig = "***" if p_value < 0.001 else "**" if p_value < 0.01 else "*" if p_value < 0.05 else "n.s."
     print(f"  Significance: {sig}")
 
@@ -264,14 +268,18 @@ def section3d(df: pd.DataFrame) -> pd.DataFrame:
             "f_total": f_total,
             "m_total": m_total,
             "diff": f_rate - m_rate,
+            "cohens_h": cohens_h(f_rate, m_rate),
             "odds_ratio": odds_ratio,
             "p_value": p_val,
         })
 
     cat_rates = pd.DataFrame(rows)
 
+    # Holm-Bonferroni correction across the 5 category tests
+    cat_rates["p_adjusted"] = holm_bonferroni(cat_rates["p_value"].values)
+
     print(f"\n{'=' * 60}")
-    print(f"{HEADER} — SECTION 3d: GENDER CATEGORY RATES")
+    print(f"{HEADER} — SECTION 3d: GENDER CATEGORY RATES (Holm-corrected)")
     print(f"{'=' * 60}")
     print(f"  F total YES annotations: {rows[0]['f_total'] if rows else 0}")
     print(f"  M total YES annotations: {rows[0]['m_total'] if rows else 0}")

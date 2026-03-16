@@ -12,6 +12,13 @@ import pandas as pd
 import numpy as np
 from scipy import stats
 
+from nlpercep.correction import (
+    holm_bonferroni,
+    rank_biserial_signed,
+    rank_biserial_mannwhitney,
+    cohens_h,
+)
+
 
 # ── 3a: Overall gender comparison ──────────────────────────────────────────────
 
@@ -21,13 +28,13 @@ def overall_gender_comparison(df: pd.DataFrame) -> dict:
     m_mean = df["m_yes_ratio"].mean()
 
     # Wilcoxon signed-rank (paired)
-    diffs = df["f_yes_ratio"] - df["m_yes_ratio"]
-    # Drop zeros for Wilcoxon
+    diffs = (df["f_yes_ratio"] - df["m_yes_ratio"]).values
     nonzero = diffs[diffs != 0]
     if len(nonzero) > 0:
         w_stat, p_value = stats.wilcoxon(nonzero)
+        r_rb = rank_biserial_signed(diffs, w_stat)
     else:
-        w_stat, p_value = np.nan, np.nan
+        w_stat, p_value, r_rb = np.nan, np.nan, np.nan
 
     return {
         "f_yes_mean": f_mean,
@@ -35,6 +42,7 @@ def overall_gender_comparison(df: pd.DataFrame) -> dict:
         "difference": f_mean - m_mean,
         "wilcoxon_W": w_stat,
         "p_value": p_value,
+        "rank_biserial_r": r_rb,
         "n": len(df),
     }
 
@@ -101,12 +109,13 @@ def gender_ambiguity_interaction(df: pd.DataFrame) -> dict:
         if len(sub) == 0:
             results[group] = {"n": 0}
             continue
-        diffs = sub["f_yes_ratio"] - sub["m_yes_ratio"]
+        diffs = (sub["f_yes_ratio"] - sub["m_yes_ratio"]).values
         nonzero = diffs[diffs != 0]
         if len(nonzero) > 0:
             w_stat, p_val = stats.wilcoxon(nonzero)
+            r_rb = rank_biserial_signed(diffs, w_stat)
         else:
-            w_stat, p_val = np.nan, np.nan
+            w_stat, p_val, r_rb = np.nan, np.nan, np.nan
         results[group] = {
             "n": len(sub),
             "f_yes_mean": sub["f_yes_ratio"].mean(),
@@ -114,6 +123,7 @@ def gender_ambiguity_interaction(df: pd.DataFrame) -> dict:
             "gender_diff": diffs.mean(),
             "wilcoxon_W": w_stat,
             "p_value": p_val,
+            "rank_biserial_r": r_rb,
         }
 
     # Compare gender difference magnitude between groups
@@ -127,9 +137,11 @@ def gender_ambiguity_interaction(df: pd.DataFrame) -> dict:
             explicit_diffs.abs(), implicit_diffs.abs(),
             alternative="less",
         )
+        r_rb = rank_biserial_mannwhitney(u_stat, len(explicit_diffs), len(implicit_diffs))
         results["interaction_test"] = {
             "mann_whitney_U": u_stat,
             "p_value": p_interaction,
+            "rank_biserial_r": r_rb,
         }
 
     return results
@@ -182,11 +194,17 @@ def gender_category_rates(df: pd.DataFrame) -> pd.DataFrame:
             "f_count": f_count,
             "m_count": m_count,
             "diff": f_rate - m_rate,
+            "cohens_h": cohens_h(f_rate, m_rate),
             "odds_ratio": odds_ratio,
             "p_value": p_val,
         })
 
-    return pd.DataFrame(rows)
+    cat_rates = pd.DataFrame(rows)
+
+    # Holm-Bonferroni correction across the 5 category tests
+    cat_rates["p_adjusted"] = holm_bonferroni(cat_rates["p_value"].values)
+
+    return cat_rates
 
 
 # ── Runner ─────────────────────────────────────────────────────────────────────
@@ -208,7 +226,7 @@ def run(df: pd.DataFrame) -> dict:
     print(f"  Female YES rate: {overall['f_yes_mean']:.4f}")
     print(f"  Male YES rate:   {overall['m_yes_mean']:.4f}")
     print(f"  Difference (F-M): {overall['difference']:.4f}")
-    print(f"  Wilcoxon W = {overall['wilcoxon_W']}, p = {overall['p_value']:.6f}")
+    print(f"  Wilcoxon W = {overall['wilcoxon_W']}, p = {overall['p_value']:.6f}, r = {overall['rank_biserial_r']:.4f}")
     sig = "***" if overall["p_value"] < 0.001 else "**" if overall["p_value"] < 0.01 else "*" if overall["p_value"] < 0.05 else "n.s."
     print(f"  Significance: {sig}")
 
@@ -229,13 +247,13 @@ def run(df: pd.DataFrame) -> dict:
     for group in ["explicit", "implicit"]:
         if group in interaction and interaction[group].get("n", 0) > 0:
             r = interaction[group]
-            print(f"  [{group.upper()}] n={r['n']}, F={r['f_yes_mean']:.4f}, M={r['m_yes_mean']:.4f}, diff={r['gender_diff']:.4f}, p={r.get('p_value', 'N/A')}")
+            print(f"  [{group.upper()}] n={r['n']}, F={r['f_yes_mean']:.4f}, M={r['m_yes_mean']:.4f}, diff={r['gender_diff']:.4f}, p={r.get('p_value', 'N/A')}, r={r.get('rank_biserial_r', 'N/A')}")
     if "interaction_test" in interaction:
         it = interaction["interaction_test"]
-        print(f"  Interaction: U={it['mann_whitney_U']:.1f}, p={it['p_value']:.6f}")
+        print(f"  Interaction: U={it['mann_whitney_U']:.1f}, p={it['p_value']:.6f}, r={it['rank_biserial_r']:.4f}")
 
     # 3d
-    print("\n--- 3d: Gender Category Rates ---")
+    print("\n--- 3d: Gender Category Rates (Holm-corrected) ---")
     print(cat_rates.to_string(index=False))
 
     return {

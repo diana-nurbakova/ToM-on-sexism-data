@@ -47,10 +47,11 @@ def generate(results: dict) -> pd.DataFrame:
 
         cat_rates = s3["category_rates"]
         for _, cat_row in cat_rates.iterrows():
-            if cat_row["p_value"] < 0.06:  # include borderline
+            p_adj = cat_row.get("p_adjusted", cat_row["p_value"])
+            if p_adj < 0.06:  # include borderline (Holm-corrected)
                 rows.append({
                     "Measure": f"Gender effect on {cat_row['category']}",
-                    "Value": f"p = {cat_row['p_value']:.3f}, OR = {cat_row['odds_ratio']:.2f}",
+                    "Value": f"p_adj = {p_adj:.3f}, OR = {cat_row['odds_ratio']:.2f}",
                     "Interpretation": f"Female annotators perceive more {cat_row['category'].lower().replace('-', ' ')}",
                 })
 

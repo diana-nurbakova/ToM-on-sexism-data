@@ -26,6 +26,7 @@ from nlpercep import (
     summary_table,
     memes_analysis,
     videos_analysis,
+    cross_modal_annotators,
 )
 
 OUTPUT_DIR = Path(__file__).resolve().parents[2] / "outputs"
@@ -141,6 +142,13 @@ def save_results(results: dict, log_text: str) -> Path:
         if "s3d" in m:
             m["s3d"].to_csv(memes_dir / "s3d_category_rates.csv", index=False)
 
+    # Cross-modal annotator pool
+    if "cross_modal" in results:
+        with open(run_dir / "cross_modal_annotators.json", "w") as f:
+            # Filter out non-serializable demo comparison dicts
+            cm = {k: v for k, v in results["cross_modal"].items()}
+            json.dump(cm, f, indent=2, default=_json_default)
+
     # Videos results
     if "videos" in results:
         videos_dir = run_dir / "videos"
@@ -245,6 +253,14 @@ def main():
         videos_df = load_videos_dataset()
         print(f"Loaded {len(videos_df)} video instances.\n")
         results["videos"] = videos_analysis.run(videos_df)
+
+    # ── Cross-modal annotator pool analysis ──────────────────────────
+    if not args.no_memes:
+        print("\n\n" + "#" * 60)
+        print("# CROSS-MODAL ANNOTATOR POOL ANALYSIS")
+        print("#" * 60)
+        videos_for_cross = videos_df if (not args.no_videos and "videos" in results) else None
+        results["cross_modal"] = cross_modal_annotators.run(df, memes_df, videos_for_cross)
 
     # Generate figures
     fig_dir = OUTPUT_DIR / "figures"

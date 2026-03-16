@@ -17,6 +17,8 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
+from nlpercep.correction import holm_bonferroni, rank_biserial_signed, cohens_h
+
 # ── Wong (2011) colorblind-safe palette ────────────────────────────────────────
 # https://www.nature.com/articles/nmeth.1618
 CB_ORANGE = "#E69F00"
@@ -196,13 +198,14 @@ def fig_gender_detection(df: pd.DataFrame, out_dir: Path, label: str = "Tweets")
         "Gender": ["Female"] * len(sub) + ["Male"] * len(sub),
     })
 
-    # Compute p-value dynamically
-    diffs = sub["f_yes_ratio"] - sub["m_yes_ratio"]
+    # Compute p-value and effect size dynamically
+    diffs = (sub["f_yes_ratio"] - sub["m_yes_ratio"]).values
     nonzero = diffs[diffs != 0]
     if len(nonzero) > 0:
-        _, p_value = stats.wilcoxon(nonzero)
+        w_stat, p_value = stats.wilcoxon(nonzero)
+        r_rb = rank_biserial_signed(diffs, w_stat)
     else:
-        p_value = np.nan
+        p_value, r_rb = np.nan, np.nan
 
     fig, ax = plt.subplots(figsize=(5, 5))
     sns.boxplot(
@@ -220,8 +223,9 @@ def fig_gender_detection(df: pd.DataFrame, out_dir: Path, label: str = "Tweets")
     sig_label = f"p = {p_value:.3f}" if not np.isnan(p_value) else "p = N/A"
     if p_value < 0.001:
         sig_label = "p < .001"
+    r_label = f", r = {r_rb:.3f}" if not np.isnan(r_rb) else ""
     n_label = f", n={len(sub)}" if len(sub) < len(df) else ""
-    ax.set_title(f"{label} — Detection Level: Gender Comparison ({sig_label}{n_label})")
+    ax.set_title(f"{label} — Detection Level: Gender Comparison ({sig_label}{r_label}{n_label})")
     ax.set_ylim(-0.05, 1.05)
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
@@ -234,18 +238,21 @@ def fig_gender_detection(df: pd.DataFrame, out_dir: Path, label: str = "Tweets")
     return _save(fig, out_dir, f"fig_gender_detection_{suffix}")
 
 
-def _compute_gender_category_rates(df: pd.DataFrame, use_actual_gender: bool = False) -> tuple[list[float], list[float], list[float]]:
-    """Compute F/M rates and p-values per category.
+def _compute_gender_category_rates(df: pd.DataFrame, use_actual_gender: bool = False) -> tuple[list[float], list[float], list[float], list[float]]:
+    """Compute F/M rates, Holm-corrected p-values, and Cohen's h per category.
 
     Args:
         use_actual_gender: If True, look up actual annotator gender (for videos).
             If False, use positional convention (0-2=F, 3-5=M) for tweets/memes.
+
+    Returns:
+        (f_rates, m_rates, p_adjusted, h_values)
     """
     cat_keys = [
         "IDEOLOGICAL-INEQUALITY", "STEREOTYPING-DOMINANCE",
         "OBJECTIFICATION", "SEXUAL-VIOLENCE", "MISOGYNY-NON-SEXUAL-VIOLENCE",
     ]
-    f_rates, m_rates, p_values = [], [], []
+    f_rates, m_rates, p_values, h_values = [], [], [], []
     for cat in cat_keys:
         f_count, m_count = 0, 0
         f_total, m_total = 0, 0
@@ -268,15 +275,21 @@ def _compute_gender_category_rates(df: pd.DataFrame, use_actual_gender: bool = F
                     m_total += 1
                     if is_cat:
                         m_count += 1
-        f_rates.append(f_count / f_total if f_total > 0 else 0)
-        m_rates.append(m_count / m_total if m_total > 0 else 0)
+        f_rate = f_count / f_total if f_total > 0 else 0
+        m_rate = m_count / m_total if m_total > 0 else 0
+        f_rates.append(f_rate)
+        m_rates.append(m_rate)
+        h_values.append(cohens_h(f_rate, m_rate))
         table = np.array([[f_count, f_total - f_count], [m_count, m_total - m_count]])
         if f_total + m_total > 0:
             _, p_val = stats.fisher_exact(table)
         else:
             p_val = np.nan
         p_values.append(p_val)
-    return f_rates, m_rates, p_values
+
+    # Holm-Bonferroni correction across the 5 category tests
+    p_adjusted = holm_bonferroni(p_values)
+    return f_rates, m_rates, list(p_adjusted), h_values
 
 
 def fig_gender_categorization(df: pd.DataFrame, out_dir: Path, label: str = "Tweets") -> Path:
@@ -286,7 +299,7 @@ def fig_gender_categorization(df: pd.DataFrame, out_dir: Path, label: str = "Twe
         "OBJECTI-\nFICATION", "SEXUAL-\nVIOLENCE", "MISOGYNY-NON-\nSEXUAL-VIOLENCE",
     ]
 
-    f_rates, m_rates, p_values = _compute_gender_category_rates(df, use_actual_gender=_is_videos(label))
+    f_rates, m_rates, p_values, h_values = _compute_gender_category_rates(df, use_actual_gender=_is_videos(label))
 
     x = np.arange(len(categories))
     width = 0.35
@@ -295,7 +308,7 @@ def fig_gender_categorization(df: pd.DataFrame, out_dir: Path, label: str = "Twe
     ax.bar(x - width / 2, f_rates, width, label="Female", color=GENDER_F, alpha=0.85)
     ax.bar(x + width / 2, m_rates, width, label="Male", color=GENDER_M, alpha=0.85)
 
-    for i, p in enumerate(p_values):
+    for i, (p, h) in enumerate(zip(p_values, h_values)):
         if p < 0.001:
             marker = "***"
         elif p < 0.01:
@@ -306,14 +319,16 @@ def fig_gender_categorization(df: pd.DataFrame, out_dir: Path, label: str = "Twe
             marker = "\u2020"
         else:
             marker = ""
+        y_max = max(f_rates[i], m_rates[i])
         if marker:
-            y_max = max(f_rates[i], m_rates[i])
-            ax.text(x[i], y_max + 0.01, marker, ha="center", fontsize=12, fontweight="bold")
+            ax.text(x[i], y_max + 0.01, f"{marker}\nh={h:.2f}", ha="center", fontsize=9, fontweight="bold")
+        elif abs(h) >= 0.05:
+            ax.text(x[i], y_max + 0.01, f"h={h:.2f}", ha="center", fontsize=8, color="gray")
 
     ax.set_xticks(x)
     ax.set_xticklabels(categories, fontsize=8.5)
     ax.set_ylabel("Category assignment rate (among YES annotators)")
-    ax.set_title(f"{label} — Interpretation Level: Gender Shapes Categorization\n(* p<.05, ** p<.01, *** p<.001, \u2020 p<.10)")
+    ax.set_title(f"{label} — Interpretation Level: Gender Shapes Categorization\n(Holm-corrected: * p<.05, ** p<.01, *** p<.001, \u2020 p<.10)")
     ax.legend(frameon=True)
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)

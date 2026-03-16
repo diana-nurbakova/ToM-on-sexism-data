@@ -1,0 +1,4 @@
+Measure,Value,Interpretation
+Gender effect on detection,p = 0.142,No gender difference at detection level
+Gender effect on MISOGYNY-NON-SEXUAL-VIOLENCE,"p_adj = 0.005, OR = 1.11",Female annotators perceive more misogyny non sexual violence
+Gender-aligned 3-3 splits,10.1%,Gender accounts for little of the detection disagreement
