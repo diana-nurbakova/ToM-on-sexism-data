@@ -34,17 +34,44 @@ Each instance is annotated across three tasks (numbered by modality):
 
 For tweets and memes, annotators who agree content is sexist still show near-maximum entropy on intent attribution and low category overlap. TikTok videos show much higher agreement overall, likely due to having only 2-3 annotators (from a pool of just 10) and the more explicit visual/audio modality.
 
-### Gender Effects
+### Gender Effects (with Effect Sizes and Holm-Bonferroni Correction)
 
-| Effect | Tweets | Memes | TikToks |
+#### Detection Level
+
+| Metric | Tweets | Memes | TikToks |
 | --- | --- | --- | --- |
-| F vs M detection (Wilcoxon p) | 0.142 (n.s.) | < 0.001 *** | 0.104 (n.s.) |
 | F YES rate | 0.450 | 0.586 | 0.472 |
 | M YES rate | 0.461 | 0.528 | 0.451 |
-| OBJECTIFICATION gender gap (Fisher p) | 0.053 | < 0.001 *** | < 0.001 *** |
-| IDEOLOGICAL-INEQUALITY gender gap (Fisher p) | 0.422 | 0.602 | < 0.001 *** |
+| Difference (F-M) | -0.011 | +0.058 | +0.021 |
+| Wilcoxon p | 0.142 (n.s.) | < 10^-24 *** | 0.104 (n.s.) |
+| Rank-biserial r | -0.026 | **0.240** | 0.082 |
 
-For tweets, gender does not predict detection but shapes categorization (F annotators assign harm categories more often). For memes, gender predicts both detection and categorization, with a strong objectification gap. For TikToks, gender does not predict detection but F annotators assign OBJECTIFICATION (OR=2.36) and IDEOLOGICAL-INEQUALITY (OR=1.67) at significantly higher rates.
+For memes, despite the extreme p-value, the effect size is **small** (r = 0.24). The 0.058 difference on a 0-1 scale is driven to significance by the large sample size (n = 4,044), not a large practical effect.
+
+#### Categorization Level (Holm-corrected, Fisher's exact with Cohen's h)
+
+| Category | Modality | F rate | M rate | Cohen's h | p (raw) | p (adjusted) |
+| --- | --- | --- | --- | --- | --- | --- |
+| MISOGYNY | Tweets | 0.235 | 0.216 | 0.045 | 0.001 | **0.005** |
+| OBJECTIFICATION | Tweets | 0.285 | 0.273 | 0.026 | 0.053 | 0.159 (n.s.) |
+| SEXUAL-VIOLENCE | Tweets | 0.184 | 0.172 | 0.033 | 0.016 | 0.064 (n.s.) |
+| OBJECTIFICATION | Memes | 0.363 | 0.314 | **0.102** | 3.4 x 10^-9 | **1.7 x 10^-8** |
+| OBJECTIFICATION | TikToks | 0.225 | 0.110 | **0.313** | 2.1 x 10^-15 | **1.0 x 10^-14** |
+| IDEOLOGICAL-INEQ. | TikToks | 0.336 | 0.233 | **0.231** | 3.8 x 10^-9 | **1.5 x 10^-8** |
+
+All tweet/meme category effects are small (|h| < 0.11). Video effects appear larger (h = 0.23-0.31) but are based on only 10 annotators, so individual preferences may dominate.
+
+### Cross-Modal Annotator Pool
+
+| Metric | Value |
+| --- | --- |
+| Tweets-Memes Jaccard similarity | 0.912 |
+| All tweet annotators also in memes? | Yes (100%) |
+| Memes-only annotators | 78 |
+| Demographics match (gender, age, education) | Yes (all p > 0.4) |
+| Demographics differ (ethnicity, country) | Small (V = 0.14, 0.25) |
+
+Cross-modal differences are not confounded by annotator population differences.
 
 ## Project Structure
 
@@ -53,6 +80,7 @@ src/nlpercep/
     __main__.py              # Entry point (python -m nlpercep)
     run_analysis.py          # Main runner with CLI args
     data.py                  # Data loading and preprocessing
+    correction.py            # Holm-Bonferroni correction, effect sizes (r, Cohen's h)
     section0_descriptive.py  # Descriptive statistics
     section1_disagreement.py # Agreement categories, entropy, Jaccard
     section2_intent_ambiguity.py  # Explicit vs implicit intent analysis
@@ -63,10 +91,12 @@ src/nlpercep/
     summary_table.py         # Paper summary table generation
     memes_analysis.py        # Parallel pipeline for memes dataset
     videos_analysis.py       # Parallel pipeline for TikTok videos (2-3 annotators)
+    cross_modal_annotators.py  # Cross-modal annotator pool comparison
 outputs/
     figures/                 # Generated figures (PDF + PNG, 300 DPI)
     tables/                  # Timestamped run directories with CSV/JSON results
     qualitative_examples.json  # Curated examples for the paper
+    ANALYSIS_REPORT.md       # Comprehensive analysis report with all findings
 ```
 
 ## Setup
@@ -116,8 +146,9 @@ Each run creates a timestamped directory under `outputs/tables/` containing:
 - `s0_*.csv` — Descriptive statistics
 - `s1_*.csv`, `s1_stats.json` — Agreement distributions and entropy
 - `s2_*.json` — Intent ambiguity analysis
-- `s3_*.json`, `s3_*.csv` — Gender effect analyses
+- `s3_*.json`, `s3_*.csv` — Gender effect analyses (with `p_adjusted` and `cohens_h` columns)
 - `table2_summary.csv` — Paper summary table
+- `cross_modal_annotators.json` — Annotator pool overlap and demographic comparison
 - `memes/` — Parallel results for the memes dataset
 - `videos/` — Parallel results for the TikTok videos dataset
 
@@ -127,8 +158,21 @@ Figures are saved to `outputs/figures/` as both PDF and PNG at 300 DPI, using th
 
 - **Section 0**: Instance counts, demographics, label distributions
 - **Section 1**: Agreement categories (unanimous YES through unanimous NO), Shannon entropy, conditional disagreement (intent entropy and Jaccard among majority-YES instances)
-- **Section 2**: Explicit vs implicit intent — Mann-Whitney U test comparing detection entropy between groups
-- **Section 3**: Gender moderation — (a) overall F vs M detection rates (Wilcoxon), (b) gender-aligned split analysis, (c) gender x ambiguity interaction, (d) per-category rates by gender (Fisher's exact test)
+- **Section 2**: Explicit vs implicit intent — Mann-Whitney U test comparing detection entropy between groups (rank-biserial r for effect size)
+- **Section 3**: Gender moderation — (a) overall F vs M detection rates (Wilcoxon signed-rank, rank-biserial r), (b) gender-aligned split analysis, (c) gender x ambiguity interaction (Mann-Whitney U, rank-biserial r), (d) per-category rates by gender (Fisher's exact, Holm-Bonferroni correction, Cohen's h)
+- **Cross-Modal**: Annotator pool overlap (Jaccard), demographic comparison (chi-squared, Cramer's V), annotation volume per annotator
+
+## Statistical Methods
+
+| Method | Purpose | Effect Size |
+| --- | --- | --- |
+| Wilcoxon signed-rank | Paired F vs M detection rates | Rank-biserial r |
+| Mann-Whitney U | Explicit vs implicit entropy; interaction test | Rank-biserial r |
+| Fisher's exact test | Per-category gender rates (2x2 tables) | Cohen's h |
+| Chi-squared | Demographic comparison across pools | Cramer's V |
+| Holm-Bonferroni | Multiple comparison correction (5 tests per modality) | — |
+
+Effect size benchmarks: rank-biserial r and Cohen's h use 0.1/0.3/0.5 (small/medium/large); Cramer's V uses 0.1/0.3/0.5.
 
 ## Dependencies
 
