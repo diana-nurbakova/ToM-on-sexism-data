@@ -338,6 +338,70 @@ def fig_gender_categorization(df: pd.DataFrame, out_dir: Path, label: str = "Twe
     return _save(fig, out_dir, f"fig_gender_categorization_{suffix}")
 
 
+def _draw_gender_cat_panel(ax, df: pd.DataFrame, label: str, use_actual_gender: bool = False):
+    """Draw a single gender-categorization panel onto *ax*."""
+    cat_labels = [
+        "IDEOLOGICAL-\nINEQUALITY", "STEREOTYPING-\nDOMINANCE",
+        "OBJECTI-\nFICATION", "SEXUAL-\nVIOLENCE", "MISOGYNY-NON-\nSEXUAL-VIOLENCE",
+    ]
+    f_rates, m_rates, p_values, h_values = _compute_gender_category_rates(df, use_actual_gender=use_actual_gender)
+
+    x = np.arange(len(cat_labels))
+    width = 0.35
+    ax.bar(x - width / 2, f_rates, width, label="Female", color=GENDER_F, alpha=0.85)
+    ax.bar(x + width / 2, m_rates, width, label="Male", color=GENDER_M, alpha=0.85)
+
+    for i, (p, h) in enumerate(zip(p_values, h_values)):
+        if p < 0.001:
+            marker = "***"
+        elif p < 0.01:
+            marker = "**"
+        elif p < 0.05:
+            marker = "*"
+        elif p < 0.1:
+            marker = "\u2020"
+        else:
+            marker = ""
+        y_max = max(f_rates[i], m_rates[i])
+        if marker:
+            ax.text(x[i], y_max + 0.01, f"{marker}\nh={h:.2f}", ha="center", fontsize=8, fontweight="bold")
+        elif abs(h) >= 0.05:
+            ax.text(x[i], y_max + 0.01, f"h={h:.2f}", ha="center", fontsize=7, color="gray")
+
+    ax.set_xticks(x)
+    ax.set_xticklabels(cat_labels, fontsize=7.5)
+    ax.set_ylim(0, max(max(f_rates), max(m_rates)) * 1.25)
+    ax.set_title(f"{label}", fontsize=11)
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+
+
+def fig_gender_categorization_side_by_side(
+    tweets_df: pd.DataFrame,
+    memes_df: pd.DataFrame,
+    out_dir: Path,
+) -> Path:
+    """Side-by-side gender categorization: Tweets (left) and Memes (right)."""
+    setup_style()
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    fig, (ax_l, ax_r) = plt.subplots(1, 2, figsize=(16, 5.5), sharey=True)
+
+    _draw_gender_cat_panel(ax_l, tweets_df, label="Tweets")
+    _draw_gender_cat_panel(ax_r, memes_df, label="Memes")
+
+    ax_l.set_ylabel("Category assignment rate (among YES annotators)")
+    ax_r.legend(frameon=True, loc="upper right")
+
+    fig.suptitle(
+        "Gender Shapes Categorization Across Modalities\n"
+        "(Holm-corrected: * p<.05, ** p<.01, *** p<.001, \u2020 p<.10; h = Cohen\u2019s h)",
+        fontsize=12,
+    )
+    fig.tight_layout()
+    return _save(fig, out_dir, "fig_gender_categorization_tweets_memes")
+
+
 def generate_all(df: pd.DataFrame, out_dir: Path, label: str = "Tweets") -> list[Path]:
     """Generate all figures for one dataset and return paths."""
     setup_style()

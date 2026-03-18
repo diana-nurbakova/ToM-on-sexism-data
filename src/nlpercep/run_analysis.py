@@ -267,6 +267,8 @@ def main():
     figures.generate_all(df, fig_dir, label="Tweets")
     if not args.no_memes and "memes" in results:
         figures.generate_all(memes_df, fig_dir, label="Memes")
+        p = figures.fig_gender_categorization_side_by_side(df, memes_df, fig_dir)
+        print(f"  - Gender categorization (tweets + memes): {p.name}")
     if not args.no_videos and "videos" in results:
         figures.generate_all(videos_df, fig_dir, label="TikToks")
 

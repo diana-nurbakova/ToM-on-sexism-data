@@ -134,7 +134,7 @@ Memes have a higher base rate of sexism labels than tweets (55.7% vs 45.6%).
 
 ![Detection vs Interpretation - Tweets](figures/fig_detection_vs_interpretation_tweets.png)
 
-Among majority-YES instances (n = 3,152):
+Among majority-YES instances (n = 3,152 out of 7,958 total, i.e. 39.6%):
 
 | Measure | Value | Interpretation |
 |---------|-------|---------------|
