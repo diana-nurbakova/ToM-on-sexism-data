@@ -21,6 +21,7 @@ from nlpercep import (
     section1_disagreement,
     section2_intent_ambiguity,
     section3_gender,
+    section3_gender_intent,
     figures,
     qualitative,
     summary_table,
@@ -108,6 +109,17 @@ def save_results(results: dict, log_text: str) -> Path:
             json.dump(s3["interaction"], f, indent=2, default=_json_default)
         s3["category_rates"].to_csv(run_dir / "s3_category_rates.csv", index=False)
 
+    # Section 3 (extension): Gender × Intent
+    if "s3_intent" in results:
+        si = results["s3_intent"]
+        si["per_label_rates"].to_csv(run_dir / "s3_intent_per_label.csv", index=False)
+        with open(run_dir / "s3_intent_summary.json", "w") as f:
+            json.dump({
+                "unknown_by_gender": si["unknown_by_gender"],
+                "split_alignment": si["split_alignment"],
+                "entropy": si["entropy"],
+            }, f, indent=2, default=_json_default)
+
     # Summary Table 2
     if "table2" in results:
         results["table2"].to_csv(run_dir / "table2_summary.csv", index=False)
@@ -141,6 +153,15 @@ def save_results(results: dict, log_text: str) -> Path:
                 json.dump(m["s3a"], f, indent=2, default=_json_default)
         if "s3d" in m:
             m["s3d"].to_csv(memes_dir / "s3d_category_rates.csv", index=False)
+        if "s3_intent" in m:
+            mi = m["s3_intent"]
+            mi["per_label_rates"].to_csv(memes_dir / "s3_intent_per_label.csv", index=False)
+            with open(memes_dir / "s3_intent_summary.json", "w") as f:
+                json.dump({
+                    "unknown_by_gender": mi["unknown_by_gender"],
+                    "split_alignment": mi["split_alignment"],
+                    "entropy": mi["entropy"],
+                }, f, indent=2, default=_json_default)
 
     # Cross-modal annotator pool
     if "cross_modal" in results:
@@ -172,7 +193,148 @@ def save_results(results: dict, log_text: str) -> Path:
         if "s3d" in v:
             v["s3d"].to_csv(videos_dir / "s3d_category_rates.csv", index=False)
 
+    # ── Combined all_results.json ─────────────────────────────────────────
+    combined = _build_combined_results(results)
+    with open(run_dir / "all_results.json", "w", encoding="utf-8") as f:
+        json.dump(combined, f, indent=2, default=_json_default)
+    # Also stable-named copy at outputs/ root for quick consumption
+    with open(OUTPUT_DIR / "all_results.json", "w", encoding="utf-8") as f:
+        json.dump(combined, f, indent=2, default=_json_default)
+
     return run_dir
+
+
+def _df_to_records(obj):
+    """Coerce a DataFrame to a list of dicts; pass other JSON-friendly types through."""
+    if isinstance(obj, pd.DataFrame):
+        return obj.to_dict(orient="records")
+    return obj
+
+
+def _build_combined_results(results: dict) -> dict:
+    """Aggregate per-section result blocks into one JSON-serializable dict."""
+    combined: dict = {
+        "generated_at": datetime.now().isoformat(timespec="seconds"),
+    }
+
+    # Tweets ─────────────────────────────────────────────────────────────
+    tweets: dict = {}
+    if "s0" in results:
+        s0 = results["s0"]
+        tweets["s0_descriptive"] = {
+            "instance_counts": _df_to_records(s0["instance_counts"]),
+            "n_unique_annotators": s0.get("n_unique_annotators"),
+            "label_distributions": {
+                task: dist.to_dict() for task, dist in s0["label_distributions"].items()
+            },
+            "demographics": {
+                attr: dist.to_dict() for attr, dist in s0["demographics"].items()
+            },
+        }
+    if "s1" in results:
+        s1 = results["s1"]
+        tweets["s1_disagreement"] = {
+            "agreement_distribution": s1["agreement_distribution"].to_dict(),
+            "entropy_stats": s1["entropy_stats"],
+            "agreement_proportions": s1["agreement_proportions"],
+            "conditional_disagreement": s1["conditional_disagreement"],
+        }
+    if "s2" in results:
+        s2 = results["s2"]
+        tweets["s2_intent_ambiguity"] = {
+            "ambiguity_groups": s2["ambiguity_groups"],
+            "overall": s2["overall"],
+            "by_language": s2["by_language"],
+        }
+    if "s3" in results:
+        s3 = results["s3"]
+        tweets["s3_gender"] = {
+            "overall": s3["overall"],
+            "split_analysis": s3["split_analysis"],
+            "by_agreement_level": _df_to_records(s3["by_agreement_level"]),
+            "interaction": s3["interaction"],
+            "category_rates": _df_to_records(s3["category_rates"]),
+        }
+    if "s3_intent" in results:
+        si = results["s3_intent"]
+        tweets["s3_gender_intent"] = {
+            "per_label_rates": _df_to_records(si["per_label_rates"]),
+            "unknown_by_gender": si["unknown_by_gender"],
+            "split_alignment": si["split_alignment"],
+            "entropy": si["entropy"],
+        }
+    if tweets:
+        combined["tweets"] = tweets
+
+    # Memes ──────────────────────────────────────────────────────────────
+    if "memes" in results:
+        m = results["memes"]
+        memes_block: dict = {}
+        if "s0" in m:
+            memes_block["s0_descriptive"] = {
+                "instance_counts": _df_to_records(m["s0"]["instance_counts"]),
+                "n_unique_annotators": m["s0"].get("n_unique_annotators"),
+                "label_distributions": {
+                    task: dist.to_dict() for task, dist in m["s0"]["label_distributions"].items()
+                },
+                "demographics": {
+                    attr: dist.to_dict() for attr, dist in m["s0"]["demographics"].items()
+                },
+            }
+        if "s1" in m:
+            memes_block["s1_disagreement"] = {
+                "agreement_distribution": m["s1"]["agreement_distribution"].to_dict(),
+                "entropy_stats": m["s1"]["entropy_stats"],
+                "agreement_proportions": m["s1"]["agreement_proportions"],
+                "conditional_disagreement": m["s1"]["conditional_disagreement"],
+                "by_language": m["s1"].get("by_language"),
+            }
+        if "s3a" in m:
+            memes_block["s3a_gender_overall"] = m["s3a"]
+        if "s3d" in m:
+            memes_block["s3d_category_rates"] = _df_to_records(m["s3d"])
+        if "s3_intent" in m:
+            mi = m["s3_intent"]
+            memes_block["s3_gender_intent"] = {
+                "per_label_rates": _df_to_records(mi["per_label_rates"]),
+                "unknown_by_gender": mi["unknown_by_gender"],
+                "split_alignment": mi["split_alignment"],
+                "entropy": mi["entropy"],
+            }
+        combined["memes"] = memes_block
+
+    # Videos ─────────────────────────────────────────────────────────────
+    if "videos" in results:
+        v = results["videos"]
+        videos_block: dict = {}
+        if "s0" in v:
+            videos_block["s0_descriptive"] = {
+                "instance_counts": _df_to_records(v["s0"]["instance_counts"]),
+                "n_unique_annotators": v["s0"].get("n_unique_annotators"),
+                "label_distributions": {
+                    task: dist.to_dict() for task, dist in v["s0"]["label_distributions"].items()
+                },
+            }
+        if "s1" in v:
+            videos_block["s1_disagreement"] = {
+                "agreement_distribution": v["s1"]["agreement_distribution"].to_dict(),
+                "entropy_stats": v["s1"]["entropy_stats"],
+                "agreement_proportions": v["s1"]["agreement_proportions"],
+                "conditional_disagreement": v["s1"]["conditional_disagreement"],
+            }
+        if "s3a" in v:
+            videos_block["s3a_gender_overall"] = v["s3a"]
+        if "s3d" in v:
+            videos_block["s3d_category_rates"] = _df_to_records(v["s3d"])
+        combined["videos"] = videos_block
+
+    # Cross-modal + summary table ────────────────────────────────────────
+    if "cross_modal" in results:
+        combined["cross_modal"] = results["cross_modal"]
+    if "table2" in results:
+        combined["table2_summary"] = _df_to_records(results["table2"])
+
+    return combined
 
 
 def _json_default(obj):
@@ -227,6 +389,7 @@ def main():
 
     if 3 in args.sections:
         results["s3"] = section3_gender.run(df)
+        results["s3_intent"] = section3_gender_intent.run_tweets(df)
 
     # Qualitative examples (needs full df with ambiguity)
     results["qualitative"] = qualitative.run(df)
@@ -271,6 +434,8 @@ def main():
         print(f"  - Gender categorization (tweets + memes): {p.name}")
         p = figures.fig_gender_categorization_side_by_side_tom(df, memes_df, fig_dir)
         print(f"  - Gender categorization (tweets + memes, ToM-grouped): {p.name}")
+        p = figures.fig_gender_intent_side_by_side(df, memes_df, fig_dir)
+        print(f"  - Gender intent (tweets + memes): {p.name}")
     if not args.no_videos and "videos" in results:
         figures.generate_all(videos_df, fig_dir, label="TikToks")
 

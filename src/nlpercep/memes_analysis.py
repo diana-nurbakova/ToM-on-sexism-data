@@ -13,6 +13,7 @@ import numpy as np
 from scipy import stats
 
 from nlpercep.correction import holm_bonferroni, rank_biserial_signed, cohens_h
+from nlpercep import section3_gender_intent
 
 
 HEADER = "MEMES"
@@ -259,5 +260,6 @@ def run(df: pd.DataFrame) -> dict:
         "s1": section1(df),
         "s3a": section3a(df),
         "s3d": section3d(df),
+        "s3_intent": section3_gender_intent.run_memes(df),
     }
     return results

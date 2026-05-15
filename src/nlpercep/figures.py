@@ -224,8 +224,14 @@ def fig_gender_detection(df: pd.DataFrame, out_dir: Path, label: str = "Tweets")
 
     f_mean = sub["f_yes_ratio"].mean()
     m_mean = sub["m_yes_ratio"].mean()
-    ax.axhline(f_mean, color=GENDER_F, linestyle="--", alpha=0.7, linewidth=1)
-    ax.axhline(m_mean, color=GENDER_M, linestyle="--", alpha=0.7, linewidth=1)
+    f_line = ax.axhline(
+        f_mean, color=GENDER_F, linestyle="--", alpha=0.85, linewidth=1.5,
+        label=f"Female mean = {f_mean:.3f}",
+    )
+    m_line = ax.axhline(
+        m_mean, color=GENDER_M, linestyle="--", alpha=0.85, linewidth=1.5,
+        label=f"Male mean = {m_mean:.3f}",
+    )
 
     ax.set_ylabel("Proportion labelling YES (sexist)")
     sig_label = f"p = {p_value:.3f}" if not np.isnan(p_value) else "p = N/A"
@@ -239,8 +245,15 @@ def fig_gender_detection(df: pd.DataFrame, out_dir: Path, label: str = "Tweets")
     ax.spines["right"].set_visible(False)
 
     y_offset = 0.03 if abs(f_mean - m_mean) > 0.02 else 0.05
-    ax.text(0, f_mean - y_offset, f"mean={f_mean:.3f}", ha="center", fontsize=9, color=GENDER_F)
-    ax.text(1, m_mean + 0.03, f"mean={m_mean:.3f}", ha="center", fontsize=9, color=GENDER_M)
+    text_bbox = dict(boxstyle="round,pad=0.2", facecolor="white", edgecolor="none", alpha=0.85)
+    ax.text(0, f_mean - y_offset, f"mean={f_mean:.3f}", ha="center", fontsize=9,
+            color="black", bbox=text_bbox)
+    ax.text(1, m_mean + 0.03, f"mean={m_mean:.3f}", ha="center", fontsize=9,
+            color="black", bbox=text_bbox)
+
+    ax.legend(handles=[f_line, m_line], loc="upper right", frameon=True,
+              framealpha=0.95, fontsize=9, title="Group mean (dashed line)",
+              title_fontsize=9)
 
     suffix = label.lower()
     return _save(fig, out_dir, f"fig_gender_detection_{suffix}")
@@ -518,6 +531,161 @@ def fig_gender_categorization_side_by_side_tom(
     return _save(fig, out_dir, "fig_gender_categorization_tweets_memes_tom")
 
 
+def _compute_gender_intent_rates(
+    df: pd.DataFrame,
+    intent_labels: list[str],
+    use_actual_gender: bool = False,
+) -> tuple[list[float], list[float], list[float], list[float]]:
+    """Compute F/M rates, Holm-corrected p-values, and Cohen's h per intent label."""
+    f_rates, m_rates, p_values, h_values = [], [], [], []
+    for label in intent_labels:
+        f_count, m_count = 0, 0
+        f_total, m_total = 0, 0
+        for _, row in df.iterrows():
+            n_ann = int(row.get("n_annotators", 6))
+            for i in range(n_ann):
+                if row.get(f"ann_{i}_task1_1") != "YES":
+                    continue
+                intent = row.get(f"ann_{i}_task1_2")
+                if intent == "UNKNOWN" or intent == "-" or intent is None:
+                    continue
+                gender = row.get(f"ann_{i}_gender") if use_actual_gender else ("F" if i < 3 else "M")
+                if gender == "F":
+                    f_total += 1
+                    if intent == label:
+                        f_count += 1
+                elif gender == "M":
+                    m_total += 1
+                    if intent == label:
+                        m_count += 1
+        f_rate = f_count / f_total if f_total > 0 else 0.0
+        m_rate = m_count / m_total if m_total > 0 else 0.0
+        f_rates.append(f_rate)
+        m_rates.append(m_rate)
+        h_values.append(cohens_h(f_rate, m_rate))
+        table = np.array([[f_count, f_total - f_count], [m_count, m_total - m_count]])
+        if f_total > 0 and m_total > 0:
+            _, p_val = stats.fisher_exact(table)
+        else:
+            p_val = np.nan
+        p_values.append(p_val)
+    p_adjusted = holm_bonferroni(p_values)
+    return f_rates, m_rates, list(p_adjusted), h_values
+
+
+def _draw_gender_intent_panel(
+    ax,
+    df: pd.DataFrame,
+    label: str,
+    intent_labels: list[str],
+    use_actual_gender: bool = False,
+    base_fs: int = 12,
+) -> None:
+    f_rates, m_rates, p_values, h_values = _compute_gender_intent_rates(
+        df, intent_labels, use_actual_gender=use_actual_gender,
+    )
+
+    x = np.arange(len(intent_labels))
+    width = 0.35
+    ax.bar(x - width / 2, f_rates, width, label="Female", color=GENDER_F, alpha=0.9,
+           edgecolor="white", linewidth=0.5)
+    ax.bar(x + width / 2, m_rates, width, label="Male", color=GENDER_M, alpha=0.9,
+           edgecolor="white", linewidth=0.5)
+
+    for i, (p, h) in enumerate(zip(p_values, h_values)):
+        if p < 0.001:
+            marker = "***"
+        elif p < 0.01:
+            marker = "**"
+        elif p < 0.05:
+            marker = "*"
+        elif p < 0.1:
+            marker = "†"
+        else:
+            marker = ""
+        y_max = max(f_rates[i], m_rates[i])
+        if marker:
+            ax.text(x[i], y_max + 0.012, f"{marker}\nh={h:.2f}", ha="center",
+                    fontsize=base_fs - 1, fontweight="bold")
+        elif abs(h) >= 0.05:
+            ax.text(x[i], y_max + 0.012, f"h={h:.2f}", ha="center",
+                    fontsize=base_fs - 2, color="gray")
+
+    ax.set_xticks(x)
+    ax.set_xticklabels(intent_labels, fontsize=base_fs)
+    ax.tick_params(axis="y", labelsize=base_fs - 1)
+    y_top = max(max(f_rates), max(m_rates)) if (f_rates and m_rates) else 1.0
+    ax.set_ylim(0, max(y_top * 1.30, 0.1))
+    ax.set_title(label, fontsize=base_fs + 2)
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+
+
+def fig_gender_intent_side_by_side(
+    tweets_df: pd.DataFrame,
+    memes_df: pd.DataFrame,
+    out_dir: Path,
+) -> Path:
+    """Side-by-side gender × intent attribution: Tweets (left) and Memes (right).
+
+    Parallels fig_gender_categorization_side_by_side. All intent labels are
+    cognitive ToM, so no green/red background grouping is drawn (per spec).
+    """
+    setup_style()
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    base_fs = 12
+    fig, (ax_l, ax_r) = plt.subplots(1, 2, figsize=(13, 5.5), sharey=True)
+
+    _draw_gender_intent_panel(ax_l, tweets_df, label="Tweets (Task 1.2)",
+                              intent_labels=["DIRECT", "REPORTED", "JUDGEMENTAL"],
+                              base_fs=base_fs)
+    _draw_gender_intent_panel(ax_r, memes_df, label="Memes (Task 2.2)",
+                              intent_labels=["DIRECT", "JUDGEMENTAL"],
+                              base_fs=base_fs)
+
+    ax_l.set_ylabel("Intent assignment rate (among YES annotators, UNKNOWN excluded)",
+                    fontsize=base_fs)
+    ax_l.legend(frameon=True, loc="upper right", fontsize=base_fs)
+    ax_r.legend(frameon=True, loc="upper right", fontsize=base_fs)
+
+    fig.suptitle(
+        "Gender Does Not Shape Intent Attribution\n"
+        "(Holm-corrected: * p<.05, ** p<.01, *** p<.001, † p<.10; h = Cohen’s h)",
+        fontsize=base_fs + 1,
+    )
+    fig.tight_layout()
+    return _save(fig, out_dir, "fig_gender_intent_tweets_memes")
+
+
+def fig_gender_intent(df: pd.DataFrame, out_dir: Path, label: str = "Tweets") -> Path:
+    """Single-panel gender × intent figure for one modality."""
+    setup_style()
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    if label == "Memes":
+        intent_labels = ["DIRECT", "JUDGEMENTAL"]
+        task = "Task 2.2"
+    else:
+        intent_labels = ["DIRECT", "REPORTED", "JUDGEMENTAL"]
+        task = "Task 1.2"
+
+    fig, ax = plt.subplots(figsize=(7, 5))
+    _draw_gender_intent_panel(ax, df, label=f"{label} ({task})",
+                              intent_labels=intent_labels,
+                              use_actual_gender=_is_videos(label))
+    ax.set_ylabel("Intent assignment rate (among YES annotators, UNKNOWN excluded)")
+    ax.legend(frameon=True, loc="upper right")
+    fig.suptitle(
+        f"{label} — Intent Attribution by Gender\n"
+        "(Holm-corrected: * p<.05, ** p<.01, *** p<.001, † p<.10)",
+        fontsize=11,
+    )
+    fig.tight_layout()
+    suffix = label.lower()
+    return _save(fig, out_dir, f"fig_gender_intent_{suffix}")
+
+
 def generate_all(df: pd.DataFrame, out_dir: Path, label: str = "Tweets") -> list[Path]:
     """Generate all figures for one dataset and return paths."""
     setup_style()
@@ -543,5 +711,10 @@ def generate_all(df: pd.DataFrame, out_dir: Path, label: str = "Tweets") -> list
     p = fig_gender_categorization(df, out_dir, label)
     print(f"  - Gender categorization: {p.name}")
     paths.append(p)
+
+    if label in {"Tweets", "Memes"}:
+        p = fig_gender_intent(df, out_dir, label)
+        print(f"  - Gender intent: {p.name}")
+        paths.append(p)
 
     return paths

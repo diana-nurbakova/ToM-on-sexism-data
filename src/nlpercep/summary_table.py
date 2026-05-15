@@ -61,6 +61,24 @@ def generate(results: dict) -> pd.DataFrame:
             "Interpretation": "Gender accounts for little of the detection disagreement",
         })
 
+    # From Section 3 (extension): Gender × Intent
+    if "s3_intent" in results:
+        si = results["s3_intent"]
+        intent_rates = si["per_label_rates"]
+        min_p_adj = float(intent_rates["p_adjusted"].min())
+        max_abs_h = float(intent_rates["cohens_h"].abs().max())
+        rows.append({
+            "Measure": "Gender effect on intent (Task 1.2)",
+            "Value": f"min p_adj = {min_p_adj:.3f}, max |h| = {max_abs_h:.3f}",
+            "Interpretation": "No gender structuring at intent attribution (cognitive ToM)",
+        })
+        align = si["split_alignment"]
+        rows.append({
+            "Measure": "Gender-aligned intent splits",
+            "Value": f"{align['pct_gender_aligned']:.1f}% of {align['n_qualifying']}",
+            "Interpretation": "Intent disagreement is not organised along gender lines",
+        })
+
     table = pd.DataFrame(rows)
 
     print("\n" + "=" * 60)

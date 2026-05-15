@@ -1,0 +1,647 @@
+Loading EXIST 2025 tweets dataset...
+Loaded 7958 instances.
+
+============================================================
+SECTION 0: DESCRIPTIVE STATISTICS
+============================================================
+
+Total instances: 7958
+
+Instances by language and split:
+lang    split  count
+  en   DEV_EN    489
+  en TRAIN_EN   3260
+  es   DEV_ES    549
+  es TRAIN_ES   3660
+
+Unique annotators: 809
+Always 6 annotators: [6]
+Always 3F+3M: F=True, M=True
+
+--- Demographic distributions ---
+
+GENDER:
+F    23874
+M    23874
+
+AGE:
+18-22    15916
+23-45    15916
+46+      15916
+
+ETHNICITY:
+White or Caucasian           29458
+Hispano or Latino            14241
+Black or African American     2633
+Multiracial                    525
+Asian                          456
+other                          228
+Middle Eastern                 207
+
+EDUCATION:
+Bachelor’s degree                   23908
+High school degree or equivalent    14751
+Master’s degree                      7448
+Less than high school diploma         684
+Doctorate                             639
+other                                 318
+
+COUNTRY:
+Mexico                                        8925
+Portugal                                      7606
+Spain                                         6957
+United Kingdom                                4628
+Poland                                        3293
+South Africa                                  3260
+Chile                                         2430
+Italy                                         1884
+United States                                 1493
+Greece                                        1002
+Canada                                         615
+Hungary                                        513
+Venezuela                                      435
+Netherlands                                    342
+Slovenia                                       342
+Estonia                                        342
+Australia                                      342
+Ireland                                        285
+Argentina                                      285
+Peru                                           228
+Latvia                                         228
+Israel                                         204
+New Zealand                                    171
+Belgium                                        171
+Finland                                        114
+Algeria                                        114
+Brazil                                         114
+Colombia                                       114
+Serbia                                         114
+Germany                                        114
+Afghanistan                                    114
+Romania                                         57
+Puerto Rico                                     57
+Cuba                                            57
+Dominican Republic                              57
+Cyprus                                          57
+Guatemala                                       57
+Panama                                          57
+Macedonia, The Former Yugoslav Republic of      57
+Czech Republic                                  57
+Viet Nam                                        57
+El Salvador                                     57
+Sweden                                          57
+Nepal                                           57
+Zimbabwe                                        57
+Norway                                          57
+France                                          57
+Russian Federation                              57
+
+--- Label distributions ---
+
+task1_1:
+NO     25997
+YES    21751
+
+task1_2:
+DIRECT         10382
+JUDGEMENTAL     5878
+REPORTED        5409
+UNKNOWN           82
+
+task1_3:
+STEREOTYPING-DOMINANCE          7859
+IDEOLOGICAL-INEQUALITY          6840
+OBJECTIFICATION                 6076
+MISOGYNY-NON-SEXUAL-VIOLENCE    4900
+SEXUAL-VIOLENCE                 3872
+UNKNOWN                          227
+
+============================================================
+SECTION 1: DISAGREEMENT MEASUREMENT
+============================================================
+
+--- Task 1.1 Agreement Categories ---
+  unanimous_yes       :   978 ( 12.3%)
+  strong_yes          :  1120 ( 14.1%)
+  weak_yes            :  1054 ( 13.2%)
+  split               :   960 ( 12.1%)
+  weak_no             :   978 ( 12.3%)
+  strong_no           :  1231 ( 15.5%)
+  unanimous_no        :  1637 ( 20.6%)
+
+--- Task 1.1 Entropy ---
+  Mean:   0.5471
+  Median: 0.6500
+  Std:    0.4018
+
+--- Full Agreement vs Disagreement ---
+  Full agreement:    2615 (32.9%)
+  Any disagreement:  5343 (67.1%)
+
+--- Conditional Disagreement (majority YES, n=3152) ---
+  Task 1.2 entropy — mean: 0.8764, median: 0.9183
+  Task 1.3 Jaccard  — mean: 0.3824, median: 0.3333
+
+--- By Language ---
+
+  [EN] n=3749
+    Entropy mean: 0.5422
+    Full agreement: 33.6%
+    Conditional Task 1.2 entropy: 0.8927
+
+  [ES] n=4209
+    Entropy mean: 0.5516
+    Full agreement: 32.2%
+    Conditional Task 1.2 entropy: 0.8645
+
+============================================================
+SECTION 2 (ANALYSIS A): INTENT AMBIGUITY PREDICTS DISAGREEMENT
+============================================================
+
+--- Ambiguity group sizes ---
+  implicit       : 4941
+  no_yes         : 1637
+  explicit       : 1380
+
+--- Entropy comparison ---
+  Explicit  — mean: 0.6856, median: 0.6500 (n=1380)
+  Implicit  — mean: 0.6898, median: 0.6500 (n=4941)
+
+  Mann-Whitney U = 3191273.0
+  p-value = 0.000068
+  Rank-biserial r = 0.0639
+  Significance: ***
+
+--- By Language ---
+  [EN] explicit=636, implicit=2239
+    Entropy explicit: 0.7145, implicit: 0.7049
+    p=0.006621, r=0.0610
+  [ES] explicit=744, implicit=2702
+    Entropy explicit: 0.6608, implicit: 0.6772
+    p=0.001440, r=0.0681
+
+============================================================
+SECTION 3 (ANALYSIS B): GENDER MODERATES PERCEPTION
+============================================================
+
+--- 3a: Overall Gender Comparison ---
+  Female YES rate: 0.4501
+  Male YES rate:   0.4610
+  Difference (F-M): -0.0109
+  Wilcoxon W = 4252518.5, p = 0.141707, r = -0.0258
+  Significance: n.s.
+
+--- 3b: Gender Split Analysis (3-3 cases) ---
+  Total 3-3 splits: 960
+  Gender-aligned:   97 (10.1%)
+    3F=YES, 3M=NO:  35
+    3F=NO, 3M=YES:  62
+    Mixed:          863
+
+--- Gender difference by agreement level ---
+agreement_cat    n  f_yes_mean  m_yes_mean  gender_diff
+unanimous_yes  978    1.000000    1.000000     0.000000
+   strong_yes 1120    0.843750    0.822917     0.020833
+     weak_yes 1054    0.673308    0.660025     0.013283
+        split  960    0.478125    0.521875    -0.043750
+      weak_no  978    0.314247    0.352420    -0.038173
+    strong_no 1231    0.148389    0.184944    -0.036556
+ unanimous_no 1637    0.000000    0.000000     0.000000
+
+--- 3c: Gender × Ambiguity Interaction ---
+  [EXPLICIT] n=1380, F=0.4609, M=0.4671, diff=-0.0063, p=0.8124829968223464, r=-0.008305760010804186
+  [IMPLICIT] n=4941, F=0.5962, M=0.6120, diff=-0.0159, p=0.08016073909226495, r=-0.03530752295761519
+  Interaction: U=3373111.0, p=0.264397, r=0.0106
+
+--- 3d: Gender Category Rates (Holm-corrected) ---
+                    category   f_rate   m_rate  f_count  m_count      diff  cohens_h  odds_ratio  p_value  p_adjusted
+      IDEOLOGICAL-INEQUALITY 0.311866 0.317009     3351     3489 -0.005143 -0.011077    0.976424 0.421830    0.421830
+      STEREOTYPING-DOMINANCE 0.356073 0.366436     3826     4033 -0.010364 -0.021576    0.956077 0.113886    0.227772
+MISOGYNY-NON-SEXUAL-VIOLENCE 0.234714 0.216064     2522     2378  0.018650  0.044643    1.112790 0.001041    0.005207
+             SEXUAL-VIOLENCE 0.184365 0.171815     1981     1891  0.012549  0.032806    1.089550 0.015913    0.063651
+             OBJECTIFICATION 0.285342 0.273487     3066     3010  0.011855  0.026421    1.060654 0.053047    0.159142
+
+============================================================
+SECTION 3 (EXTENSION): GENDER × INTENT ATTRIBUTION (TWEETS)
+============================================================
+
+--- Test A: Per-Label Gender Comparison (Tweets — Task 1.2, Holm-corrected) ---
+intent_label   f_rate   m_rate  f_count  m_count  f_total  m_total      diff  cohens_h  odds_ratio  p_value  p_adjusted
+      DIRECT 0.488287 0.470148     5232     5150    10715    10954  0.018140  0.036312    1.075399 0.007688    0.015376
+    REPORTED 0.251330 0.247946     2693     2716    10715    10954  0.003384  0.007819    1.018230 0.572010    0.572010
+ JUDGEMENTAL 0.260383 0.281906     2790     3088    10715    10954 -0.021524 -0.048425    0.896771 0.000370    0.001111
+
+--- UNKNOWN intent by gender (Tweets) ---
+  F: 30/10745 (0.28%)
+  M: 52/11006 (0.47%)
+
+--- Test B: Gender-Alignment of Intent Splits (Tweets) ---
+  Qualifying majority-YES instances: 2579
+  Gender-aligned (|r| > 0.50): 1156 (44.8%)
+  Mean |r| across qualifying instances: 0.4670
+
+--- Test C: Intent Entropy by Gender (exploratory, Tweets) ---
+  n paired instances:    3151
+  F intent entropy mean: 0.5378
+  M intent entropy mean: 0.5894
+  Mean diff (F - M):     -0.0515
+  Wilcoxon W = 875009.5, p = 0.000036, r = -0.1059
+
+============================================================
+QUALITATIVE EXAMPLES
+============================================================
+
+--- Type 1: Detection agreement + interpretation divergence ---
+
+  [202424] (en) YES=6/6, entropy_1.2=1.585, jaccard_1.3=0.189
+  Text: this is the same little boy who has said “when we get married, I’m going to slap the shit out of you- fucking stupid bitch” 😬
+    F: YES | JUDGEMENTAL | MISOGYNY-NON-SEXUAL-VIOLENCE
+    F: YES | REPORTED | STEREOTYPING-DOMINANCE, OBJECTIFICATION
+    M: YES | JUDGEMENTAL | STEREOTYPING-DOMINANCE
+    M: YES | DIRECT | STEREOTYPING-DOMINANCE, OBJECTIFICATION, SEXUAL-VIOLENCE
+    M: YES | REPORTED | SEXUAL-VIOLENCE
+    F: YES | DIRECT | MISOGYNY-NON-SEXUAL-VIOLENCE
+
+  [201411] (en) YES=5/6, entropy_1.2=1.922, jaccard_1.3=0.2
+  Text: @libsoftiktok Wait, I thought there was a war against the white male hegemony. Looks like whites man is still in power 🤔
+    F: YES | UNKNOWN | MISOGYNY-NON-SEXUAL-VIOLENCE
+    F: YES | REPORTED | STEREOTYPING-DOMINANCE
+    M: YES | DIRECT | STEREOTYPING-DOMINANCE, MISOGYNY-NON-SEXUAL-VIOLENCE
+    M: NO | - | -
+    M: YES | JUDGEMENTAL | IDEOLOGICAL-INEQUALITY
+    F: YES | DIRECT | IDEOLOGICAL-INEQUALITY
+
+  [202884] (en) YES=5/6, entropy_1.2=1.922, jaccard_1.3=0.2
+  Text: @BernieSanders Its also quite common in agri pastoral societies for mothers to be back working on the fields 72 hrs - 1 week after giving birth.What America has is too many pressure groups talking dow...
+    F: NO | - | -
+    F: YES | REPORTED | UNKNOWN
+    M: YES | JUDGEMENTAL | IDEOLOGICAL-INEQUALITY, STEREOTYPING-DOMINANCE
+    M: YES | DIRECT | STEREOTYPING-DOMINANCE
+    M: YES | UNKNOWN | IDEOLOGICAL-INEQUALITY, STEREOTYPING-DOMINANCE
+    F: YES | JUDGEMENTAL | OBJECTIFICATION
+
+  [202654] (en) YES=5/6, entropy_1.2=1.922, jaccard_1.3=0.2
+  Text: @DesignationSix @ccollins43 Celebration of the completion of his initiation  into the boys club. He'd have more points had his victims been black tho.
+    F: NO | - | -
+    F: YES | JUDGEMENTAL | IDEOLOGICAL-INEQUALITY
+    M: YES | DIRECT | SEXUAL-VIOLENCE, MISOGYNY-NON-SEXUAL-VIOLENCE
+    M: YES | REPORTED | IDEOLOGICAL-INEQUALITY
+    M: YES | UNKNOWN | OBJECTIFICATION
+    F: YES | DIRECT | IDEOLOGICAL-INEQUALITY, STEREOTYPING-DOMINANCE, OBJECTIFICATION, SEXUAL-VIOLENCE, MISOGYNY-NON-SEXUAL-VIOLENCE
+
+  [200626] (en) YES=6/6, entropy_1.2=1.918, jaccard_1.3=0.208
+  Text: People shaming women for riding the cock carousel but idk that sounds like that might be a fun attraction at some gay carnival or smth
+    F: YES | UNKNOWN | OBJECTIFICATION, SEXUAL-VIOLENCE
+    F: YES | REPORTED | STEREOTYPING-DOMINANCE
+    M: YES | JUDGEMENTAL | OBJECTIFICATION, SEXUAL-VIOLENCE, MISOGYNY-NON-SEXUAL-VIOLENCE
+    M: YES | JUDGEMENTAL | MISOGYNY-NON-SEXUAL-VIOLENCE
+    M: YES | DIRECT | STEREOTYPING-DOMINANCE
+    F: YES | REPORTED | IDEOLOGICAL-INEQUALITY, STEREOTYPING-DOMINANCE, OBJECTIFICATION
+
+--- Type 2: Gender-differential categorization ---
+
+  [101502] (es) YES=5/6
+  Text: @africajotes2014 @Jordip24905527 @Jordipascual73 Es que llevaba una falda muy corta, iba provocando...
+    F: YES | DIRECT | OBJECTIFICATION, SEXUAL-VIOLENCE, MISOGYNY-NON-SEXUAL-VIOLENCE
+    F: YES | DIRECT | SEXUAL-VIOLENCE
+    F: YES | DIRECT | OBJECTIFICATION
+    M: YES | DIRECT | OBJECTIFICATION
+    M: YES | DIRECT | IDEOLOGICAL-INEQUALITY, STEREOTYPING-DOMINANCE
+    M: NO | - | -
+
+  [200643] (en) YES=5/6
+  Text: $LUNABROOOOO😂 such a cock tease😂 I'v been watching this chart all day waiting for you to break out ffs😂 https://t.co/Hg64HohfyB https://t.co/ljllgMEncJ
+    F: YES | DIRECT | OBJECTIFICATION, MISOGYNY-NON-SEXUAL-VIOLENCE
+    F: YES | DIRECT | OBJECTIFICATION
+    M: YES | UNKNOWN | OBJECTIFICATION, SEXUAL-VIOLENCE
+    M: NO | - | -
+    M: YES | JUDGEMENTAL | IDEOLOGICAL-INEQUALITY
+    F: YES | JUDGEMENTAL | STEREOTYPING-DOMINANCE
+
+  [300496] (es) YES=5/6
+  Text: @VogueSpain ¿Que tienes que decir sobre este alcahueterismo, Vogue España? https://t.co/OvvEHineVjDesde el 8:45 hablan de tu sororidad para con las mujeres a quienes dices apoyar.  Habría que ser muy ...
+    F: YES | JUDGEMENTAL | MISOGYNY-NON-SEXUAL-VIOLENCE
+    F: NO | - | -
+    F: YES | DIRECT | OBJECTIFICATION
+    M: YES | REPORTED | OBJECTIFICATION
+    M: YES | DIRECT | IDEOLOGICAL-INEQUALITY, STEREOTYPING-DOMINANCE
+    M: YES | JUDGEMENTAL | STEREOTYPING-DOMINANCE
+
+  [100236] (es) YES=5/6
+  Text: @MenervaPiquero Claro q sí, Carlota!!! Hoy leyendo a muchos fucsias dudando de Sofía!!! SOFIA es lo de menos aquí. Sofía representa a muchas otras víctimas que están calladas. Si Sofía cae x el juicio...
+    F: NO | - | -
+    F: YES | JUDGEMENTAL | SEXUAL-VIOLENCE, MISOGYNY-NON-SEXUAL-VIOLENCE
+    F: YES | JUDGEMENTAL | MISOGYNY-NON-SEXUAL-VIOLENCE
+    M: YES | REPORTED | STEREOTYPING-DOMINANCE
+    M: YES | JUDGEMENTAL | IDEOLOGICAL-INEQUALITY, OBJECTIFICATION, SEXUAL-VIOLENCE
+    M: YES | DIRECT | IDEOLOGICAL-INEQUALITY, STEREOTYPING-DOMINANCE, OBJECTIFICATION
+
+  [202496] (en) YES=5/6
+  Text: @BOYCHLMT same…. and he covers it with this “humbled” act like ur not fooling anymore slutbag 😐😓
+    F: YES | JUDGEMENTAL | SEXUAL-VIOLENCE
+    F: NO | - | -
+    M: YES | DIRECT | SEXUAL-VIOLENCE
+    M: YES | DIRECT | OBJECTIFICATION, MISOGYNY-NON-SEXUAL-VIOLENCE
+    M: YES | DIRECT | OBJECTIFICATION, MISOGYNY-NON-SEXUAL-VIOLENCE
+    F: YES | DIRECT | IDEOLOGICAL-INEQUALITY, STEREOTYPING-DOMINANCE
+
+============================================================
+TABLE 2: KEY QUANTITATIVE RESULTS
+============================================================
+  Instances with disagreement                   | 67.1%                     | Social perception disagreement is the norm
+  Detection entropy (Task 1.1)                  | mean 0.547                | Moderate disagreement at detection level
+  Intent entropy among YES (Task 1.2)           | mean 0.876                | Near-maximum disagreement at interpretation level
+  Categorization Jaccard among YES (Task 1.3)   | mean 0.382                | Low overlap in category assignment
+  Gender effect on detection                    | p = 0.142                 | No gender difference at detection level
+  Gender effect on MISOGYNY-NON-SEXUAL-VIOLENCE | p_adj = 0.005, OR = 1.11  | Female annotators perceive more misogyny non sexual violence
+  Gender-aligned 3-3 splits                     | 10.1%                     | Gender accounts for little of the detection disagreement
+  Gender effect on intent (Task 1.2)            | min p_adj = 0.001, max |h| = 0.048 | No gender structuring at intent attribution (cognitive ToM)
+  Gender-aligned intent splits                  | 44.8% of 2579             | Intent disagreement is not organised along gender lines
+
+
+############################################################
+# MEMES DATASET ANALYSIS
+############################################################
+
+Loading EXIST 2025 memes dataset...
+Loaded 4044 meme instances.
+
+
+============================================================
+MEMES — SECTION 0: DESCRIPTIVE STATISTICS
+============================================================
+
+Total instances: 4044
+
+Instances by language and split:
+lang         split  count
+  en TRAIN-MEME_EN   2010
+  es TRAIN-MEME_ES   2034
+
+Unique annotators: 887
+
+--- Label distributions ---
+
+Task 2.1 (sexism detection):
+YES    13509
+NO     10755
+
+Task 2.2 (source intention):
+DIRECT         8593
+JUDGEMENTAL    4789
+UNKNOWN         127
+
+Task 2.3 (categorization):
+STEREOTYPING-DOMINANCE          4842
+OBJECTIFICATION                 4590
+IDEOLOGICAL-INEQUALITY          4190
+SEXUAL-VIOLENCE                 2244
+MISOGYNY-NON-SEXUAL-VIOLENCE    2073
+UNKNOWN                           68
+
+============================================================
+MEMES — SECTION 1: DISAGREEMENT MEASUREMENT
+============================================================
+
+--- Task 2.1 Agreement Categories ---
+  unanimous_yes       :   580 ( 14.3%)
+  strong_yes          :   778 ( 19.2%)
+  weak_yes            :   680 ( 16.8%)
+  split               :   624 ( 15.4%)
+  weak_no             :   542 ( 13.4%)
+  strong_no           :   463 ( 11.4%)
+  unanimous_no        :   377 (  9.3%)
+
+--- Task 2.1 Entropy ---
+  Mean:   0.6313
+  Median: 0.6500
+  Std:    0.3746
+
+--- Full Agreement vs Disagreement ---
+  Full agreement:     957 (23.7%)
+  Any disagreement:  3087 (76.3%)
+
+--- Conditional Disagreement (majority YES, n=2038) ---
+  Task 2.2 entropy — mean: 0.7009, median: 0.8113
+  Task 2.3 Jaccard  — mean: 0.4176, median: 0.3778
+
+--- By Language ---
+  [EN] n=2010, entropy=0.6323, full_agree=23.6%, cond_entropy_2.2=0.7634
+  [ES] n=2034, entropy=0.6302, full_agree=23.7%, cond_entropy_2.2=0.6446
+
+============================================================
+MEMES — SECTION 3a: OVERALL GENDER COMPARISON
+============================================================
+  Female YES rate: 0.5855
+  Male YES rate:   0.5280
+  Difference (F-M): 0.0575
+  Wilcoxon W = 1063914.5, p = 0.000000, r = 0.2395
+  Significance: ***
+
+============================================================
+MEMES — SECTION 3d: GENDER CATEGORY RATES (Holm-corrected)
+============================================================
+                    category   f_rate   m_rate  f_count  m_count      diff  cohens_h  odds_ratio      p_value   p_adjusted
+      IDEOLOGICAL-INEQUALITY 0.308180 0.312363     2189     2001 -0.004184 -0.009044    0.980640 6.020593e-01 6.020593e-01
+      STEREOTYPING-DOMINANCE 0.364494 0.351702     2589     2253  0.012792  0.026683    1.057234 1.223715e-01 2.731617e-01
+MISOGYNY-NON-SEXUAL-VIOLENCE 0.158947 0.147362     1129      944  0.011585  0.032174    1.093474 6.230873e-02 2.492349e-01
+             SEXUAL-VIOLENCE 0.160918 0.171870     1143     1101 -0.010952 -0.029411    0.924055 9.105389e-02 2.731617e-01
+             OBJECTIFICATION 0.362664 0.314393     2576     2014  0.048271  0.102067    1.240904 3.357834e-09 1.678917e-08
+
+============================================================
+SECTION 3 (EXTENSION): GENDER × INTENT ATTRIBUTION (MEMES)
+============================================================
+
+--- Test A: Per-Label Gender Comparison (Memes — Task 2.2, Holm-corrected) ---
+intent_label   f_rate   m_rate  f_count  m_count  f_total  m_total      diff  cohens_h  odds_ratio  p_value  p_adjusted
+      DIRECT 0.647893 0.635718     4567     4026     7049     6333  0.012176  0.025395    1.054394 0.143567    0.287134
+ JUDGEMENTAL 0.352107 0.364282     2482     2307     7049     6333 -0.012176 -0.025395    0.948412 0.143567    0.287134
+
+--- UNKNOWN intent by gender (Memes) ---
+  F: 54/7103 (0.76%)
+  M: 73/6406 (1.14%)
+
+--- Test B: Gender-Alignment of Intent Splits (Memes) ---
+  Qualifying majority-YES instances: 1602
+  Gender-aligned (|r| > 0.50): 706 (44.1%)
+  Mean |r| across qualifying instances: 0.4532
+
+--- Test C: Intent Entropy by Gender (exploratory, Memes) ---
+  n paired instances:    2036
+  F intent entropy mean: 0.4475
+  M intent entropy mean: 0.4480
+  Mean diff (F - M):     -0.0005
+  Wilcoxon W = 362152.0, p = 0.392390, r = -0.0275
+
+
+############################################################
+# TIKTOK VIDEOS DATASET ANALYSIS
+############################################################
+
+Loading EXIST 2025 videos dataset...
+Loaded 2524 video instances.
+
+
+============================================================
+VIDEOS (TikTok) — SECTION 0: DESCRIPTIVE STATISTICS
+============================================================
+
+Total instances: 2524
+
+Instances by language and split:
+lang          split  count
+  en TRAIN-VIDEO_EN   1000
+  es TRAIN-VIDEO_ES   1524
+
+Unique annotators: 10
+
+Annotators per instance:
+  2 annotators: 1780 instances (70.5%)
+  3 annotators: 744 instances (29.5%)
+
+Gender composition:
+  ('F', 'M'): 1438 (57.0%)
+  ('F', 'M', 'M'): 428 (17.0%)
+  ('F', 'F'): 342 (13.5%)
+  ('F', 'F', 'M'): 166 (6.6%)
+  ('F', 'F', 'F'): 150 (5.9%)
+
+--- Label distributions ---
+
+Task 3.1 (sexism detection):
+NO         2988
+YES        2730
+UNKNOWN      74
+
+Task 3.2 (source intention):
+DIRECT         1692
+JUDGEMENTAL    1038
+UNKNOWN          74
+
+Task 3.3 (categorization):
+STEREOTYPING-DOMINANCE          1624
+IDEOLOGICAL-INEQUALITY           800
+OBJECTIFICATION                  483
+MISOGYNY-NON-SEXUAL-VIOLENCE     242
+SEXUAL-VIOLENCE                  225
+UNKNOWN                           78
+
+============================================================
+VIDEOS (TikTok) — SECTION 1: DISAGREEMENT MEASUREMENT
+============================================================
+
+--- Task 3.1 Agreement Categories ---
+  unanimous_yes       :   819 ( 32.4%)
+  majority_yes        :   383 ( 15.2%)
+  split               :     0 (  0.0%)
+  majority_no         :   218 (  8.6%)
+  unanimous_no        :  1104 ( 43.7%)
+
+--- Task 3.1 Entropy ---
+  Mean:   0.2187
+  Median: 0.0000
+  Std:    0.3912
+
+--- Full Agreement vs Disagreement ---
+  Full agreement:    1923 (76.2%)
+  Any disagreement:   601 (23.8%)
+
+--- Conditional Disagreement (majority YES, n=1202) ---
+  Task 3.2 entropy — mean: 0.1175, median: 0.0000
+  Task 3.3 Jaccard  — mean: 0.6420, median: 1.0000
+
+--- By Language ---
+  [EN] n=1000, entropy=0.2213, full_agree=75.9%, cond_entropy_3.2=0.1671
+  [ES] n=1524, entropy=0.2169, full_agree=76.4%, cond_entropy_3.2=0.0872
+
+============================================================
+VIDEOS (TikTok) — SECTION 3a: OVERALL GENDER COMPARISON
+============================================================
+  Instances with both genders: 2032 / 2524
+  Female YES rate: 0.4717
+  Male YES rate:   0.4505
+  Difference (F-M): 0.0212
+  Wilcoxon W = 53205.0, p = 0.104268, r = 0.0820
+  Significance: n.s.
+
+============================================================
+VIDEOS (TikTok) — SECTION 3d: GENDER CATEGORY RATES (Holm-corrected)
+============================================================
+  F total YES annotations: 1591
+  M total YES annotations: 1139
+                    category   f_rate   m_rate  f_count  m_count  f_total  m_total     diff  cohens_h  odds_ratio      p_value   p_adjusted
+      IDEOLOGICAL-INEQUALITY 0.336266 0.232660      535      265     1591     1139 0.103606  0.230507    1.670919 3.788983e-09 1.515593e-08
+      STEREOTYPING-DOMINANCE 0.598366 0.589991      952      672     1591     1139 0.008375  0.017055    1.035342 6.638605e-01 7.371261e-01
+MISOGYNY-NON-SEXUAL-VIOLENCE 0.094280 0.080773      150       92     1591     1139 0.013508  0.047831    1.184639 2.457087e-01 7.371261e-01
+             SEXUAL-VIOLENCE 0.086738 0.076383      138       87     1591     1139 0.010355  0.037853    1.148444 3.590822e-01 7.371261e-01
+             OBJECTIFICATION 0.225016 0.109745      358      125     1591     1139 0.115270  0.313153    2.355309 2.050036e-15 1.025018e-14
+
+
+############################################################
+# CROSS-MODAL ANNOTATOR POOL ANALYSIS
+############################################################
+
+============================================================
+CROSS-MODAL ANNOTATOR POOL ANALYSIS
+============================================================
+
+--- Pool Sizes ---
+  Tweets annotators:  809
+  Memes annotators:   887
+  Union (T ∪ M):      887
+
+--- Tweets ↔ Memes Overlap ---
+  Shared annotators:  809
+  Tweets-only:        0
+  Memes-only:         78
+  Jaccard similarity: 0.9121
+  % of tweets pool shared: 100.0%
+  % of memes pool shared:  91.2%
+
+  Videos annotators:  10
+  Tweets ∩ Videos:    10
+  Memes ∩ Videos:     10
+  All three:          10
+
+--- Demographic Comparison ---
+
+  Shared annotators with demographics: 809
+  Tweets-only with demographics:       0
+  Memes-only with demographics:        78
+
+  Comparing full tweets pool vs full memes pool demographics:
+    gender      : χ²=0.04, p=0.8458 n.s., Cramér's V=0.005
+    age         : χ²=0.31, p=0.8574 n.s., Cramér's V=0.013
+    ethnicity   : χ²=34.98, p=0.0000 ***, Cramér's V=0.144
+    education   : χ²=5.06, p=0.4082 n.s., Cramér's V=0.055
+    country     : χ²=107.86, p=0.0002 ***, Cramér's V=0.252
+
+--- Annotation Volume (instances per annotator) ---
+  Tweets — mean: 59.0, median: 57, min: 11, max: 171
+  Memes  — mean: 27.4, median: 27, min: 9, max: 54
+
+  Shared annotators — tweets volume:  mean=59.0, median=57
+  Shared annotators — memes volume:   mean=27.5, median=27
+
+Generating figures (Tweets)...
+  - Agreement distribution: fig_agreement_distribution_tweets.pdf
+  - Detection vs interpretation: fig_detection_vs_interpretation_tweets.pdf
+  - Gender detection: fig_gender_detection_tweets.pdf
+  - Gender categorization: fig_gender_categorization_tweets.pdf
+  - Gender intent: fig_gender_intent_tweets.pdf
+
+Generating figures (Memes)...
+  - Agreement distribution: fig_agreement_distribution_memes.pdf
+  - Detection vs interpretation: fig_detection_vs_interpretation_memes.pdf
+  - Gender detection: fig_gender_detection_memes.pdf
+  - Gender categorization: fig_gender_categorization_memes.pdf
+  - Gender intent: fig_gender_intent_memes.pdf
+  - Gender categorization (tweets + memes): fig_gender_categorization_tweets_memes.pdf
+  - Gender categorization (tweets + memes, ToM-grouped): fig_gender_categorization_tweets_memes_tom.pdf
+  - Gender intent (tweets + memes): fig_gender_intent_tweets_memes.pdf
+
+Generating figures (TikToks)...
+  - Agreement distribution: fig_agreement_distribution_tiktoks.pdf
+  - Detection vs interpretation: fig_detection_vs_interpretation_tiktoks.pdf
+  - Gender detection: fig_gender_detection_tiktoks.pdf
+  - Gender categorization: fig_gender_categorization_tiktoks.pdf

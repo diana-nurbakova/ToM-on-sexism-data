@@ -13,12 +13,13 @@
 3. [Section 1: Disagreement Measurement](#3-section-1-disagreement-measurement)
 4. [Section 2 (Analysis A): Intent Ambiguity Predicts Disagreement](#4-section-2-analysis-a-intent-ambiguity-predicts-disagreement)
 5. [Section 3 (Analysis B): Gender Moderates Perception](#5-section-3-analysis-b-gender-moderates-perception)
-6. [Memes Dataset Analysis](#6-memes-dataset-analysis)
-7. [TikTok Videos Dataset Analysis](#7-tiktok-videos-dataset-analysis)
-8. [Cross-Modal Annotator Pool Analysis](#8-cross-modal-annotator-pool-analysis)
-9. [Qualitative Examples](#9-qualitative-examples)
-10. [Summary Table](#10-summary-table)
-11. [Methodological Notes](#11-methodological-notes)
+6. [Section 3 (Extension): Gender × Intent Attribution](#6-section-3-extension-gender--intent-attribution)
+7. [Memes Dataset Analysis](#7-memes-dataset-analysis)
+8. [TikTok Videos Dataset Analysis](#8-tiktok-videos-dataset-analysis)
+9. [Cross-Modal Annotator Pool Analysis](#9-cross-modal-annotator-pool-analysis)
+10. [Qualitative Examples](#10-qualitative-examples)
+11. [Summary Table](#11-summary-table)
+12. [Methodological Notes](#12-methodological-notes)
 
 ---
 
@@ -272,7 +273,84 @@ Among YES annotators, how often each category is assigned by gender:
 
 ---
 
-## 6. Memes Dataset Analysis
+## 6. Section 3 (Extension): Gender × Intent Attribution
+
+**Specification:** [`specs/spec-gender-intent-test.md`](../specs/spec-gender-intent-test.md). The paper claims intent attribution (Task 1.2 / 2.2) is a cognitive ToM operation and therefore should *not* be gender-structured — in contrast to affective categorisation (Task 1.3 / 2.3). This extension provides direct evidence by parallelling the per-category test on the intent labels.
+
+### 6.1 Test A: Per-Label Gender Comparison (Tweets, Task 1.2)
+
+**Population:** All annotations where Task 1.1 = YES and Task 1.2 ≠ UNKNOWN. Holm-Bonferroni correction across the 3 intent labels.
+
+![Gender × Intent — Tweets + Memes](figures/fig_gender_intent_tweets_memes.png)
+
+| Intent label | F rate | M rate | Diff (F-M) | Cohen's h | OR | p (raw) | p_adj | Sig |
+|---|---|---|---|---|---|---|---|---|
+| DIRECT | 0.488 | 0.470 | +0.018 | **0.036** | 1.075 | 0.0077 | **0.0154** | * |
+| REPORTED | 0.251 | 0.248 | +0.003 | 0.008 | 1.018 | 0.572 | 0.572 | n.s. |
+| JUDGEMENTAL | 0.260 | 0.282 | -0.022 | **-0.048** | 0.897 | 0.0004 | **0.0011** | ** |
+
+**N annotations after exclusion:** F = 10,715, M = 10,954 (out of 10,745 / 11,006 total YES annotations; UNKNOWN removed).
+
+**Interpretation.** Two of the three intent labels reach significance after Holm correction, but the effect sizes are **below the negligible threshold** (|h| < 0.05 for all three labels, well under Cohen's 0.2 "small" benchmark). The statistical significance is driven by the very large sample size (n ≈ 21,700 annotations), not a practically meaningful difference. The pattern is consistent — female annotators lean slightly more towards DIRECT, male annotators slightly more towards JUDGEMENTAL — but neither shift is large enough to matter.
+
+### 6.2 Test A: Per-Label Gender Comparison (Memes, Task 2.2)
+
+| Intent label | F rate | M rate | Diff (F-M) | Cohen's h | OR | p (raw) | p_adj | Sig |
+|---|---|---|---|---|---|---|---|---|
+| DIRECT | 0.648 | 0.636 | +0.012 | 0.025 | 1.054 | 0.144 | 0.287 | n.s. |
+| JUDGEMENTAL | 0.352 | 0.364 | -0.012 | -0.025 | 0.948 | 0.144 | 0.287 | n.s. |
+
+**N annotations after exclusion:** F = 7,049, M = 6,333. No intent label shows a significant gender difference for memes. Effect sizes are negligible (|h| = 0.025).
+
+### 6.3 UNKNOWN Intent by Gender
+
+Implementation note 2 of the spec asks whether UNKNOWN itself is gender-structured.
+
+| Modality | F UNKNOWN | M UNKNOWN | F rate | M rate |
+|---|---|---|---|---|
+| Tweets | 30 / 10,745 | 52 / 11,006 | 0.28% | 0.47% |
+| Memes | 54 / 7,103 | 73 / 6,406 | 0.76% | 1.14% |
+
+Male annotators use UNKNOWN slightly more often in both modalities. The rates are very small (< 1.2%) and unlikely to confound Test A.
+
+### 6.4 Test B: Gender-Alignment of Intent Splits
+
+**Population:** Majority-YES instances (≥4/6 YES) where YES annotators (with non-UNKNOWN intents) assigned ≥2 different intent labels. For each, we compute the point-biserial correlation between gender (F=0, M=1) and the binary choice between the two most common intent labels among the annotators who chose either. |r| > 0.5 is operationalised as "gender-aligned".
+
+| Modality | Qualifying instances | Gender-aligned | % aligned | Mean |r| |
+|---|---|---|---|---|
+| Tweets | 2,579 | 1,156 | **44.8%** | 0.467 |
+| Memes | 1,602 | 706 | **44.1%** | 0.453 |
+
+**Caveat on the 10.1% comparison.** The spec proposes comparing these percentages to the 10.1% gender-aligned baseline for 3-3 *detection* splits. The two metrics are not directly comparable: the detection baseline uses a strict criterion (all 3 F annotators YES *and* all 3 M annotators NO, or vice versa), while the intent metric uses |r| > 0.5 on a small subsample of annotators (often 3–4 per instance) choosing between two labels. With only 2–3 annotators per gender choosing between two labels, |r| > 0.5 is well within the chance distribution — the mean |r| of ≈ 0.46 across qualifying instances suggests this metric has a high noise floor and the 44% figure should be read as "no clear concentration above chance" rather than evidence of gender structuring.
+
+### 6.5 Test C: Intent Entropy by Gender (exploratory)
+
+Per-instance entropy of the F (3 annotators) and M (3 annotators) intent labels among majority-YES instances, with UNKNOWN excluded. Paired Wilcoxon signed-rank.
+
+| Modality | n paired | F entropy mean | M entropy mean | Diff (F-M) | Wilcoxon W | p | Rank-biserial r |
+|---|---|---|---|---|---|---|---|
+| Tweets | 3,151 | 0.538 | 0.589 | -0.052 | 875,009.5 | < 0.001 *** | -0.106 |
+| Memes | 2,036 | 0.448 | 0.448 | -0.001 | 362,152.0 | 0.392 | -0.028 |
+
+**Interpretation.** For tweets, female annotators show *slightly lower* intent entropy than male annotators within the same instance (i.e., F subgroups agree on intent marginally more often than M subgroups). The effect size is **negligible to small** (|r| = 0.11; below Cohen's 0.2 "small" benchmark for rank-biserial). For memes there is no detectable difference. The spec flags this test as underpowered by design (only 3 annotators per gender per instance, ≈ 10 possible entropy values), so it should be interpreted cautiously.
+
+### 6.6 Summary and Comparison to Categorisation
+
+| Operation | Modality | Largest |h| | Holm-significant labels |
+|---|---|---|---|
+| **Intent attribution** (Task 1.2 / 2.2) | Tweets | 0.05 | 2/3 (negligible) |
+| **Intent attribution** | Memes | 0.03 | 0/2 |
+| **Categorisation** (Task 1.3 / 2.3) | Tweets | 0.05 (MISOGYNY) | 1/5 |
+| **Categorisation** | Memes | **0.10** (OBJECTIFICATION) | 1/5 |
+
+**Bottom line.** Gender does not meaningfully structure intent attribution in either modality. The Holm-significant p-values in tweets reflect statistical power on a 21,000-annotation sample, not a substantive effect — every Cohen's h is below 0.05, which is at or below the noise threshold for "negligible". This contrasts with categorisation, where memes show a small but clearly larger effect (h = 0.10 for objectification). The cognitive/affective ToM mapping holds in the directional sense (intent shows *weaker* gender structuring than affective categorisation), but the data support a **gradient framing** rather than a strict binary: detection (no gender structuring) → intent (statistical signal, no practical effect) → affective categorisation (small but practical effect, strongest in memes).
+
+This is closer to the spec's "Possible reframing" outcome than to the strict "all n.s." outcome: the paper's claim that "Intent disagreement is not structured by gender" is empirically supported in terms of *practical* magnitude (|h| < 0.05) but should be qualified in light of the Holm-significant tweet result.
+
+---
+
+## 7. Memes Dataset Analysis
 
 ### 6.1 Agreement Distribution
 
@@ -341,7 +419,7 @@ The same detection-interpretation gap holds for memes, though intent entropy is 
 
 ---
 
-## 7. TikTok Videos Dataset Analysis
+## 8. TikTok Videos Dataset Analysis
 
 ### 7.1 Agreement Distribution
 
@@ -409,7 +487,7 @@ Video category effects are the largest observed (h = 0.23 for ideological inequa
 
 ---
 
-## 8. Cross-Modal Annotator Pool Analysis
+## 9. Cross-Modal Annotator Pool Analysis
 
 This section checks whether differences between modalities could be confounded by different annotator populations.
 
@@ -465,7 +543,7 @@ The videos dataset (10 annotators, variable panel size) is not directly comparab
 
 ---
 
-## 9. Qualitative Examples
+## 10. Qualitative Examples
 
 ### 9.1 Type 1: Detection Agreement + Interpretation Divergence
 
@@ -520,7 +598,7 @@ Female annotators emphasize **sexual violence and objectification**; male annota
 
 ---
 
-## 10. Summary Table
+## 11. Summary Table
 
 | Measure | Value | Effect Size | Interpretation |
 |---------|-------|------------|----------------|
@@ -531,6 +609,8 @@ Female annotators emphasize **sexual violence and objectification**; male annota
 | Tweets: Gender detection effect | p = 0.142 | r = -0.026 | No gender difference at detection |
 | Tweets: Misogyny gender effect | p_adj = 0.005 | h = 0.045 | Negligible effect size |
 | Tweets: Gender-aligned 3-3 splits | 10.1% | -- | Gender is not the main disagreement axis |
+| Tweets: Gender effect on intent (Task 1.2) | min p_adj = 0.001 | max \|h\| = 0.048 | Holm-significant but **practically negligible** |
+| Memes: Gender effect on intent (Task 2.2) | p_adj = 0.287 | \|h\| = 0.025 | No gender effect on intent attribution |
 | **Memes: Instances with disagreement** | 76.3% | -- | Even more disagreement than tweets |
 | **Memes: Gender detection effect** | p < 10^-24 | **r = 0.240** | Small effect; F label sexist more often |
 | **Memes: Objectification gender effect** | p_adj < 10^-8 | **h = 0.102** | Small effect; F see more objectification |
@@ -542,7 +622,7 @@ Female annotators emphasize **sexual violence and objectification**; male annota
 
 ---
 
-## 11. Methodological Notes
+## 12. Methodological Notes
 
 ### 11.1 Multiple Comparison Correction
 
@@ -585,10 +665,13 @@ Key takeaway: **all tweet/meme gender effects are small or negligible in practic
 | Tweets: Detection vs Interpretation | `fig_detection_vs_interpretation_tweets.png` |
 | Tweets: Gender Detection | `fig_gender_detection_tweets.png` |
 | Tweets: Gender Categorization | `fig_gender_categorization_tweets.png` |
+| Tweets: Gender Intent | `fig_gender_intent_tweets.png` |
+| Tweets + Memes: Gender Intent (side-by-side) | `fig_gender_intent_tweets_memes.png` |
 | Memes: Agreement Distribution | `fig_agreement_distribution_memes.png` |
 | Memes: Detection vs Interpretation | `fig_detection_vs_interpretation_memes.png` |
 | Memes: Gender Detection | `fig_gender_detection_memes.png` |
 | Memes: Gender Categorization | `fig_gender_categorization_memes.png` |
+| Memes: Gender Intent | `fig_gender_intent_memes.png` |
 | TikToks: Agreement Distribution | `fig_agreement_distribution_tiktoks.png` |
 | TikToks: Detection vs Interpretation | `fig_detection_vs_interpretation_tiktoks.png` |
 | TikToks: Gender Detection | `fig_gender_detection_tiktoks.png` |

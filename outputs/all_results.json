@@ -1,0 +1,1147 @@
+{
+  "generated_at": "2026-05-15T19:04:21",
+  "tweets": {
+    "s0_descriptive": {
+      "instance_counts": [
+        {
+          "lang": "en",
+          "split": "DEV_EN",
+          "count": 489
+        },
+        {
+          "lang": "en",
+          "split": "TRAIN_EN",
+          "count": 3260
+        },
+        {
+          "lang": "es",
+          "split": "DEV_ES",
+          "count": 549
+        },
+        {
+          "lang": "es",
+          "split": "TRAIN_ES",
+          "count": 3660
+        }
+      ],
+      "n_unique_annotators": 809,
+      "label_distributions": {
+        "task1_1": {
+          "NO": 25997,
+          "YES": 21751
+        },
+        "task1_2": {
+          "DIRECT": 10382,
+          "JUDGEMENTAL": 5878,
+          "REPORTED": 5409,
+          "UNKNOWN": 82
+        },
+        "task1_3": {
+          "STEREOTYPING-DOMINANCE": 7859,
+          "IDEOLOGICAL-INEQUALITY": 6840,
+          "OBJECTIFICATION": 6076,
+          "MISOGYNY-NON-SEXUAL-VIOLENCE": 4900,
+          "SEXUAL-VIOLENCE": 3872,
+          "UNKNOWN": 227
+        }
+      },
+      "demographics": {
+        "gender": {
+          "F": 23874,
+          "M": 23874
+        },
+        "age": {
+          "18-22": 15916,
+          "23-45": 15916,
+          "46+": 15916
+        },
+        "ethnicity": {
+          "White or Caucasian": 29458,
+          "Hispano or Latino": 14241,
+          "Black or African American": 2633,
+          "Multiracial": 525,
+          "Asian": 456,
+          "other": 228,
+          "Middle Eastern": 207
+        },
+        "education": {
+          "Bachelor\u2019s degree": 23908,
+          "High school degree or equivalent": 14751,
+          "Master\u2019s degree": 7448,
+          "Less than high school diploma": 684,
+          "Doctorate": 639,
+          "other": 318
+        },
+        "country": {
+          "Mexico": 8925,
+          "Portugal": 7606,
+          "Spain": 6957,
+          "United Kingdom": 4628,
+          "Poland": 3293,
+          "South Africa": 3260,
+          "Chile": 2430,
+          "Italy": 1884,
+          "United States": 1493,
+          "Greece": 1002,
+          "Canada": 615,
+          "Hungary": 513,
+          "Venezuela": 435,
+          "Netherlands": 342,
+          "Slovenia": 342,
+          "Estonia": 342,
+          "Australia": 342,
+          "Ireland": 285,
+          "Argentina": 285,
+          "Peru": 228,
+          "Latvia": 228,
+          "Israel": 204,
+          "New Zealand": 171,
+          "Belgium": 171,
+          "Finland": 114,
+          "Algeria": 114,
+          "Brazil": 114,
+          "Colombia": 114,
+          "Serbia": 114,
+          "Germany": 114,
+          "Afghanistan": 114,
+          "Romania": 57,
+          "Puerto Rico": 57,
+          "Cuba": 57,
+          "Dominican Republic": 57,
+          "Cyprus": 57,
+          "Guatemala": 57,
+          "Panama": 57,
+          "Macedonia, The Former Yugoslav Republic of": 57,
+          "Czech Republic": 57,
+          "Viet Nam": 57,
+          "El Salvador": 57,
+          "Sweden": 57,
+          "Nepal": 57,
+          "Zimbabwe": 57,
+          "Norway": 57,
+          "France": 57,
+          "Russian Federation": 57
+        }
+      }
+    },
+    "s1_disagreement": {
+      "agreement_distribution": {
+        "unanimous_yes": 978,
+        "strong_yes": 1120,
+        "weak_yes": 1054,
+        "split": 960,
+        "weak_no": 978,
+        "strong_no": 1231,
+        "unanimous_no": 1637
+      },
+      "entropy_stats": {
+        "mean": 0.5471449922209102,
+        "median": 0.6500224216483541,
+        "std": 0.40178647167022785
+      },
+      "agreement_proportions": {
+        "full_agreement_n": 2615,
+        "full_agreement_pct": 32.86001507916562,
+        "any_disagreement_n": 5343,
+        "any_disagreement_pct": 67.13998492083438
+      },
+      "conditional_disagreement": {
+        "n_majority_yes": 3152,
+        "entropy_1_2_mean": 0.8763989970037256,
+        "entropy_1_2_median": 0.9182958340544896,
+        "jaccard_1_3_mean": 0.3823685138183869,
+        "jaccard_1_3_median": 0.3333333333333333
+      }
+    },
+    "s2_intent_ambiguity": {
+      "ambiguity_groups": {
+        "implicit": 4941,
+        "no_yes": 1637,
+        "explicit": 1380
+      },
+      "overall": {
+        "n_explicit": 1380,
+        "n_implicit": 4941,
+        "entropy_explicit_mean": 0.6855745740925309,
+        "entropy_explicit_median": 0.6500224216483541,
+        "entropy_implicit_mean": 0.6897565140348737,
+        "entropy_implicit_median": 0.6500224216483541,
+        "mann_whitney_U": 3191273.0,
+        "p_value": 6.751332235639937e-05,
+        "rank_biserial_r": 0.06394791877487693
+      },
+      "by_language": {
+        "en": {
+          "n_explicit": 636,
+          "n_implicit": 2239,
+          "entropy_explicit_mean": 0.7145008037271046,
+          "entropy_explicit_median": 0.6500224216483541,
+          "entropy_implicit_mean": 0.7048720034950056,
+          "entropy_implicit_median": 0.9182958340544896,
+          "mann_whitney_U": 668534.5,
+          "p_value": 0.006620871262840301,
+          "rank_biserial_r": 0.06104968806267397
+        },
+        "es": {
+          "n_explicit": 744,
+          "n_implicit": 2702,
+          "entropy_explicit_mean": 0.6608473132758792,
+          "entropy_explicit_median": 0.6500224216483541,
+          "entropy_implicit_mean": 0.6772311325022182,
+          "entropy_implicit_median": 0.6500224216483541,
+          "mann_whitney_U": 936738.5,
+          "p_value": 0.0014398130094107117,
+          "rank_biserial_r": 0.06805542290457889
+        }
+      }
+    },
+    "s3_gender": {
+      "overall": {
+        "f_yes_mean": 0.450071207170981,
+        "m_yes_mean": 0.4610036022451202,
+        "difference": -0.010932395074139234,
+        "wilcoxon_W": 4252518.5,
+        "p_value": 0.14170666980195115,
+        "rank_biserial_r": -0.02576125744865565,
+        "n": 7958
+      },
+      "split_analysis": {
+        "n_splits": 960,
+        "n_gender_aligned": 97,
+        "pct_gender_aligned": 10.104166666666666,
+        "n_3F_yes_3M_no": 35,
+        "n_3F_no_3M_yes": 62,
+        "n_mixed": 863
+      },
+      "by_agreement_level": [
+        {
+          "agreement_cat": "unanimous_yes",
+          "n": 978,
+          "f_yes_mean": 1.0,
+          "m_yes_mean": 1.0,
+          "gender_diff": 0.0
+        },
+        {
+          "agreement_cat": "strong_yes",
+          "n": 1120,
+          "f_yes_mean": 0.84375,
+          "m_yes_mean": 0.8229166666666666,
+          "gender_diff": 0.020833333333333336
+        },
+        {
+          "agreement_cat": "weak_yes",
+          "n": 1054,
+          "f_yes_mean": 0.6733080328905756,
+          "m_yes_mean": 0.6600253004427576,
+          "gender_diff": 0.013282732447817835
+        },
+        {
+          "agreement_cat": "split",
+          "n": 960,
+          "f_yes_mean": 0.478125,
+          "m_yes_mean": 0.521875,
+          "gender_diff": -0.04375
+        },
+        {
+          "agreement_cat": "weak_no",
+          "n": 978,
+          "f_yes_mean": 0.31424676209952274,
+          "m_yes_mean": 0.3524199045671438,
+          "gender_diff": -0.03817314246762099
+        },
+        {
+          "agreement_cat": "strong_no",
+          "n": 1231,
+          "f_yes_mean": 0.14838884375846195,
+          "m_yes_mean": 0.18494448957487136,
+          "gender_diff": -0.03655564581640942
+        },
+        {
+          "agreement_cat": "unanimous_no",
+          "n": 1637,
+          "f_yes_mean": 0.0,
+          "m_yes_mean": 0.0,
+          "gender_diff": 0.0
+        }
+      ],
+      "interaction": {
+        "explicit": {
+          "n": 1380,
+          "f_yes_mean": 0.4608695652173913,
+          "m_yes_mean": 0.4671497584541063,
+          "gender_diff": -0.006280193236714971,
+          "wilcoxon_W": 249662.0,
+          "p_value": 0.8124829968223464,
+          "rank_biserial_r": -0.008305760010804186
+        },
+        "implicit": {
+          "n": 4941,
+          "f_yes_mean": 0.5961681171152938,
+          "m_yes_mean": 0.6120218579234973,
+          "gender_diff": -0.015853740808203464,
+          "wilcoxon_W": 2431941.5,
+          "p_value": 0.08016073909226495,
+          "rank_biserial_r": -0.03530752295761519
+        },
+        "interaction_test": {
+          "mann_whitney_U": 3373111.0,
+          "p_value": 0.2643965852852478,
+          "rank_biserial_r": 0.010611886932469838
+        }
+      },
+      "category_rates": [
+        {
+          "category": "IDEOLOGICAL-INEQUALITY",
+          "f_rate": 0.31186598417868777,
+          "m_rate": 0.31700890423405415,
+          "f_count": 3351,
+          "m_count": 3489,
+          "diff": -0.005142920055366373,
+          "cohens_h": -0.011077005832860198,
+          "odds_ratio": 0.976424262567009,
+          "p_value": 0.4218301018286488,
+          "p_adjusted": 0.4218301018286488
+        },
+        {
+          "category": "STEREOTYPING-DOMINANCE",
+          "f_rate": 0.3560725919032108,
+          "m_rate": 0.36643648918771576,
+          "f_count": 3826,
+          "m_count": 4033,
+          "diff": -0.010363897284504986,
+          "cohens_h": -0.021575608944857327,
+          "odds_ratio": 0.9560774570911529,
+          "p_value": 0.11388608908614106,
+          "p_adjusted": 0.22777217817228212
+        },
+        {
+          "category": "MISOGYNY-NON-SEXUAL-VIOLENCE",
+          "f_rate": 0.23471382038157282,
+          "m_rate": 0.21606396510994003,
+          "f_count": 2522,
+          "m_count": 2378,
+          "diff": 0.018649855271632793,
+          "cohens_h": 0.0446426707075932,
+          "odds_ratio": 1.112789651214204,
+          "p_value": 0.001041435431583883,
+          "p_adjusted": 0.005207177157919416
+        },
+        {
+          "category": "SEXUAL-VIOLENCE",
+          "f_rate": 0.18436482084690553,
+          "m_rate": 0.17181537343267309,
+          "f_count": 1981,
+          "m_count": 1891,
+          "diff": 0.012549447414232445,
+          "cohens_h": 0.03280601356984636,
+          "odds_ratio": 1.0895502151607666,
+          "p_value": 0.01591279317828154,
+          "p_adjusted": 0.06365117271312616
+        },
+        {
+          "category": "OBJECTIFICATION",
+          "f_rate": 0.2853420195439739,
+          "m_rate": 0.2734871888061058,
+          "f_count": 3066,
+          "m_count": 3010,
+          "diff": 0.011854830737868138,
+          "cohens_h": 0.02642103767437587,
+          "odds_ratio": 1.0606540943739646,
+          "p_value": 0.05304729599531963,
+          "p_adjusted": 0.15914188798595888
+        }
+      ]
+    },
+    "s3_gender_intent": {
+      "per_label_rates": [
+        {
+          "intent_label": "DIRECT",
+          "f_rate": 0.4882874475034998,
+          "m_rate": 0.4701478911813036,
+          "f_count": 5232,
+          "m_count": 5150,
+          "f_total": 10715,
+          "m_total": 10954,
+          "diff": 0.01813955632219616,
+          "cohens_h": 0.036312496980249076,
+          "odds_ratio": 1.0753990887987406,
+          "p_value": 0.00768823059431366,
+          "p_adjusted": 0.01537646118862732
+        },
+        {
+          "intent_label": "REPORTED",
+          "f_rate": 0.25132991133924404,
+          "m_rate": 0.24794595581522733,
+          "f_count": 2693,
+          "m_count": 2716,
+          "f_total": 10715,
+          "m_total": 10954,
+          "diff": 0.003383955524016713,
+          "cohens_h": 0.007818728598574465,
+          "odds_ratio": 1.018229599822873,
+          "p_value": 0.5720096578133732,
+          "p_adjusted": 0.5720096578133732
+        },
+        {
+          "intent_label": "JUDGEMENTAL",
+          "f_rate": 0.2603826411572562,
+          "m_rate": 0.28190615300346905,
+          "f_count": 2790,
+          "m_count": 3088,
+          "f_total": 10715,
+          "m_total": 10954,
+          "diff": -0.021523511846212873,
+          "cohens_h": -0.04842484682536008,
+          "odds_ratio": 0.8967710563737108,
+          "p_value": 0.00037040804165386614,
+          "p_adjusted": 0.0011112241249615984
+        }
+      ],
+      "unknown_by_gender": {
+        "f_unknown": 30,
+        "m_unknown": 52,
+        "f_yes_total": 10745,
+        "m_yes_total": 11006,
+        "f_unknown_rate": 0.002791996277338297,
+        "m_unknown_rate": 0.004724695620570598
+      },
+      "split_alignment": {
+        "n_qualifying": 2579,
+        "n_gender_aligned": 1156,
+        "pct_gender_aligned": 44.823575029081034,
+        "alignment_threshold": 0.5,
+        "mean_abs_r": 0.4669524666647747
+      },
+      "entropy": {
+        "n": 3151,
+        "f_entropy_mean": 0.5378086932606365,
+        "m_entropy_mean": 0.5893536155194432,
+        "mean_diff": -0.05154492225880676,
+        "wilcoxon_W": 875009.5,
+        "p_value": 3.625077421764724e-05,
+        "rank_biserial_r": -0.10586997651273666
+      }
+    }
+  },
+  "memes": {
+    "s0_descriptive": {
+      "instance_counts": [
+        {
+          "lang": "en",
+          "split": "TRAIN-MEME_EN",
+          "count": 2010
+        },
+        {
+          "lang": "es",
+          "split": "TRAIN-MEME_ES",
+          "count": 2034
+        }
+      ],
+      "n_unique_annotators": 887,
+      "label_distributions": {
+        "task2_1": {
+          "YES": 13509,
+          "NO": 10755
+        },
+        "task2_2": {
+          "DIRECT": 8593,
+          "JUDGEMENTAL": 4789,
+          "UNKNOWN": 127
+        },
+        "task2_3": {
+          "STEREOTYPING-DOMINANCE": 4842,
+          "OBJECTIFICATION": 4590,
+          "IDEOLOGICAL-INEQUALITY": 4190,
+          "SEXUAL-VIOLENCE": 2244,
+          "MISOGYNY-NON-SEXUAL-VIOLENCE": 2073,
+          "UNKNOWN": 68
+        }
+      },
+      "demographics": {
+        "gender": {
+          "F": 12132,
+          "M": 12132
+        },
+        "age": {
+          "18-22": 8088,
+          "23-45": 8088,
+          "46+": 8088
+        },
+        "ethnicity": {
+          "White or Caucasian": 14217,
+          "Hispano or Latino": 5688,
+          "Black or African American": 2415,
+          "Asian": 918,
+          "Multiracial": 567,
+          "Middle Eastern": 243,
+          "other": 216
+        },
+        "education": {
+          "Bachelor\u2019s degree": 11694,
+          "High school degree or equivalent": 7311,
+          "Master\u2019s degree": 4005,
+          "Doctorate": 498,
+          "other": 432,
+          "Less than high school diploma": 324
+        },
+        "country": {
+          "Spain": 3288,
+          "Mexico": 3177,
+          "United Kingdom": 2646,
+          "South Africa": 2523,
+          "Portugal": 2322,
+          "Poland": 1347,
+          "Italy": 1290,
+          "Chile": 1161,
+          "United States": 1035,
+          "Australia": 594,
+          "Greece": 486,
+          "Canada": 444,
+          "Germany": 405,
+          "Netherlands": 405,
+          "Venezuela": 243,
+          "France": 216,
+          "Hungary": 216,
+          "New Zealand": 216,
+          "Argentina": 135,
+          "Sweden": 135,
+          "Zimbabwe": 135,
+          "Ireland": 135,
+          "Colombia": 135,
+          "Slovenia": 108,
+          "Estonia": 108,
+          "Israel": 108,
+          "Nigeria": 81,
+          "Viet Nam": 81,
+          "Austria": 81,
+          "Brazil": 81,
+          "China": 81,
+          "Finland": 81,
+          "Peru": 54,
+          "Russian Federation": 54,
+          "Belgium": 54,
+          "United Arab Emirates": 54,
+          "Czech Republic": 54,
+          "Serbia": 54,
+          "Cuba": 54,
+          "Turkey": 54,
+          "Afghanistan": 27,
+          "Croatia": 27,
+          "Morocco": 27,
+          "Dominican Republic": 27,
+          "Nicaragua": 27,
+          "Romania": 27,
+          "Azerbaijan": 27,
+          "Bangladesh": 27,
+          "Latvia": 27,
+          "India": 27,
+          "Ecuador": 27,
+          "Bulgaria": 27,
+          "Uruguay": 9
+        }
+      }
+    },
+    "s1_disagreement": {
+      "agreement_distribution": {
+        "unanimous_yes": 580,
+        "strong_yes": 778,
+        "weak_yes": 680,
+        "split": 624,
+        "weak_no": 542,
+        "strong_no": 463,
+        "unanimous_no": 377
+      },
+      "entropy_stats": {
+        "mean": 0.6312649195054881,
+        "median": 0.6500224216483541,
+        "std": 0.3745938017378201
+      },
+      "agreement_proportions": {
+        "full_agreement_n": 957,
+        "full_agreement_pct": 23.664688427299705,
+        "any_disagreement_n": 3087,
+        "any_disagreement_pct": 76.33531157270029
+      },
+      "conditional_disagreement": {
+        "n_majority_yes": 2038,
+        "entropy_1_2_mean": 0.700884928829674,
+        "entropy_1_2_median": 0.8112781244591328,
+        "jaccard_1_3_mean": 0.4175875040889761,
+        "jaccard_1_3_median": 0.3777777777777777
+      },
+      "by_language": {
+        "en": {
+          "n": 2010,
+          "entropy_mean": 0.6323351894680026,
+          "full_agreement_pct": 23.582089552238806,
+          "cond_entropy_1_2": 0.7634275228488296
+        },
+        "es": {
+          "n": 2034,
+          "entropy_mean": 0.6302072780971034,
+          "full_agreement_pct": 23.74631268436578,
+          "cond_entropy_1_2": 0.6446373955319248
+        }
+      }
+    },
+    "s3a_gender_overall": {
+      "f_yes_mean": 0.585476425980877,
+      "m_yes_mean": 0.5280250576986483,
+      "difference": 0.05745136828222874,
+      "wilcoxon_W": 1063914.5,
+      "p_value": 1.3374855510508192e-24,
+      "rank_biserial_r": 0.23946214787001907,
+      "n": 4044
+    },
+    "s3d_category_rates": [
+      {
+        "category": "IDEOLOGICAL-INEQUALITY",
+        "f_rate": 0.30817964240461776,
+        "m_rate": 0.3123634093037777,
+        "f_count": 2189,
+        "m_count": 2001,
+        "diff": -0.004183766899159946,
+        "cohens_h": -0.009043981559591296,
+        "odds_ratio": 0.9806396150723987,
+        "p_value": 0.6020592883103789,
+        "p_adjusted": 0.6020592883103789
+      },
+      {
+        "category": "STEREOTYPING-DOMINANCE",
+        "f_rate": 0.3644938758271153,
+        "m_rate": 0.35170152981579766,
+        "f_count": 2589,
+        "m_count": 2253,
+        "diff": 0.012792346011317623,
+        "cohens_h": 0.026682789816846464,
+        "odds_ratio": 1.057234276908591,
+        "p_value": 0.1223714531937984,
+        "p_adjusted": 0.27316167680598424
+      },
+      {
+        "category": "MISOGYNY-NON-SEXUAL-VIOLENCE",
+        "f_rate": 0.1589469238349993,
+        "m_rate": 0.14736184826724946,
+        "f_count": 1129,
+        "m_count": 944,
+        "diff": 0.011585075567749847,
+        "cohens_h": 0.03217384029161974,
+        "odds_ratio": 1.093473909540211,
+        "p_value": 0.06230872521871303,
+        "p_adjusted": 0.24923490087485212
+      },
+      {
+        "category": "SEXUAL-VIOLENCE",
+        "f_rate": 0.16091792200478672,
+        "m_rate": 0.1718701217608492,
+        "f_count": 1143,
+        "m_count": 1101,
+        "diff": -0.010952199756062486,
+        "cohens_h": -0.029410704292641587,
+        "odds_ratio": 0.9240554651354168,
+        "p_value": 0.09105389226866141,
+        "p_adjusted": 0.27316167680598424
+      },
+      {
+        "category": "OBJECTIFICATION",
+        "f_rate": 0.3626636632408841,
+        "m_rate": 0.3143927567905089,
+        "f_count": 2576,
+        "m_count": 2014,
+        "diff": 0.04827090645037524,
+        "cohens_h": 0.10206735589213656,
+        "odds_ratio": 1.2409041283579556,
+        "p_value": 3.357833608894353e-09,
+        "p_adjusted": 1.6789168044471764e-08
+      }
+    ],
+    "s3_gender_intent": {
+      "per_label_rates": [
+        {
+          "intent_label": "DIRECT",
+          "f_rate": 0.6478933182011632,
+          "m_rate": 0.6357176693510185,
+          "f_count": 4567,
+          "m_count": 4026,
+          "f_total": 7049,
+          "m_total": 6333,
+          "diff": 0.012175648850144771,
+          "cohens_h": 0.02539485114554929,
+          "odds_ratio": 1.0543943216794303,
+          "p_value": 0.14356689608074225,
+          "p_adjusted": 0.2871337921614845
+        },
+        {
+          "intent_label": "JUDGEMENTAL",
+          "f_rate": 0.3521066817988367,
+          "m_rate": 0.3642823306489815,
+          "f_count": 2482,
+          "m_count": 2307,
+          "f_total": 7049,
+          "m_total": 6333,
+          "diff": -0.012175648850144827,
+          "cohens_h": -0.025394851145549735,
+          "odds_ratio": 0.9484117843191802,
+          "p_value": 0.14356689608074225,
+          "p_adjusted": 0.2871337921614845
+        }
+      ],
+      "unknown_by_gender": {
+        "f_unknown": 54,
+        "m_unknown": 73,
+        "f_yes_total": 7103,
+        "m_yes_total": 6406,
+        "f_unknown_rate": 0.007602421512037168,
+        "m_unknown_rate": 0.011395566656259756
+      },
+      "split_alignment": {
+        "n_qualifying": 1602,
+        "n_gender_aligned": 706,
+        "pct_gender_aligned": 44.06991260923846,
+        "alignment_threshold": 0.5,
+        "mean_abs_r": 0.4532407113593776
+      },
+      "entropy": {
+        "n": 2036,
+        "f_entropy_mean": 0.447482932453813,
+        "m_entropy_mean": 0.447996738092304,
+        "mean_diff": -0.0005138056384910454,
+        "wilcoxon_W": 362152.0,
+        "p_value": 0.39239007959764116,
+        "rank_biserial_r": -0.027531853761361913
+      }
+    }
+  },
+  "videos": {
+    "s0_descriptive": {
+      "instance_counts": [
+        {
+          "lang": "en",
+          "split": "TRAIN-VIDEO_EN",
+          "count": 1000
+        },
+        {
+          "lang": "es",
+          "split": "TRAIN-VIDEO_ES",
+          "count": 1524
+        }
+      ],
+      "n_unique_annotators": 10,
+      "label_distributions": {
+        "task3_1": {
+          "NO": 2988,
+          "YES": 2730,
+          "UNKNOWN": 74
+        },
+        "task3_2": {
+          "DIRECT": 1692,
+          "JUDGEMENTAL": 1038,
+          "UNKNOWN": 74
+        },
+        "task3_3": {
+          "STEREOTYPING-DOMINANCE": 1624,
+          "IDEOLOGICAL-INEQUALITY": 800,
+          "OBJECTIFICATION": 483,
+          "MISOGYNY-NON-SEXUAL-VIOLENCE": 242,
+          "SEXUAL-VIOLENCE": 225,
+          "UNKNOWN": 78
+        }
+      }
+    },
+    "s1_disagreement": {
+      "agreement_distribution": {
+        "unanimous_yes": 819,
+        "majority_yes": 383,
+        "split": 0,
+        "majority_no": 218,
+        "unanimous_no": 1104
+      },
+      "entropy_stats": {
+        "mean": 0.21865919028001118,
+        "median": 0.0,
+        "std": 0.3912066167247273
+      },
+      "agreement_proportions": {
+        "full_agreement_n": 1923,
+        "full_agreement_pct": 76.18858954041204,
+        "any_disagreement_n": 601,
+        "any_disagreement_pct": 23.811410459587957
+      },
+      "conditional_disagreement": {
+        "n_majority_yes": 1202,
+        "entropy_1_2_mean": 0.11745087360888924,
+        "entropy_1_2_median": 0.0,
+        "jaccard_1_3_mean": 0.641971713810316,
+        "jaccard_1_3_median": 1.0
+      }
+    },
+    "s3a_gender_overall": {
+      "f_yes_mean": 0.4717027559055118,
+      "m_yes_mean": 0.45054133858267714,
+      "difference": 0.021161417322834664,
+      "wilcoxon_W": 53205.0,
+      "p_value": 0.10426764297797483,
+      "rank_biserial_r": 0.0820472563211152,
+      "n_both_genders": 2032,
+      "n_total": 2524
+    },
+    "s3d_category_rates": [
+      {
+        "category": "IDEOLOGICAL-INEQUALITY",
+        "f_rate": 0.33626649905719674,
+        "m_rate": 0.23266022827041263,
+        "f_count": 535,
+        "m_count": 265,
+        "f_total": 1591,
+        "m_total": 1139,
+        "diff": 0.10360627078678411,
+        "cohens_h": 0.23050697337158788,
+        "odds_ratio": 1.6709190966266438,
+        "p_value": 3.7889830880555165e-09,
+        "p_adjusted": 1.5155932352222066e-08
+      },
+      {
+        "category": "STEREOTYPING-DOMINANCE",
+        "f_rate": 0.5983658076681333,
+        "m_rate": 0.5899912203687445,
+        "f_count": 952,
+        "m_count": 672,
+        "f_total": 1591,
+        "m_total": 1139,
+        "diff": 0.00837458729938878,
+        "cohens_h": 0.017054667952279834,
+        "odds_ratio": 1.035341679707877,
+        "p_value": 0.6638604893568909,
+        "p_adjusted": 0.7371260608964497
+      },
+      {
+        "category": "MISOGYNY-NON-SEXUAL-VIOLENCE",
+        "f_rate": 0.09428032683846638,
+        "m_rate": 0.08077260755048288,
+        "f_count": 150,
+        "m_count": 92,
+        "f_total": 1591,
+        "m_total": 1139,
+        "diff": 0.0135077192879835,
+        "cohens_h": 0.047830885696748426,
+        "odds_ratio": 1.1846392903478864,
+        "p_value": 0.24570868696548323,
+        "p_adjusted": 0.7371260608964497
+      },
+      {
+        "category": "SEXUAL-VIOLENCE",
+        "f_rate": 0.08673790069138906,
+        "m_rate": 0.07638279192273925,
+        "f_count": 138,
+        "m_count": 87,
+        "f_total": 1591,
+        "m_total": 1139,
+        "diff": 0.010355108768649812,
+        "cohens_h": 0.03785277145283639,
+        "odds_ratio": 1.148444360063602,
+        "p_value": 0.35908219747997633,
+        "p_adjusted": 0.7371260608964497
+      },
+      {
+        "category": "OBJECTIFICATION",
+        "f_rate": 0.2250157133878064,
+        "m_rate": 0.10974539069359086,
+        "f_count": 358,
+        "m_count": 125,
+        "f_total": 1591,
+        "m_total": 1139,
+        "diff": 0.11527032269421554,
+        "cohens_h": 0.3131533563934217,
+        "odds_ratio": 2.35530900243309,
+        "p_value": 2.0500361197135843e-15,
+        "p_adjusted": 1.0250180598567922e-14
+      }
+    ]
+  },
+  "cross_modal": {
+    "tweets_n": 809,
+    "memes_n": 887,
+    "overlap_tweets_memes": 809,
+    "only_tweets": 0,
+    "only_memes": 78,
+    "jaccard_tweets_memes": 0.9120631341600902,
+    "pct_tweets_shared": 100.0,
+    "pct_memes_shared": 91.20631341600902,
+    "videos_n": 10,
+    "overlap_tweets_videos": 10,
+    "overlap_memes_videos": 10,
+    "overlap_all_three": 10,
+    "demographic_comparison_exclusive": {},
+    "demographic_comparison_full_pools": {
+      "gender": {
+        "tweets_dist": {
+          "F": 402,
+          "M": 407
+        },
+        "memes_dist": {
+          "F": 446,
+          "M": 441
+        },
+        "chi2": 0.03781583454457533,
+        "p_value": 0.8458134123614964,
+        "dof": 1,
+        "cramers_v": 0.004721977578838786
+      },
+      "age": {
+        "tweets_dist": {
+          "18-22": 273,
+          "23-45": 278,
+          "46+": 258
+        },
+        "memes_dist": {
+          "18-22": 295,
+          "23-45": 298,
+          "46+": 294
+        },
+        "chi2": 0.30777003080532717,
+        "p_value": 0.8573705997570114,
+        "dof": 2,
+        "cramers_v": 0.01347101252842105
+      },
+      "ethnicity": {
+        "tweets_dist": {
+          "Asian": 8,
+          "Black or African American": 47,
+          "Hispano or Latino": 236,
+          "Middle Eastern": 3,
+          "Multiracial": 10,
+          "White or Caucasian": 501,
+          "other": 4
+        },
+        "memes_dist": {
+          "Asian": 33,
+          "Black or African American": 90,
+          "Hispano or Latino": 208,
+          "Middle Eastern": 9,
+          "Multiracial": 20,
+          "White or Caucasian": 519,
+          "other": 8
+        },
+        "chi2": 34.97704922613696,
+        "p_value": 4.3538497741926924e-06,
+        "dof": 6,
+        "cramers_v": 0.14360800867960108
+      },
+      "education": {
+        "tweets_dist": {
+          "Bachelor\u2019s degree": 407,
+          "Doctorate": 12,
+          "High school degree or equivalent": 249,
+          "Less than high school diploma": 12,
+          "Master\u2019s degree": 123,
+          "other": 6
+        },
+        "memes_dist": {
+          "Bachelor\u2019s degree": 432,
+          "Doctorate": 18,
+          "High school degree or equivalent": 265,
+          "Less than high school diploma": 12,
+          "Master\u2019s degree": 144,
+          "other": 16
+        },
+        "chi2": 5.063574838254119,
+        "p_value": 0.40817084351823946,
+        "dof": 5,
+        "cramers_v": 0.054640629312006445
+      },
+      "country": {
+        "tweets_dist": {
+          "Afghanistan": 2,
+          "Algeria": 2,
+          "Argentina": 5,
+          "Australia": 6,
+          "Austria": 0,
+          "Azerbaijan": 0,
+          "Bangladesh": 0,
+          "Belgium": 3,
+          "Brazil": 2,
+          "Bulgaria": 0,
+          "Canada": 10,
+          "Chile": 41,
+          "China": 0,
+          "Colombia": 2,
+          "Croatia": 0,
+          "Cuba": 1,
+          "Cyprus": 1,
+          "Czech Republic": 1,
+          "Dominican Republic": 1,
+          "Ecuador": 0,
+          "El Salvador": 1,
+          "Estonia": 6,
+          "Finland": 2,
+          "France": 1,
+          "Germany": 1,
+          "Greece": 17,
+          "Guatemala": 1,
+          "Hungary": 9,
+          "India": 0,
+          "Ireland": 5,
+          "Israel": 3,
+          "Italy": 34,
+          "Latvia": 4,
+          "Macedonia, The Former Yugoslav Republic of": 1,
+          "Mexico": 145,
+          "Morocco": 0,
+          "Nepal": 1,
+          "Netherlands": 6,
+          "New Zealand": 3,
+          "Nicaragua": 0,
+          "Nigeria": 0,
+          "Norway": 1,
+          "Panama": 1,
+          "Peru": 4,
+          "Poland": 57,
+          "Portugal": 131,
+          "Puerto Rico": 1,
+          "Romania": 1,
+          "Russian Federation": 1,
+          "Serbia": 1,
+          "Slovenia": 6,
+          "South Africa": 57,
+          "Spain": 114,
+          "Sweden": 1,
+          "Turkey": 0,
+          "United Arab Emirates": 0,
+          "United Kingdom": 81,
+          "United States": 27,
+          "Uruguay": 0,
+          "Venezuela": 6,
+          "Viet Nam": 1,
+          "Zimbabwe": 1
+        },
+        "memes_dist": {
+          "Afghanistan": 1,
+          "Algeria": 0,
+          "Argentina": 5,
+          "Australia": 22,
+          "Austria": 3,
+          "Azerbaijan": 1,
+          "Bangladesh": 1,
+          "Belgium": 2,
+          "Brazil": 2,
+          "Bulgaria": 1,
+          "Canada": 17,
+          "Chile": 41,
+          "China": 3,
+          "Colombia": 5,
+          "Croatia": 1,
+          "Cuba": 2,
+          "Cyprus": 0,
+          "Czech Republic": 2,
+          "Dominican Republic": 1,
+          "Ecuador": 1,
+          "El Salvador": 0,
+          "Estonia": 4,
+          "Finland": 3,
+          "France": 8,
+          "Germany": 15,
+          "Greece": 18,
+          "Guatemala": 0,
+          "Hungary": 8,
+          "India": 1,
+          "Ireland": 5,
+          "Israel": 4,
+          "Italy": 49,
+          "Latvia": 1,
+          "Macedonia, The Former Yugoslav Republic of": 0,
+          "Mexico": 113,
+          "Morocco": 1,
+          "Nepal": 0,
+          "Netherlands": 15,
+          "New Zealand": 8,
+          "Nicaragua": 1,
+          "Nigeria": 3,
+          "Norway": 0,
+          "Panama": 0,
+          "Peru": 2,
+          "Poland": 51,
+          "Portugal": 83,
+          "Puerto Rico": 0,
+          "Romania": 1,
+          "Russian Federation": 2,
+          "Serbia": 2,
+          "Slovenia": 4,
+          "South Africa": 94,
+          "Spain": 116,
+          "Sweden": 5,
+          "Turkey": 2,
+          "United Arab Emirates": 2,
+          "United Kingdom": 98,
+          "United States": 39,
+          "Uruguay": 1,
+          "Venezuela": 9,
+          "Viet Nam": 3,
+          "Zimbabwe": 5
+        },
+        "chi2": 107.86498802632919,
+        "p_value": 0.00020391020102886737,
+        "dof": 61,
+        "cramers_v": 0.2521896888583427
+      }
+    },
+    "shared_annotator_volume": {
+      "tweets_mean": 59.021013597033374,
+      "tweets_median": 57.0,
+      "memes_mean": 27.482076637824473,
+      "memes_median": 27.0
+    },
+    "volume": {
+      "tweets_mean": 59.021013597033374,
+      "tweets_median": 57.0,
+      "memes_mean": 27.35512965050733,
+      "memes_median": 27.0
+    }
+  },
+  "table2_summary": [
+    {
+      "Measure": "Instances with disagreement",
+      "Value": "67.1%",
+      "Interpretation": "Social perception disagreement is the norm"
+    },
+    {
+      "Measure": "Detection entropy (Task 1.1)",
+      "Value": "mean 0.547",
+      "Interpretation": "Moderate disagreement at detection level"
+    },
+    {
+      "Measure": "Intent entropy among YES (Task 1.2)",
+      "Value": "mean 0.876",
+      "Interpretation": "Near-maximum disagreement at interpretation level"
+    },
+    {
+      "Measure": "Categorization Jaccard among YES (Task 1.3)",
+      "Value": "mean 0.382",
+      "Interpretation": "Low overlap in category assignment"
+    },
+    {
+      "Measure": "Gender effect on detection",
+      "Value": "p = 0.142",
+      "Interpretation": "No gender difference at detection level"
+    },
+    {
+      "Measure": "Gender effect on MISOGYNY-NON-SEXUAL-VIOLENCE",
+      "Value": "p_adj = 0.005, OR = 1.11",
+      "Interpretation": "Female annotators perceive more misogyny non sexual violence"
+    },
+    {
+      "Measure": "Gender-aligned 3-3 splits",
+      "Value": "10.1%",
+      "Interpretation": "Gender accounts for little of the detection disagreement"
+    },
+    {
+      "Measure": "Gender effect on intent (Task 1.2)",
+      "Value": "min p_adj = 0.001, max |h| = 0.048",
+      "Interpretation": "No gender structuring at intent attribution (cognitive ToM)"
+    },
+    {
+      "Measure": "Gender-aligned intent splits",
+      "Value": "44.8% of 2579",
+      "Interpretation": "Intent disagreement is not organised along gender lines"
+    }
+  ]
+}

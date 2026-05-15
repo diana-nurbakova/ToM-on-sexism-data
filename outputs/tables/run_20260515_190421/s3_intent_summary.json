@@ -1,0 +1,26 @@
+{
+  "unknown_by_gender": {
+    "f_unknown": 30,
+    "m_unknown": 52,
+    "f_yes_total": 10745,
+    "m_yes_total": 11006,
+    "f_unknown_rate": 0.002791996277338297,
+    "m_unknown_rate": 0.004724695620570598
+  },
+  "split_alignment": {
+    "n_qualifying": 2579,
+    "n_gender_aligned": 1156,
+    "pct_gender_aligned": 44.823575029081034,
+    "alignment_threshold": 0.5,
+    "mean_abs_r": 0.4669524666647747
+  },
+  "entropy": {
+    "n": 3151,
+    "f_entropy_mean": 0.5378086932606365,
+    "m_entropy_mean": 0.5893536155194432,
+    "mean_diff": -0.05154492225880676,
+    "wilcoxon_W": 875009.5,
+    "p_value": 3.625077421764724e-05,
+    "rank_biserial_r": -0.10586997651273666
+  }
+}
