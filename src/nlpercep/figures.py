@@ -227,7 +227,7 @@ def fig_gender_detection(df: pd.DataFrame, out_dir: Path, label: str = "Tweets")
     ax.axhline(f_mean, color=GENDER_F, linestyle="--", alpha=0.7, linewidth=1)
     ax.axhline(m_mean, color=GENDER_M, linestyle="--", alpha=0.7, linewidth=1)
 
-    ax.set_ylabel("Proportion labeling YES (sexist)")
+    ax.set_ylabel("Proportion labelling YES (sexist)")
     sig_label = f"p = {p_value:.3f}" if not np.isnan(p_value) else "p = N/A"
     if p_value < 0.001:
         sig_label = "p < .001"
@@ -336,7 +336,7 @@ def fig_gender_categorization(df: pd.DataFrame, out_dir: Path, label: str = "Twe
     ax.set_xticks(x)
     ax.set_xticklabels(categories, fontsize=8.5)
     ax.set_ylabel("Category assignment rate (among YES annotators)")
-    ax.set_title(f"{label} — Interpretation Level: Gender Shapes Categorization\n(Holm-corrected: * p<.05, ** p<.01, *** p<.001, \u2020 p<.10)")
+    ax.set_title(f"{label} — Interpretation Level: Gender Shapes Categorisation\n(Holm-corrected: * p<.05, ** p<.01, *** p<.001, \u2020 p<.10)")
     ax.legend(frameon=True)
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
@@ -402,7 +402,7 @@ def fig_gender_categorization_side_by_side(
     ax_r.legend(frameon=True, loc="upper right")
 
     fig.suptitle(
-        "Gender Shapes Categorization Across Modalities\n"
+        "Gender Shapes Categorisation Across Modalities\n"
         "(Holm-corrected: * p<.05, ** p<.01, *** p<.001, \u2020 p<.10; h = Cohen\u2019s h)",
         fontsize=12,
     )
@@ -504,8 +504,8 @@ def fig_gender_categorization_side_by_side_tom(
     base_fs = 13
     fig, (ax_l, ax_r) = plt.subplots(1, 2, figsize=(18, 7), sharey=True)
 
-    title_tw = "Tweets — Gender Shapes Categorization\n(Holm-corrected: * p<.05, ** p<.01, *** p<.001, † p<.10)"
-    title_me = "Memes — Gender Shapes Categorization\n(Holm-corrected: * p<.05, ** p<.01, *** p<.001, † p<.10)"
+    title_tw = "Tweets — Gender Shapes Categorisation\n(Holm-corrected: * p<.05, ** p<.01, *** p<.001, † p<.10)"
+    title_me = "Memes — Gender Shapes Categorisation\n(Holm-corrected: * p<.05, ** p<.01, *** p<.001, † p<.10)"
     _draw_gender_cat_panel_tom(ax_l, tweets_df, label=title_tw, base_fs=base_fs)
     _draw_gender_cat_panel_tom(ax_r, memes_df, label=title_me, base_fs=base_fs)
 
