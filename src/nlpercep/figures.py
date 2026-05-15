@@ -49,6 +49,14 @@ AGREE_COLORS = [
 DET_COLOR = CB_GREEN
 INTERP_COLOR = CB_VERMILLION
 
+# ToM grouping for categorization figures
+# Base colours match the TikZ green!60!black / red!70!black
+TOM_COGNITIVE_BASE = "#009900"
+TOM_AFFECTIVE_BASE = "#B30000"
+# Pale background fills (≈ TikZ !12 fill)
+TOM_COGNITIVE_BG = "#E0F3E0"
+TOM_AFFECTIVE_BG = "#F6E0E0"
+
 
 def _save(fig, out_dir: Path, name: str) -> Path:
     """Save figure as both PDF and PNG."""
@@ -400,6 +408,114 @@ def fig_gender_categorization_side_by_side(
     )
     fig.tight_layout()
     return _save(fig, out_dir, "fig_gender_categorization_tweets_memes")
+
+
+def _draw_gender_cat_panel_tom(
+    ax,
+    df: pd.DataFrame,
+    label: str,
+    use_actual_gender: bool = False,
+    base_fs: int = 13,
+) -> None:
+    """Gender-categorization panel with Cognitive/Affective ToM grouping.
+
+    Cognitive ToM: IDEOLOGICAL-INEQUALITY, STEREOTYPING-DOMINANCE (indices 0–1).
+    Affective ToM: OBJECTIFICATION, SEXUAL-VIOLENCE, MISOGYNY-NON-SEXUAL-VIOLENCE (indices 2–4).
+    """
+    cat_labels = [
+        "IDEOLOGICAL-\nINEQUALITY", "STEREOTYPING-\nDOMINANCE",
+        "OBJECTI-\nFICATION", "SEXUAL-\nVIOLENCE", "MISOGYNY-NON-\nSEXUAL-VIOLENCE",
+    ]
+    f_rates, m_rates, p_values, h_values = _compute_gender_category_rates(df, use_actual_gender=use_actual_gender)
+
+    n_cat = len(cat_labels)
+    x = np.arange(n_cat)
+    width = 0.35
+    split_x = 1.5
+    x_min, x_max = -0.5, n_cat - 0.5
+
+    ax.set_xlim(x_min, x_max)
+    ax.axvspan(x_min, split_x, color=TOM_COGNITIVE_BG, zorder=0)
+    ax.axvspan(split_x, x_max, color=TOM_AFFECTIVE_BG, zorder=0)
+    ax.axvline(split_x, linestyle="--", color="gray", linewidth=1.0, alpha=0.8, zorder=1)
+
+    ax.bar(x - width / 2, f_rates, width, label="Female", color=GENDER_F, alpha=0.9,
+           edgecolor="white", linewidth=0.5, zorder=2)
+    ax.bar(x + width / 2, m_rates, width, label="Male", color=GENDER_M, alpha=0.9,
+           edgecolor="white", linewidth=0.5, zorder=2)
+
+    for i, (p, h) in enumerate(zip(p_values, h_values)):
+        if p < 0.001:
+            marker = "***"
+        elif p < 0.01:
+            marker = "**"
+        elif p < 0.05:
+            marker = "*"
+        elif p < 0.1:
+            marker = "†"
+        else:
+            marker = ""
+        y_max = max(f_rates[i], m_rates[i])
+        if marker:
+            ax.text(x[i], y_max + 0.012, f"{marker}\nh={h:.2f}", ha="center",
+                    fontsize=base_fs, fontweight="bold", zorder=3)
+        elif abs(h) >= 0.05:
+            ax.text(x[i], y_max + 0.012, f"h={h:.2f}", ha="center",
+                    fontsize=base_fs - 2, color="gray", zorder=3)
+
+    ax.set_xticks(x)
+    ax.set_xticklabels(cat_labels, fontsize=base_fs)
+    ax.tick_params(axis="y", labelsize=base_fs)
+    ax.set_ylim(0, max(max(f_rates), max(m_rates)) * 1.30)
+    ax.set_title(label, fontsize=base_fs + 3)
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+
+    # ToM-group brackets and labels underneath the x-tick labels.
+    # Mixed transform: x in data coords, y in axes fraction.
+    trans = ax.get_xaxis_transform()
+    bracket_y = -0.20
+    label_y = -0.24
+    ax.plot([x_min + 0.05, split_x - 0.1], [bracket_y, bracket_y],
+            color=TOM_COGNITIVE_BASE, lw=1.8, transform=trans, clip_on=False, zorder=4)
+    ax.plot([split_x + 0.1, x_max - 0.05], [bracket_y, bracket_y],
+            color=TOM_AFFECTIVE_BASE, lw=1.8, transform=trans, clip_on=False, zorder=4)
+    ax.text((x_min + split_x) / 2, label_y, "Cognitive ToM", ha="center", va="top",
+            transform=trans, fontsize=base_fs + 1, style="italic",
+            color=TOM_COGNITIVE_BASE, zorder=4)
+    ax.text((split_x + x_max) / 2, label_y, "Affective ToM", ha="center", va="top",
+            transform=trans, fontsize=base_fs + 1, style="italic",
+            color=TOM_AFFECTIVE_BASE, zorder=4)
+
+
+def fig_gender_categorization_side_by_side_tom(
+    tweets_df: pd.DataFrame,
+    memes_df: pd.DataFrame,
+    out_dir: Path,
+) -> Path:
+    """Side-by-side gender categorization with Cognitive/Affective ToM grouping.
+
+    Larger fonts, pale green/red axvspan fills, dashed separator, and bracketed
+    group labels underneath the x-tick labels.
+    """
+    setup_style()
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    base_fs = 13
+    fig, (ax_l, ax_r) = plt.subplots(1, 2, figsize=(18, 7), sharey=True)
+
+    title_tw = "Tweets — Gender Shapes Categorization\n(Holm-corrected: * p<.05, ** p<.01, *** p<.001, † p<.10)"
+    title_me = "Memes — Gender Shapes Categorization\n(Holm-corrected: * p<.05, ** p<.01, *** p<.001, † p<.10)"
+    _draw_gender_cat_panel_tom(ax_l, tweets_df, label=title_tw, base_fs=base_fs)
+    _draw_gender_cat_panel_tom(ax_r, memes_df, label=title_me, base_fs=base_fs)
+
+    ax_l.set_ylabel("Category assignment rate\n(among YES annotators)", fontsize=base_fs + 1)
+    ax_l.legend(frameon=True, loc="upper right", fontsize=base_fs)
+    ax_r.legend(frameon=True, loc="upper right", fontsize=base_fs)
+
+    fig.tight_layout()
+    fig.subplots_adjust(bottom=0.20)
+    return _save(fig, out_dir, "fig_gender_categorization_tweets_memes_tom")
 
 
 def generate_all(df: pd.DataFrame, out_dir: Path, label: str = "Tweets") -> list[Path]:

@@ -1,0 +1,1199 @@
+{
+  "pool_sizes": {
+    "tweets_total": 809,
+    "tweets_en": 398,
+    "tweets_es": 428,
+    "tweets_both_langs": 17,
+    "memes_total": 887,
+    "memes_en": 450,
+    "memes_es": 456,
+    "memes_both_langs": 19,
+    "union": 887,
+    "tweets_and_memes": 809,
+    "tweets_only": 0,
+    "memes_only": 78
+  },
+  "distributions": {
+    "tweets_all": {
+      "n": 809,
+      "gender": {
+        "counts": {
+          "M": 407,
+          "F": 402
+        },
+        "pct": {
+          "M": 50.31,
+          "F": 49.69
+        }
+      },
+      "age": {
+        "counts": {
+          "23-45": 278,
+          "18-22": 273,
+          "46+": 258
+        },
+        "pct": {
+          "23-45": 34.36,
+          "18-22": 33.75,
+          "46+": 31.89
+        }
+      },
+      "ethnicity": {
+        "counts": {
+          "White or Caucasian": 501,
+          "Hispano or Latino": 236,
+          "Black or African American": 47,
+          "Multiracial": 10,
+          "Asian": 8,
+          "other": 4,
+          "Middle Eastern": 3
+        },
+        "pct": {
+          "White or Caucasian": 61.93,
+          "Hispano or Latino": 29.17,
+          "Black or African American": 5.81,
+          "Multiracial": 1.24,
+          "Asian": 0.99,
+          "other": 0.49,
+          "Middle Eastern": 0.37
+        }
+      },
+      "education": {
+        "counts": {
+          "Bachelor's degree": 407,
+          "High school degree or equivalent": 249,
+          "Master's degree": 123,
+          "Doctorate": 12,
+          "Less than high school diploma": 12,
+          "other": 6
+        },
+        "pct": {
+          "Bachelor's degree": 50.31,
+          "High school degree or equivalent": 30.78,
+          "Master's degree": 15.2,
+          "Doctorate": 1.48,
+          "Less than high school diploma": 1.48,
+          "other": 0.74
+        }
+      },
+      "country": {
+        "counts": {
+          "Mexico": 145,
+          "Portugal": 131,
+          "Spain": 114,
+          "United Kingdom": 81,
+          "Poland": 57,
+          "South Africa": 57,
+          "Chile": 41,
+          "Italy": 34,
+          "United States": 27,
+          "Greece": 17,
+          "Canada": 10,
+          "Hungary": 9,
+          "Venezuela": 6,
+          "Netherlands": 6,
+          "Estonia": 6,
+          "Slovenia": 6,
+          "Australia": 6,
+          "Argentina": 5,
+          "Ireland": 5,
+          "Peru": 4,
+          "Latvia": 4,
+          "Belgium": 3,
+          "Israel": 3,
+          "New Zealand": 3,
+          "Afghanistan": 2,
+          "Colombia": 2,
+          "Algeria": 2,
+          "Brazil": 2,
+          "Finland": 2,
+          "France": 1,
+          "Dominican Republic": 1,
+          "Cuba": 1,
+          "Macedonia, The Former Yugoslav Republic of": 1,
+          "Panama": 1,
+          "Puerto Rico": 1,
+          "El Salvador": 1,
+          "Serbia": 1,
+          "Romania": 1,
+          "Germany": 1,
+          "Russian Federation": 1,
+          "Norway": 1,
+          "Viet Nam": 1,
+          "Cyprus": 1,
+          "Czech Republic": 1,
+          "Nepal": 1,
+          "Guatemala": 1,
+          "Sweden": 1,
+          "Zimbabwe": 1
+        },
+        "pct": {
+          "Mexico": 17.92,
+          "Portugal": 16.19,
+          "Spain": 14.09,
+          "United Kingdom": 10.01,
+          "Poland": 7.05,
+          "South Africa": 7.05,
+          "Chile": 5.07,
+          "Italy": 4.2,
+          "United States": 3.34,
+          "Greece": 2.1,
+          "Canada": 1.24,
+          "Hungary": 1.11,
+          "Venezuela": 0.74,
+          "Netherlands": 0.74,
+          "Estonia": 0.74,
+          "Slovenia": 0.74,
+          "Australia": 0.74,
+          "Argentina": 0.62,
+          "Ireland": 0.62,
+          "Peru": 0.49,
+          "Latvia": 0.49,
+          "Belgium": 0.37,
+          "Israel": 0.37,
+          "New Zealand": 0.37,
+          "Afghanistan": 0.25,
+          "Colombia": 0.25,
+          "Algeria": 0.25,
+          "Brazil": 0.25,
+          "Finland": 0.25,
+          "France": 0.12,
+          "Dominican Republic": 0.12,
+          "Cuba": 0.12,
+          "Macedonia, The Former Yugoslav Republic of": 0.12,
+          "Panama": 0.12,
+          "Puerto Rico": 0.12,
+          "El Salvador": 0.12,
+          "Serbia": 0.12,
+          "Romania": 0.12,
+          "Germany": 0.12,
+          "Russian Federation": 0.12,
+          "Norway": 0.12,
+          "Viet Nam": 0.12,
+          "Cyprus": 0.12,
+          "Czech Republic": 0.12,
+          "Nepal": 0.12,
+          "Guatemala": 0.12,
+          "Sweden": 0.12,
+          "Zimbabwe": 0.12
+        }
+      }
+    },
+    "tweets_en": {
+      "n": 398,
+      "gender": {
+        "counts": {
+          "F": 199,
+          "M": 199
+        },
+        "pct": {
+          "F": 50.0,
+          "M": 50.0
+        }
+      },
+      "age": {
+        "counts": {
+          "18-22": 134,
+          "23-45": 133,
+          "46+": 131
+        },
+        "pct": {
+          "18-22": 33.67,
+          "23-45": 33.42,
+          "46+": 32.91
+        }
+      },
+      "ethnicity": {
+        "counts": {
+          "White or Caucasian": 292,
+          "Black or African American": 46,
+          "Hispano or Latino": 43,
+          "Asian": 7,
+          "Multiracial": 6,
+          "other": 3,
+          "Middle Eastern": 1
+        },
+        "pct": {
+          "White or Caucasian": 73.37,
+          "Black or African American": 11.56,
+          "Hispano or Latino": 10.8,
+          "Asian": 1.76,
+          "Multiracial": 1.51,
+          "other": 0.75,
+          "Middle Eastern": 0.25
+        }
+      },
+      "education": {
+        "counts": {
+          "Bachelor's degree": 172,
+          "High school degree or equivalent": 153,
+          "Master's degree": 60,
+          "Less than high school diploma": 5,
+          "Doctorate": 4,
+          "other": 4
+        },
+        "pct": {
+          "Bachelor's degree": 43.22,
+          "High school degree or equivalent": 38.44,
+          "Master's degree": 15.08,
+          "Less than high school diploma": 1.26,
+          "Doctorate": 1.01,
+          "other": 1.01
+        }
+      },
+      "country": {
+        "counts": {
+          "United Kingdom": 70,
+          "Portugal": 58,
+          "South Africa": 57,
+          "Poland": 53,
+          "Mexico": 28,
+          "Spain": 16,
+          "Greece": 16,
+          "Italy": 12,
+          "United States": 10,
+          "Hungary": 9,
+          "Chile": 8,
+          "Canada": 8,
+          "Estonia": 6,
+          "Slovenia": 6,
+          "Australia": 6,
+          "Latvia": 4,
+          "Ireland": 4,
+          "Israel": 3,
+          "Netherlands": 3,
+          "New Zealand": 3,
+          "Belgium": 2,
+          "Finland": 2,
+          "Macedonia, The Former Yugoslav Republic of": 1,
+          "Venezuela": 1,
+          "Romania": 1,
+          "Germany": 1,
+          "Russian Federation": 1,
+          "Norway": 1,
+          "Viet Nam": 1,
+          "Cyprus": 1,
+          "Czech Republic": 1,
+          "Nepal": 1,
+          "Argentina": 1,
+          "Algeria": 1,
+          "Sweden": 1,
+          "Zimbabwe": 1
+        },
+        "pct": {
+          "United Kingdom": 17.59,
+          "Portugal": 14.57,
+          "South Africa": 14.32,
+          "Poland": 13.32,
+          "Mexico": 7.04,
+          "Spain": 4.02,
+          "Greece": 4.02,
+          "Italy": 3.02,
+          "United States": 2.51,
+          "Hungary": 2.26,
+          "Chile": 2.01,
+          "Canada": 2.01,
+          "Estonia": 1.51,
+          "Slovenia": 1.51,
+          "Australia": 1.51,
+          "Latvia": 1.01,
+          "Ireland": 1.01,
+          "Israel": 0.75,
+          "Netherlands": 0.75,
+          "New Zealand": 0.75,
+          "Belgium": 0.5,
+          "Finland": 0.5,
+          "Macedonia, The Former Yugoslav Republic of": 0.25,
+          "Venezuela": 0.25,
+          "Romania": 0.25,
+          "Germany": 0.25,
+          "Russian Federation": 0.25,
+          "Norway": 0.25,
+          "Viet Nam": 0.25,
+          "Cyprus": 0.25,
+          "Czech Republic": 0.25,
+          "Nepal": 0.25,
+          "Argentina": 0.25,
+          "Algeria": 0.25,
+          "Sweden": 0.25,
+          "Zimbabwe": 0.25
+        }
+      }
+    },
+    "tweets_es": {
+      "n": 428,
+      "gender": {
+        "counts": {
+          "F": 215,
+          "M": 213
+        },
+        "pct": {
+          "F": 50.23,
+          "M": 49.77
+        }
+      },
+      "age": {
+        "counts": {
+          "23-45": 148,
+          "18-22": 144,
+          "46+": 136
+        },
+        "pct": {
+          "23-45": 34.58,
+          "18-22": 33.64,
+          "46+": 31.78
+        }
+      },
+      "ethnicity": {
+        "counts": {
+          "White or Caucasian": 220,
+          "Hispano or Latino": 199,
+          "Multiracial": 4,
+          "Middle Eastern": 2,
+          "Black or African American": 1,
+          "other": 1,
+          "Asian": 1
+        },
+        "pct": {
+          "White or Caucasian": 51.4,
+          "Hispano or Latino": 46.5,
+          "Multiracial": 0.93,
+          "Middle Eastern": 0.47,
+          "Black or African American": 0.23,
+          "other": 0.23,
+          "Asian": 0.23
+        }
+      },
+      "education": {
+        "counts": {
+          "Bachelor's degree": 242,
+          "High school degree or equivalent": 103,
+          "Master's degree": 66,
+          "Doctorate": 8,
+          "Less than high school diploma": 7,
+          "other": 2
+        },
+        "pct": {
+          "Bachelor's degree": 56.54,
+          "High school degree or equivalent": 24.07,
+          "Master's degree": 15.42,
+          "Doctorate": 1.87,
+          "Less than high school diploma": 1.64,
+          "other": 0.47
+        }
+      },
+      "country": {
+        "counts": {
+          "Mexico": 122,
+          "Spain": 101,
+          "Portugal": 76,
+          "Chile": 34,
+          "Italy": 23,
+          "United States": 17,
+          "United Kingdom": 11,
+          "Venezuela": 6,
+          "Poland": 5,
+          "Peru": 4,
+          "Argentina": 4,
+          "Canada": 3,
+          "Netherlands": 3,
+          "Afghanistan": 2,
+          "Colombia": 2,
+          "Brazil": 2,
+          "Belgium": 1,
+          "France": 1,
+          "Dominican Republic": 1,
+          "Cuba": 1,
+          "Macedonia, The Former Yugoslav Republic of": 1,
+          "Greece": 1,
+          "Panama": 1,
+          "Algeria": 1,
+          "Puerto Rico": 1,
+          "El Salvador": 1,
+          "Ireland": 1,
+          "Serbia": 1,
+          "Guatemala": 1
+        },
+        "pct": {
+          "Mexico": 28.5,
+          "Spain": 23.6,
+          "Portugal": 17.76,
+          "Chile": 7.94,
+          "Italy": 5.37,
+          "United States": 3.97,
+          "United Kingdom": 2.57,
+          "Venezuela": 1.4,
+          "Poland": 1.17,
+          "Peru": 0.93,
+          "Argentina": 0.93,
+          "Canada": 0.7,
+          "Netherlands": 0.7,
+          "Afghanistan": 0.47,
+          "Colombia": 0.47,
+          "Brazil": 0.47,
+          "Belgium": 0.23,
+          "France": 0.23,
+          "Dominican Republic": 0.23,
+          "Cuba": 0.23,
+          "Macedonia, The Former Yugoslav Republic of": 0.23,
+          "Greece": 0.23,
+          "Panama": 0.23,
+          "Algeria": 0.23,
+          "Puerto Rico": 0.23,
+          "El Salvador": 0.23,
+          "Ireland": 0.23,
+          "Serbia": 0.23,
+          "Guatemala": 0.23
+        }
+      }
+    },
+    "memes_all": {
+      "n": 887,
+      "gender": {
+        "counts": {
+          "F": 446,
+          "M": 441
+        },
+        "pct": {
+          "F": 50.28,
+          "M": 49.72
+        }
+      },
+      "age": {
+        "counts": {
+          "23-45": 298,
+          "18-22": 295,
+          "46+": 294
+        },
+        "pct": {
+          "23-45": 33.6,
+          "18-22": 33.26,
+          "46+": 33.15
+        }
+      },
+      "ethnicity": {
+        "counts": {
+          "White or Caucasian": 519,
+          "Hispano or Latino": 208,
+          "Black or African American": 90,
+          "Asian": 33,
+          "Multiracial": 20,
+          "Middle Eastern": 9,
+          "other": 8
+        },
+        "pct": {
+          "White or Caucasian": 58.51,
+          "Hispano or Latino": 23.45,
+          "Black or African American": 10.15,
+          "Asian": 3.72,
+          "Multiracial": 2.25,
+          "Middle Eastern": 1.01,
+          "other": 0.9
+        }
+      },
+      "education": {
+        "counts": {
+          "Bachelor's degree": 432,
+          "High school degree or equivalent": 265,
+          "Master's degree": 144,
+          "Doctorate": 18,
+          "other": 16,
+          "Less than high school diploma": 12
+        },
+        "pct": {
+          "Bachelor's degree": 48.7,
+          "High school degree or equivalent": 29.88,
+          "Master's degree": 16.23,
+          "Doctorate": 2.03,
+          "other": 1.8,
+          "Less than high school diploma": 1.35
+        }
+      },
+      "country": {
+        "counts": {
+          "Spain": 116,
+          "Mexico": 113,
+          "United Kingdom": 98,
+          "South Africa": 94,
+          "Portugal": 83,
+          "Poland": 51,
+          "Italy": 49,
+          "Chile": 41,
+          "United States": 39,
+          "Australia": 22,
+          "Greece": 18,
+          "Canada": 17,
+          "Germany": 15,
+          "Netherlands": 15,
+          "Venezuela": 9,
+          "New Zealand": 8,
+          "France": 8,
+          "Hungary": 8,
+          "Argentina": 5,
+          "Colombia": 5,
+          "Sweden": 5,
+          "Ireland": 5,
+          "Zimbabwe": 5,
+          "Slovenia": 4,
+          "Israel": 4,
+          "Estonia": 4,
+          "Nigeria": 3,
+          "China": 3,
+          "Austria": 3,
+          "Finland": 3,
+          "Viet Nam": 3,
+          "Brazil": 2,
+          "Russian Federation": 2,
+          "Peru": 2,
+          "Serbia": 2,
+          "Czech Republic": 2,
+          "Cuba": 2,
+          "Turkey": 2,
+          "United Arab Emirates": 2,
+          "Belgium": 2,
+          "Afghanistan": 1,
+          "Romania": 1,
+          "Nicaragua": 1,
+          "Dominican Republic": 1,
+          "Ecuador": 1,
+          "Bulgaria": 1,
+          "Uruguay": 1,
+          "Azerbaijan": 1,
+          "Bangladesh": 1,
+          "Latvia": 1,
+          "Croatia": 1,
+          "Morocco": 1,
+          "India": 1
+        },
+        "pct": {
+          "Spain": 13.08,
+          "Mexico": 12.74,
+          "United Kingdom": 11.05,
+          "South Africa": 10.6,
+          "Portugal": 9.36,
+          "Poland": 5.75,
+          "Italy": 5.52,
+          "Chile": 4.62,
+          "United States": 4.4,
+          "Australia": 2.48,
+          "Greece": 2.03,
+          "Canada": 1.92,
+          "Germany": 1.69,
+          "Netherlands": 1.69,
+          "Venezuela": 1.01,
+          "New Zealand": 0.9,
+          "France": 0.9,
+          "Hungary": 0.9,
+          "Argentina": 0.56,
+          "Colombia": 0.56,
+          "Sweden": 0.56,
+          "Ireland": 0.56,
+          "Zimbabwe": 0.56,
+          "Slovenia": 0.45,
+          "Israel": 0.45,
+          "Estonia": 0.45,
+          "Nigeria": 0.34,
+          "China": 0.34,
+          "Austria": 0.34,
+          "Finland": 0.34,
+          "Viet Nam": 0.34,
+          "Brazil": 0.23,
+          "Russian Federation": 0.23,
+          "Peru": 0.23,
+          "Serbia": 0.23,
+          "Czech Republic": 0.23,
+          "Cuba": 0.23,
+          "Turkey": 0.23,
+          "United Arab Emirates": 0.23,
+          "Belgium": 0.23,
+          "Afghanistan": 0.11,
+          "Romania": 0.11,
+          "Nicaragua": 0.11,
+          "Dominican Republic": 0.11,
+          "Ecuador": 0.11,
+          "Bulgaria": 0.11,
+          "Uruguay": 0.11,
+          "Azerbaijan": 0.11,
+          "Bangladesh": 0.11,
+          "Latvia": 0.11,
+          "Croatia": 0.11,
+          "Morocco": 0.11,
+          "India": 0.11
+        }
+      }
+    },
+    "memes_en": {
+      "n": 450,
+      "gender": {
+        "counts": {
+          "M": 225,
+          "F": 225
+        },
+        "pct": {
+          "M": 50.0,
+          "F": 50.0
+        }
+      },
+      "age": {
+        "counts": {
+          "18-22": 150,
+          "23-45": 150,
+          "46+": 150
+        },
+        "pct": {
+          "18-22": 33.33,
+          "23-45": 33.33,
+          "46+": 33.33
+        }
+      },
+      "ethnicity": {
+        "counts": {
+          "White or Caucasian": 284,
+          "Black or African American": 82,
+          "Hispano or Latino": 30,
+          "Asian": 28,
+          "Multiracial": 12,
+          "Middle Eastern": 8,
+          "other": 6
+        },
+        "pct": {
+          "White or Caucasian": 63.11,
+          "Black or African American": 18.22,
+          "Hispano or Latino": 6.67,
+          "Asian": 6.22,
+          "Multiracial": 2.67,
+          "Middle Eastern": 1.78,
+          "other": 1.33
+        }
+      },
+      "education": {
+        "counts": {
+          "Bachelor's degree": 179,
+          "High school degree or equivalent": 170,
+          "Master's degree": 68,
+          "Doctorate": 12,
+          "other": 12,
+          "Less than high school diploma": 9
+        },
+        "pct": {
+          "Bachelor's degree": 39.78,
+          "High school degree or equivalent": 37.78,
+          "Master's degree": 15.11,
+          "Doctorate": 2.67,
+          "other": 2.67,
+          "Less than high school diploma": 2.0
+        }
+      },
+      "country": {
+        "counts": {
+          "South Africa": 91,
+          "United Kingdom": 78,
+          "Poland": 40,
+          "Portugal": 32,
+          "Mexico": 20,
+          "Australia": 20,
+          "Italy": 17,
+          "Greece": 15,
+          "Canada": 14,
+          "United States": 13,
+          "Spain": 11,
+          "Netherlands": 10,
+          "Germany": 9,
+          "Chile": 8,
+          "Hungary": 8,
+          "New Zealand": 7,
+          "Ireland": 5,
+          "Zimbabwe": 5,
+          "France": 4,
+          "Slovenia": 4,
+          "Sweden": 4,
+          "Israel": 4,
+          "Estonia": 4,
+          "Finland": 3,
+          "Viet Nam": 3,
+          "Colombia": 2,
+          "Turkey": 2,
+          "United Arab Emirates": 2,
+          "Austria": 2,
+          "Belgium": 2,
+          "Brazil": 1,
+          "Romania": 1,
+          "Czech Republic": 1,
+          "Azerbaijan": 1,
+          "Bangladesh": 1,
+          "Latvia": 1,
+          "Croatia": 1,
+          "Morocco": 1,
+          "China": 1,
+          "Nigeria": 1,
+          "India": 1
+        },
+        "pct": {
+          "South Africa": 20.22,
+          "United Kingdom": 17.33,
+          "Poland": 8.89,
+          "Portugal": 7.11,
+          "Mexico": 4.44,
+          "Australia": 4.44,
+          "Italy": 3.78,
+          "Greece": 3.33,
+          "Canada": 3.11,
+          "United States": 2.89,
+          "Spain": 2.44,
+          "Netherlands": 2.22,
+          "Germany": 2.0,
+          "Chile": 1.78,
+          "Hungary": 1.78,
+          "New Zealand": 1.56,
+          "Ireland": 1.11,
+          "Zimbabwe": 1.11,
+          "France": 0.89,
+          "Slovenia": 0.89,
+          "Sweden": 0.89,
+          "Israel": 0.89,
+          "Estonia": 0.89,
+          "Finland": 0.67,
+          "Viet Nam": 0.67,
+          "Colombia": 0.44,
+          "Turkey": 0.44,
+          "United Arab Emirates": 0.44,
+          "Austria": 0.44,
+          "Belgium": 0.44,
+          "Brazil": 0.22,
+          "Romania": 0.22,
+          "Czech Republic": 0.22,
+          "Azerbaijan": 0.22,
+          "Bangladesh": 0.22,
+          "Latvia": 0.22,
+          "Croatia": 0.22,
+          "Morocco": 0.22,
+          "China": 0.22,
+          "Nigeria": 0.22,
+          "India": 0.22
+        }
+      }
+    },
+    "memes_es": {
+      "n": 456,
+      "gender": {
+        "counts": {
+          "F": 228,
+          "M": 228
+        },
+        "pct": {
+          "F": 50.0,
+          "M": 50.0
+        }
+      },
+      "age": {
+        "counts": {
+          "18-22": 152,
+          "23-45": 152,
+          "46+": 152
+        },
+        "pct": {
+          "18-22": 33.33,
+          "23-45": 33.33,
+          "46+": 33.33
+        }
+      },
+      "ethnicity": {
+        "counts": {
+          "White or Caucasian": 246,
+          "Hispano or Latino": 184,
+          "Multiracial": 9,
+          "Black or African American": 8,
+          "Asian": 6,
+          "other": 2,
+          "Middle Eastern": 1
+        },
+        "pct": {
+          "White or Caucasian": 53.95,
+          "Hispano or Latino": 40.35,
+          "Multiracial": 1.97,
+          "Black or African American": 1.75,
+          "Asian": 1.32,
+          "other": 0.44,
+          "Middle Eastern": 0.22
+        }
+      },
+      "education": {
+        "counts": {
+          "Bachelor's degree": 260,
+          "High school degree or equivalent": 102,
+          "Master's degree": 80,
+          "Doctorate": 7,
+          "other": 4,
+          "Less than high school diploma": 3
+        },
+        "pct": {
+          "Bachelor's degree": 57.02,
+          "High school degree or equivalent": 22.37,
+          "Master's degree": 17.54,
+          "Doctorate": 1.54,
+          "other": 0.88,
+          "Less than high school diploma": 0.66
+        }
+      },
+      "country": {
+        "counts": {
+          "Spain": 111,
+          "Mexico": 99,
+          "Portugal": 54,
+          "Chile": 35,
+          "Italy": 32,
+          "United States": 26,
+          "United Kingdom": 20,
+          "Poland": 11,
+          "Venezuela": 9,
+          "Germany": 6,
+          "Argentina": 5,
+          "Netherlands": 5,
+          "France": 4,
+          "Greece": 3,
+          "South Africa": 3,
+          "Colombia": 3,
+          "Canada": 3,
+          "Brazil": 2,
+          "Australia": 2,
+          "Russian Federation": 2,
+          "Peru": 2,
+          "Serbia": 2,
+          "Nigeria": 2,
+          "China": 2,
+          "Cuba": 2,
+          "New Zealand": 1,
+          "Czech Republic": 1,
+          "Afghanistan": 1,
+          "Romania": 1,
+          "Nicaragua": 1,
+          "Dominican Republic": 1,
+          "Sweden": 1,
+          "Austria": 1,
+          "Ecuador": 1,
+          "Bulgaria": 1,
+          "Uruguay": 1
+        },
+        "pct": {
+          "Spain": 24.34,
+          "Mexico": 21.71,
+          "Portugal": 11.84,
+          "Chile": 7.68,
+          "Italy": 7.02,
+          "United States": 5.7,
+          "United Kingdom": 4.39,
+          "Poland": 2.41,
+          "Venezuela": 1.97,
+          "Germany": 1.32,
+          "Argentina": 1.1,
+          "Netherlands": 1.1,
+          "France": 0.88,
+          "Greece": 0.66,
+          "South Africa": 0.66,
+          "Colombia": 0.66,
+          "Canada": 0.66,
+          "Brazil": 0.44,
+          "Australia": 0.44,
+          "Russian Federation": 0.44,
+          "Peru": 0.44,
+          "Serbia": 0.44,
+          "Nigeria": 0.44,
+          "China": 0.44,
+          "Cuba": 0.44,
+          "New Zealand": 0.22,
+          "Czech Republic": 0.22,
+          "Afghanistan": 0.22,
+          "Romania": 0.22,
+          "Nicaragua": 0.22,
+          "Dominican Republic": 0.22,
+          "Sweden": 0.22,
+          "Austria": 0.22,
+          "Ecuador": 0.22,
+          "Bulgaria": 0.22,
+          "Uruguay": 0.22
+        }
+      }
+    },
+    "union": {
+      "n": 887,
+      "gender": {
+        "counts": {
+          "M": 446,
+          "F": 441
+        },
+        "pct": {
+          "M": 50.28,
+          "F": 49.72
+        }
+      },
+      "age": {
+        "counts": {
+          "23-45": 304,
+          "18-22": 299,
+          "46+": 284
+        },
+        "pct": {
+          "23-45": 34.27,
+          "18-22": 33.71,
+          "46+": 32.02
+        }
+      },
+      "ethnicity": {
+        "counts": {
+          "White or Caucasian": 547,
+          "Hispano or Latino": 239,
+          "Black or African American": 65,
+          "Asian": 16,
+          "Multiracial": 11,
+          "other": 5,
+          "Middle Eastern": 4
+        },
+        "pct": {
+          "White or Caucasian": 61.67,
+          "Hispano or Latino": 26.94,
+          "Black or African American": 7.33,
+          "Asian": 1.8,
+          "Multiracial": 1.24,
+          "other": 0.56,
+          "Middle Eastern": 0.45
+        }
+      },
+      "education": {
+        "counts": {
+          "Bachelor's degree": 437,
+          "High school degree or equivalent": 280,
+          "Master's degree": 133,
+          "Doctorate": 15,
+          "Less than high school diploma": 14,
+          "other": 8
+        },
+        "pct": {
+          "Bachelor's degree": 49.27,
+          "High school degree or equivalent": 31.57,
+          "Master's degree": 14.99,
+          "Doctorate": 1.69,
+          "Less than high school diploma": 1.58,
+          "other": 0.9
+        }
+      },
+      "country": {
+        "counts": {
+          "Mexico": 147,
+          "Portugal": 133,
+          "Spain": 115,
+          "United Kingdom": 95,
+          "South Africa": 76,
+          "Poland": 63,
+          "Chile": 42,
+          "Italy": 38,
+          "United States": 32,
+          "Greece": 18,
+          "Canada": 14,
+          "Hungary": 12,
+          "Australia": 11,
+          "Ireland": 7,
+          "Venezuela": 6,
+          "Netherlands": 6,
+          "Estonia": 6,
+          "Slovenia": 6,
+          "Argentina": 5,
+          "Peru": 4,
+          "Latvia": 4,
+          "Israel": 4,
+          "Zimbabwe": 4,
+          "New Zealand": 3,
+          "Belgium": 3,
+          "Colombia": 2,
+          "Afghanistan": 2,
+          "Algeria": 2,
+          "Brazil": 2,
+          "Germany": 2,
+          "France": 2,
+          "Finland": 2,
+          "Macedonia, The Former Yugoslav Republic of": 1,
+          "Panama": 1,
+          "Puerto Rico": 1,
+          "El Salvador": 1,
+          "Serbia": 1,
+          "Romania": 1,
+          "Russian Federation": 1,
+          "Norway": 1,
+          "Viet Nam": 1,
+          "Cyprus": 1,
+          "Czech Republic": 1,
+          "Nepal": 1,
+          "Dominican Republic": 1,
+          "Guatemala": 1,
+          "Sweden": 1,
+          "China": 1,
+          "Nigeria": 1,
+          "India": 1,
+          "Cuba": 1
+        },
+        "pct": {
+          "Mexico": 16.57,
+          "Portugal": 14.99,
+          "Spain": 12.97,
+          "United Kingdom": 10.71,
+          "South Africa": 8.57,
+          "Poland": 7.1,
+          "Chile": 4.74,
+          "Italy": 4.28,
+          "United States": 3.61,
+          "Greece": 2.03,
+          "Canada": 1.58,
+          "Hungary": 1.35,
+          "Australia": 1.24,
+          "Ireland": 0.79,
+          "Venezuela": 0.68,
+          "Netherlands": 0.68,
+          "Estonia": 0.68,
+          "Slovenia": 0.68,
+          "Argentina": 0.56,
+          "Peru": 0.45,
+          "Latvia": 0.45,
+          "Israel": 0.45,
+          "Zimbabwe": 0.45,
+          "New Zealand": 0.34,
+          "Belgium": 0.34,
+          "Colombia": 0.23,
+          "Afghanistan": 0.23,
+          "Algeria": 0.23,
+          "Brazil": 0.23,
+          "Germany": 0.23,
+          "France": 0.23,
+          "Finland": 0.23,
+          "Macedonia, The Former Yugoslav Republic of": 0.11,
+          "Panama": 0.11,
+          "Puerto Rico": 0.11,
+          "El Salvador": 0.11,
+          "Serbia": 0.11,
+          "Romania": 0.11,
+          "Russian Federation": 0.11,
+          "Norway": 0.11,
+          "Viet Nam": 0.11,
+          "Cyprus": 0.11,
+          "Czech Republic": 0.11,
+          "Nepal": 0.11,
+          "Dominican Republic": 0.11,
+          "Guatemala": 0.11,
+          "Sweden": 0.11,
+          "China": 0.11,
+          "Nigeria": 0.11,
+          "India": 0.11,
+          "Cuba": 0.11
+        }
+      }
+    }
+  },
+  "volume_stats": {
+    "tweets_all": {
+      "all": {
+        "mean": 59.021013597033374,
+        "median": 57.0,
+        "std": 14.43072572710581,
+        "min": 11,
+        "max": 171,
+        "n_annotators": 809
+      }
+    },
+    "tweets_en": {
+      "all": {
+        "mean": 56.517587939698494,
+        "median": 57.0,
+        "std": 8.142214665463813,
+        "min": 11,
+        "max": 114,
+        "n_annotators": 398
+      }
+    },
+    "tweets_es": {
+      "all": {
+        "mean": 59.004672897196265,
+        "median": 57.0,
+        "std": 13.25113142217277,
+        "min": 12,
+        "max": 114,
+        "n_annotators": 428
+      }
+    },
+    "memes_all": {
+      "all": {
+        "mean": 27.35512965050733,
+        "median": 27.0,
+        "std": 4.279081112739278,
+        "min": 9,
+        "max": 54,
+        "n_annotators": 887
+      }
+    },
+    "memes_en": {
+      "all": {
+        "mean": 26.8,
+        "median": 27.0,
+        "std": 1.7223798732036224,
+        "min": 12,
+        "max": 27,
+        "n_annotators": 450
+      }
+    },
+    "memes_es": {
+      "all": {
+        "mean": 26.763157894736842,
+        "median": 27.0,
+        "std": 2.0533655314589483,
+        "min": 9,
+        "max": 27,
+        "n_annotators": 456
+      }
+    },
+    "union": {
+      "all": {
+        "mean": 81.18602029312288,
+        "median": 84.0,
+        "std": 22.45075641241136,
+        "min": 12,
+        "max": 198,
+        "n_annotators": 887
+      },
+      "tweets": {
+        "mean": 59.021013597033374,
+        "median": 57.0,
+        "std": 14.43072572710581,
+        "min": 11,
+        "max": 171,
+        "n_annotators": 809
+      },
+      "memes": {
+        "mean": 27.35512965050733,
+        "median": 27.0,
+        "std": 4.279081112739279,
+        "min": 9,
+        "max": 54,
+        "n_annotators": 887
+      }
+    }
+  },
+  "overlap": {
+    "tweets_en|tweets_es": {
+      "intersection": 17,
+      "jaccard": 0.021013597033374538
+    },
+    "memes_en|memes_es": {
+      "intersection": 19,
+      "jaccard": 0.02142051860202931
+    },
+    "tweets|memes": {
+      "intersection": 809,
+      "jaccard": 0.9120631341600902
+    },
+    "tweets_en|memes_en": {
+      "intersection": 316,
+      "jaccard": 0.5939849624060151
+    },
+    "tweets_es|memes_es": {
+      "intersection": 390,
+      "jaccard": 0.7894736842105263
+    }
+  }
+}
