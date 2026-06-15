@@ -1,0 +1,78 @@
+{
+  "bare|1.1|C": {
+    "n": 600,
+    "flip_rate": 0.20833333333333334,
+    "mean_jsd": 0.19884891617852055,
+    "flip_F2M": 0.171875,
+    "flip_M2F": 0.25,
+    "asymmetry": 0.078125,
+    "flip_by_category": {
+      "ideological_inequality": 0.13333333333333333,
+      "stereotyping_dominance": 0.2,
+      "objectification": 0.25,
+      "sexual_violence": 0.23333333333333334,
+      "misogyny_non_sexual_violence": 0.225
+    },
+    "flip_by_invariance": {
+      "SHIFTING": 0.22538293216630198,
+      "INVARIANT": 0.15384615384615385
+    }
+  },
+  "defined|1.1|C": {
+    "n": 600,
+    "flip_rate": 0.19666666666666666,
+    "mean_jsd": 0.1927424520658723,
+    "flip_F2M": 0.153125,
+    "flip_M2F": 0.23529411764705882,
+    "asymmetry": 0.08216911764705881,
+    "flip_by_category": {
+      "ideological_inequality": 0.125,
+      "stereotyping_dominance": 0.2,
+      "objectification": 0.21666666666666667,
+      "sexual_violence": 0.20833333333333334,
+      "misogyny_non_sexual_violence": 0.23333333333333334
+    },
+    "flip_by_invariance": {
+      "SHIFTING": 0.21663019693654267,
+      "INVARIANT": 0.13286713286713286
+    }
+  },
+  "bare|1.3|C": {
+    "n": 600,
+    "flip_rate": 0.35833333333333334,
+    "mean_jsd": 0.07987455187276299,
+    "flip_F2M": 0.340625,
+    "flip_M2F": 0.3088235294117647,
+    "asymmetry": 0.03180147058823529,
+    "flip_by_category": {
+      "ideological_inequality": 0.225,
+      "stereotyping_dominance": 0.38333333333333336,
+      "objectification": 0.43333333333333335,
+      "sexual_violence": 0.35833333333333334,
+      "misogyny_non_sexual_violence": 0.39166666666666666
+    },
+    "flip_by_invariance": {
+      "SHIFTING": 0.40700218818380746,
+      "INVARIANT": 0.20279720279720279
+    }
+  },
+  "defined|1.3|C": {
+    "n": 600,
+    "flip_rate": 0.41,
+    "mean_jsd": 0.09275025434777485,
+    "flip_F2M": 0.428125,
+    "flip_M2F": 0.3382352941176471,
+    "asymmetry": 0.0898897058823529,
+    "flip_by_category": {
+      "ideological_inequality": 0.20833333333333334,
+      "stereotyping_dominance": 0.45,
+      "objectification": 0.48333333333333334,
+      "sexual_violence": 0.44166666666666665,
+      "misogyny_non_sexual_violence": 0.4666666666666667
+    },
+    "flip_by_invariance": {
+      "SHIFTING": 0.4420131291028446,
+      "INVARIANT": 0.3076923076923077
+    }
+  }
+}

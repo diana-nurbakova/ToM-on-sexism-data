@@ -1,0 +1,68 @@
+{
+  "pool": "en train+dev",
+  "n": 3749,
+  "swappable_overall": 1849,
+  "target_per_category": 120,
+  "by_strat_category": {
+    "ideological_inequality": {
+      "total": 995,
+      "swappable": 537,
+      "meets_120": true,
+      "shortfall": 0
+    },
+    "stereotyping_dominance": {
+      "total": 812,
+      "swappable": 518,
+      "meets_120": true,
+      "shortfall": 0
+    },
+    "objectification": {
+      "total": 527,
+      "swappable": 257,
+      "meets_120": true,
+      "shortfall": 0
+    },
+    "sexual_violence": {
+      "total": 290,
+      "swappable": 150,
+      "meets_120": true,
+      "shortfall": 0
+    },
+    "misogyny_non_sexual_violence": {
+      "total": 244,
+      "swappable": 144,
+      "meets_120": true,
+      "shortfall": 0
+    }
+  },
+  "by_multilabel_ge0.5_swappable": {
+    "ideological_inequality": 242,
+    "stereotyping_dominance": 348,
+    "objectification": 223,
+    "sexual_violence": 130,
+    "misogyny_non_sexual_violence": 133
+  },
+  "bin_grid_swappable": {
+    "high": {
+      "ideological_inequality": 227,
+      "misogyny_non_sexual_violence": 85,
+      "objectification": 152,
+      "sexual_violence": 104,
+      "stereotyping_dominance": 268
+    },
+    "low": {
+      "ideological_inequality": 104,
+      "misogyny_non_sexual_violence": 24,
+      "objectification": 35,
+      "sexual_violence": 11,
+      "stereotyping_dominance": 72
+    },
+    "mixed": {
+      "ideological_inequality": 206,
+      "misogyny_non_sexual_violence": 35,
+      "objectification": 70,
+      "sexual_violence": 35,
+      "stereotyping_dominance": 178
+    }
+  }
+}

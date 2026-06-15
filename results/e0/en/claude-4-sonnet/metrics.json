@@ -1,0 +1,651 @@
+{
+  "model": "claude-4-sonnet",
+  "lang": "en",
+  "itemset": "smoke",
+  "status_counts": {
+    "bare|1.1|A": {
+      "parsed_ok": 300
+    },
+    "bare|1.1|B": {
+      "parsed_ok": 300
+    },
+    "bare|1.1|C": {
+      "parsed_ok": 1800
+    },
+    "defined|1.1|A": {
+      "parsed_ok": 300
+    },
+    "defined|1.1|B": {
+      "parsed_ok": 300
+    },
+    "defined|1.1|C": {
+      "parsed_ok": 1800
+    },
+    "bare|1.2|A": {
+      "parsed_ok": 300
+    },
+    "bare|1.2|B": {
+      "parsed_ok": 300
+    },
+    "bare|1.2|C": {
+      "parsed_ok": 1800
+    },
+    "defined|1.2|A": {
+      "parsed_ok": 300
+    },
+    "defined|1.2|B": {
+      "parsed_ok": 300
+    },
+    "defined|1.2|C": {
+      "parsed_ok": 1800
+    },
+    "bare|1.3|A": {
+      "parsed_ok": 300
+    },
+    "bare|1.3|B": {
+      "parsed_ok": 300
+    },
+    "bare|1.3|C": {
+      "parsed_ok": 1800
+    },
+    "defined|1.3|A": {
+      "parsed_ok": 300
+    },
+    "defined|1.3|B": {
+      "parsed_ok": 300
+    },
+    "defined|1.3|C": {
+      "parsed_ok": 1800
+    }
+  },
+  "metrics": {
+    "bare|1.1|A": {
+      "n_items": 300,
+      "mean_jsd": 0.13762164687485617,
+      "mean_kl": 5.762952101542746,
+      "mean_cross_entropy": 6.274381066263487,
+      "f1": {
+        "macro_f1": 0.7515126840841768,
+        "per_class": {
+          "not_sexist": {
+            "precision": 0.7941176470588235,
+            "recall": 0.949748743718593,
+            "f1": 0.8649885583524027,
+            "support": 199
+          },
+          "sexist": {
+            "precision": 0.8387096774193549,
+            "recall": 0.5148514851485149,
+            "f1": 0.6380368098159509,
+            "support": 101
+          }
+        }
+      }
+    },
+    "bare|1.1|B": {
+      "n_items": 300,
+      "mean_jsd": 0.14252804777797076,
+      "mean_kl": 6.191760108223509,
+      "mean_cross_entropy": 6.703189072944366,
+      "f1": {
+        "macro_f1": 0.7528409090909091,
+        "per_class": {
+          "not_sexist": {
+            "precision": 0.7925311203319502,
+            "recall": 0.9597989949748744,
+            "f1": 0.868181818181818,
+            "support": 199
+          },
+          "sexist": {
+            "precision": 0.864406779661017,
+            "recall": 0.504950495049505,
+            "f1": 0.6375000000000001,
+            "support": 101
+          }
+        }
+      }
+    },
+    "defined|1.1|A": {
+      "n_items": 300,
+      "mean_jsd": 0.1526884717956139,
+      "mean_kl": 7.333957540659303,
+      "mean_cross_entropy": 7.8453865053786735,
+      "f1": {
+        "macro_f1": 0.7650481091966883,
+        "per_class": {
+          "not_sexist": {
+            "precision": 0.8016877637130801,
+            "recall": 0.9547738693467337,
+            "f1": 0.871559633027523,
+            "support": 199
+          },
+          "sexist": {
+            "precision": 0.8571428571428571,
+            "recall": 0.5346534653465347,
+            "f1": 0.6585365853658536,
+            "support": 101
+          }
+        }
+      }
+    },
+    "defined|1.1|B": {
+      "n_items": 300,
+      "mean_jsd": 0.16526494374232703,
+      "mean_kl": 8.405024918853929,
+      "mean_cross_entropy": 8.916453883573555,
+      "f1": {
+        "macro_f1": 0.7683592817733852,
+        "per_class": {
+          "not_sexist": {
+            "precision": 0.8025210084033614,
+            "recall": 0.9597989949748744,
+            "f1": 0.874141876430206,
+            "support": 199
+          },
+          "sexist": {
+            "precision": 0.8709677419354839,
+            "recall": 0.5346534653465347,
+            "f1": 0.6625766871165644,
+            "support": 101
+          }
+        }
+      }
+    },
+    "bare|1.2|A": {
+      "n_items": 300,
+      "mean_jsd": 0.20502823241053722,
+      "mean_kl": 10.250710956436171,
+      "mean_cross_entropy": 11.068556746600303,
+      "f1": {
+        "macro_f1": 0.6133377096548703,
+        "per_class": {
+          "not_sexist": {
+            "precision": 0.916256157635468,
+            "recall": 0.8493150684931506,
+            "f1": 0.8815165876777251,
+            "support": 219
+          },
+          "direct": {
+            "precision": 0.6307692307692307,
+            "recall": 0.7592592592592593,
+            "f1": 0.6890756302521008,
+            "support": 54
+          },
+          "reported": {
+            "precision": 0.4,
+            "recall": 0.4,
+            "f1": 0.4000000000000001,
+            "support": 15
+          },
+          "judgemental": {
+            "precision": 0.4117647058823529,
+            "recall": 0.5833333333333334,
+            "f1": 0.4827586206896552,
+            "support": 12
+          }
+        }
+      }
+    },
+    "bare|1.2|B": {
+      "n_items": 300,
+      "mean_jsd": 0.1856605536745444,
+      "mean_kl": 8.078649815593886,
+      "mean_cross_entropy": 8.896495605761059,
+      "f1": {
+        "macro_f1": 0.5469965302035303,
+        "per_class": {
+          "not_sexist": {
+            "precision": 0.905940594059406,
+            "recall": 0.8356164383561644,
+            "f1": 0.8693586698337291,
+            "support": 219
+          },
+          "direct": {
+            "precision": 0.6212121212121212,
+            "recall": 0.7592592592592593,
+            "f1": 0.6833333333333333,
+            "support": 54
+          },
+          "reported": {
+            "precision": 0.5,
+            "recall": 0.3333333333333333,
+            "f1": 0.4,
+            "support": 15
+          },
+          "judgemental": {
+            "precision": 0.18181818181818182,
+            "recall": 0.3333333333333333,
+            "f1": 0.23529411764705885,
+            "support": 12
+          }
+        }
+      }
+    },
+    "defined|1.2|A": {
+      "n_items": 300,
+      "mean_jsd": 0.21219599112910556,
+      "mean_kl": 10.11658513246051,
+      "mean_cross_entropy": 10.934430922624795,
+      "f1": {
+        "macro_f1": 0.5433696281814562,
+        "per_class": {
+          "not_sexist": {
+            "precision": 0.9247311827956989,
+            "recall": 0.7853881278538812,
+            "f1": 0.8493827160493828,
+            "support": 219
+          },
+          "direct": {
+            "precision": 0.6212121212121212,
+            "recall": 0.7592592592592593,
+            "f1": 0.6833333333333333,
+            "support": 54
+          },
+          "reported": {
+            "precision": 0.3125,
+            "recall": 0.3333333333333333,
+            "f1": 0.3225806451612903,
+            "support": 15
+          },
+          "judgemental": {
+            "precision": 0.21875,
+            "recall": 0.5833333333333334,
+            "f1": 0.31818181818181823,
+            "support": 12
+          }
+        }
+      }
+    },
+    "defined|1.2|B": {
+      "n_items": 300,
+      "mean_jsd": 0.1969308913940288,
+      "mean_kl": 8.290604634332164,
+      "mean_cross_entropy": 9.108450424499047,
+      "f1": {
+        "macro_f1": 0.550707741063507,
+        "per_class": {
+          "not_sexist": {
+            "precision": 0.9289617486338798,
+            "recall": 0.776255707762557,
+            "f1": 0.845771144278607,
+            "support": 219
+          },
+          "direct": {
+            "precision": 0.6307692307692307,
+            "recall": 0.7592592592592593,
+            "f1": 0.6890756302521008,
+            "support": 54
+          },
+          "reported": {
+            "precision": 0.3333333333333333,
+            "recall": 0.4,
+            "f1": 0.3636363636363636,
+            "support": 15
+          },
+          "judgemental": {
+            "precision": 0.20588235294117646,
+            "recall": 0.5833333333333334,
+            "f1": 0.3043478260869565,
+            "support": 12
+          }
+        }
+      }
+    },
+    "bare|1.3|A": {
+      "n_items": 300,
+      "mean_jsd": 0.06107966170831851,
+      "mean_kl": null,
+      "f1": {
+        "macro_f1": 0.39222630677291426,
+        "per_class": {
+          "ideological_inequality": {
+            "precision": 0.36538461538461536,
+            "recall": 0.6129032258064516,
+            "f1": 0.45783132530120485,
+            "support": 31
+          },
+          "stereotyping_dominance": {
+            "precision": 0.3018867924528302,
+            "recall": 0.5925925925925926,
+            "f1": 0.4,
+            "support": 27
+          },
+          "objectification": {
+            "precision": 0.6086956521739131,
+            "recall": 0.6666666666666666,
+            "f1": 0.6363636363636365,
+            "support": 21
+          },
+          "sexual_violence": {
+            "precision": 0.5,
+            "recall": 0.13333333333333333,
+            "f1": 0.2105263157894737,
+            "support": 15
+          },
+          "misogyny_non_sexual_violence": {
+            "precision": 0.20833333333333334,
+            "recall": 0.3333333333333333,
+            "f1": 0.25641025641025644,
+            "support": 15
+          }
+        }
+      }
+    },
+    "bare|1.3|B": {
+      "n_items": 300,
+      "mean_jsd": 0.07616513373089176,
+      "mean_kl": null,
+      "f1": {
+        "macro_f1": 0.38440773522757005,
+        "per_class": {
+          "ideological_inequality": {
+            "precision": 0.425,
+            "recall": 0.5483870967741935,
+            "f1": 0.47887323943661964,
+            "support": 31
+          },
+          "stereotyping_dominance": {
+            "precision": 0.32608695652173914,
+            "recall": 0.5555555555555556,
+            "f1": 0.410958904109589,
+            "support": 27
+          },
+          "objectification": {
+            "precision": 0.5416666666666666,
+            "recall": 0.6190476190476191,
+            "f1": 0.5777777777777778,
+            "support": 21
+          },
+          "sexual_violence": {
+            "precision": 0.5,
+            "recall": 0.13333333333333333,
+            "f1": 0.2105263157894737,
+            "support": 15
+          },
+          "misogyny_non_sexual_violence": {
+            "precision": 0.19230769230769232,
+            "recall": 0.3333333333333333,
+            "f1": 0.2439024390243902,
+            "support": 15
+          }
+        }
+      }
+    },
+    "defined|1.3|A": {
+      "n_items": 300,
+      "mean_jsd": 0.055579184192259136,
+      "mean_kl": null,
+      "f1": {
+        "macro_f1": 0.4085782409311821,
+        "per_class": {
+          "ideological_inequality": {
+            "precision": 0.6,
+            "recall": 0.6774193548387096,
+            "f1": 0.6363636363636364,
+            "support": 31
+          },
+          "stereotyping_dominance": {
+            "precision": 0.48,
+            "recall": 0.4444444444444444,
+            "f1": 0.4615384615384615,
+            "support": 27
+          },
+          "objectification": {
+            "precision": 0.42424242424242425,
+            "recall": 0.6666666666666666,
+            "f1": 0.5185185185185185,
+            "support": 21
+          },
+          "sexual_violence": {
+            "precision": 0.3333333333333333,
+            "recall": 0.2,
+            "f1": 0.25,
+            "support": 15
+          },
+          "misogyny_non_sexual_violence": {
+            "precision": 0.15789473684210525,
+            "recall": 0.2,
+            "f1": 0.17647058823529413,
+            "support": 15
+          }
+        }
+      }
+    },
+    "defined|1.3|B": {
+      "n_items": 300,
+      "mean_jsd": 0.06878664410090268,
+      "mean_kl": null,
+      "f1": {
+        "macro_f1": 0.42203564857637677,
+        "per_class": {
+          "ideological_inequality": {
+            "precision": 0.6428571428571429,
+            "recall": 0.5806451612903226,
+            "f1": 0.6101694915254238,
+            "support": 31
+          },
+          "stereotyping_dominance": {
+            "precision": 0.5,
+            "recall": 0.4074074074074074,
+            "f1": 0.44897959183673464,
+            "support": 27
+          },
+          "objectification": {
+            "precision": 0.4375,
+            "recall": 0.6666666666666666,
+            "f1": 0.5283018867924528,
+            "support": 21
+          },
+          "sexual_violence": {
+            "precision": 0.42857142857142855,
+            "recall": 0.2,
+            "f1": 0.27272727272727276,
+            "support": 15
+          },
+          "misogyny_non_sexual_violence": {
+            "precision": 0.23529411764705882,
+            "recall": 0.26666666666666666,
+            "f1": 0.25,
+            "support": 15
+          }
+        }
+      }
+    },
+    "bare|1.1|C": {
+      "n_items": 300,
+      "mean_jsd": 0.18910478291009078,
+      "mean_kl": 10.433348771441542,
+      "mean_cross_entropy": 10.944777736159045,
+      "f1": {
+        "macro_f1": 0.7291945722438996,
+        "per_class": {
+          "not_sexist": {
+            "precision": 0.7773279352226721,
+            "recall": 0.964824120603015,
+            "f1": 0.8609865470852018,
+            "support": 199
+          },
+          "sexist": {
+            "precision": 0.8679245283018868,
+            "recall": 0.45544554455445546,
+            "f1": 0.5974025974025974,
+            "support": 101
+          }
+        }
+      }
+    },
+    "defined|1.1|C": {
+      "n_items": 300,
+      "mean_jsd": 0.1835257389027724,
+      "mean_kl": 9.929639776268923,
+      "mean_cross_entropy": 10.441068740986681,
+      "f1": {
+        "macro_f1": 0.7368837256114218,
+        "per_class": {
+          "not_sexist": {
+            "precision": 0.7827868852459017,
+            "recall": 0.9597989949748744,
+            "f1": 0.8623024830699775,
+            "support": 199
+          },
+          "sexist": {
+            "precision": 0.8571428571428571,
+            "recall": 0.4752475247524752,
+            "f1": 0.6114649681528662,
+            "support": 101
+          }
+        }
+      }
+    },
+    "bare|1.2|C": {
+      "n_items": 300,
+      "mean_jsd": 0.22239969783550673,
+      "mean_kl": 11.67983432296542,
+      "mean_cross_entropy": 12.497680113126671,
+      "f1": {
+        "macro_f1": 0.5358933933933934,
+        "per_class": {
+          "not_sexist": {
+            "precision": 0.9014084507042254,
+            "recall": 0.8767123287671232,
+            "f1": 0.8888888888888888,
+            "support": 219
+          },
+          "direct": {
+            "precision": 0.6666666666666666,
+            "recall": 0.7037037037037037,
+            "f1": 0.6846846846846847,
+            "support": 54
+          },
+          "reported": {
+            "precision": 0.4,
+            "recall": 0.26666666666666666,
+            "f1": 0.32,
+            "support": 15
+          },
+          "judgemental": {
+            "precision": 0.2,
+            "recall": 0.3333333333333333,
+            "f1": 0.25,
+            "support": 12
+          }
+        }
+      }
+    },
+    "defined|1.2|C": {
+      "n_items": 300,
+      "mean_jsd": 0.2453296949383434,
+      "mean_kl": 12.708505665908097,
+      "mean_cross_entropy": 13.526351456069742,
+      "f1": {
+        "macro_f1": 0.5104561747664652,
+        "per_class": {
+          "not_sexist": {
+            "precision": 0.9293478260869565,
+            "recall": 0.7808219178082192,
+            "f1": 0.8486352357320099,
+            "support": 219
+          },
+          "direct": {
+            "precision": 0.6610169491525424,
+            "recall": 0.7222222222222222,
+            "f1": 0.6902654867256637,
+            "support": 54
+          },
+          "reported": {
+            "precision": 0.25,
+            "recall": 0.2,
+            "f1": 0.22222222222222224,
+            "support": 15
+          },
+          "judgemental": {
+            "precision": 0.17777777777777778,
+            "recall": 0.6666666666666666,
+            "f1": 0.2807017543859649,
+            "support": 12
+          }
+        }
+      }
+    },
+    "bare|1.3|C": {
+      "n_items": 300,
+      "mean_jsd": 0.08464269528373422,
+      "mean_kl": null,
+      "f1": {
+        "macro_f1": 0.39644478977812314,
+        "per_class": {
+          "ideological_inequality": {
+            "precision": 0.4117647058823529,
+            "recall": 0.45161290322580644,
+            "f1": 0.4307692307692308,
+            "support": 31
+          },
+          "stereotyping_dominance": {
+            "precision": 0.3148148148148148,
+            "recall": 0.6296296296296297,
+            "f1": 0.4197530864197531,
+            "support": 27
+          },
+          "objectification": {
+            "precision": 0.4444444444444444,
+            "recall": 0.5714285714285714,
+            "f1": 0.5,
+            "support": 21
+          },
+          "sexual_violence": {
+            "precision": 0.42857142857142855,
+            "recall": 0.2,
+            "f1": 0.27272727272727276,
+            "support": 15
+          },
+          "misogyny_non_sexual_violence": {
+            "precision": 0.2916666666666667,
+            "recall": 0.4666666666666667,
+            "f1": 0.35897435897435903,
+            "support": 15
+          }
+        }
+      }
+    },
+    "defined|1.3|C": {
+      "n_items": 300,
+      "mean_jsd": 0.07590125220660587,
+      "mean_kl": null,
+      "f1": {
+        "macro_f1": 0.4506262608762608,
+        "per_class": {
+          "ideological_inequality": {
+            "precision": 0.45454545454545453,
+            "recall": 0.4838709677419355,
+            "f1": 0.46874999999999994,
+            "support": 31
+          },
+          "stereotyping_dominance": {
+            "precision": 0.48,
+            "recall": 0.4444444444444444,
+            "f1": 0.4615384615384615,
+            "support": 27
+          },
+          "objectification": {
+            "precision": 0.42424242424242425,
+            "recall": 0.6666666666666666,
+            "f1": 0.5185185185185185,
+            "support": 21
+          },
+          "sexual_violence": {
+            "precision": 0.6,
+            "recall": 0.4,
+            "f1": 0.48,
+            "support": 15
+          },
+          "misogyny_non_sexual_violence": {
+            "precision": 0.2727272727272727,
+            "recall": 0.4,
+            "f1": 0.3243243243243243,
+            "support": 15
+          }
+        }
+      }
+    }
+  }
+}

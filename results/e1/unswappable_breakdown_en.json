@@ -1,0 +1,73 @@
+{
+  "note": "post @mention-exclusion fix (e1-fix-mention-exclusion.md)",
+  "before_unswappable": 87,
+  "after_unswappable": 88,
+  "sample_n": 195,
+  "rate_after": 0.451,
+  "delta": {
+    "items_flipped_swappable_to_unswappable": 1,
+    "handle_internal_token_no_longer_altered": 1,
+    "net_change_in_unswappable": 1
+  },
+  "primary_totals": {
+    "abstract": 18,
+    "none": 53,
+    "slur": 17
+  },
+  "bucket_multilabel": {
+    "abstract": 19,
+    "none": 53,
+    "name": 1,
+    "slur": 17
+  },
+  "stratum_grid": {
+    "high": {
+      "ideological_inequality": 3,
+      "misogyny_non_sexual_violence": 7,
+      "objectification": 7,
+      "sexual_violence": 8,
+      "stereotyping_dominance": 6
+    },
+    "low": {
+      "ideological_inequality": 3,
+      "misogyny_non_sexual_violence": 3,
+      "objectification": 9,
+      "sexual_violence": 6,
+      "stereotyping_dominance": 4
+    },
+    "mixed": {
+      "ideological_inequality": 6,
+      "misogyny_non_sexual_violence": 9,
+      "objectification": 6,
+      "sexual_violence": 7,
+      "stereotyping_dominance": 4
+    }
+  },
+  "primary_by_category": {
+    "ideological_inequality": {
+      "abstract": 7,
+      "none": 3,
+      "slur": 2
+    },
+    "misogyny_non_sexual_violence": {
+      "abstract": 6,
+      "none": 6,
+      "slur": 7
+    },
+    "objectification": {
+      "abstract": 2,
+      "none": 14,
+      "slur": 6
+    },
+    "sexual_violence": {
+      "abstract": 1,
+      "none": 18,
+      "slur": 2
+    },
+    "stereotyping_dominance": {
+      "abstract": 2,
+      "none": 12,
+      "slur": 0
+    }
+  }
+}

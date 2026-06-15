@@ -1,0 +1,404 @@
+[
+  {
+    "regression_id": "REG-EN-01",
+    "exist_item_id": "202709",
+    "language": "en",
+    "slot_type": "clear_sexist",
+    "text": "Freezing my tits off right now someone please cuddle me and validate my existence with money.",
+    "gold_detect_dist": {
+      "not_sexist": 0.16666666666666663,
+      "sexist": 0.8333333333333334
+    },
+    "gold_intent_dist": {
+      "not_sexist": 0.16666666666666666,
+      "direct": 0.6666666666666666,
+      "reported": 0.16666666666666666,
+      "judgemental": 0.0
+    },
+    "gold_category_dist": {
+      "ideological_inequality": 0.5,
+      "stereotyping_dominance": 0.5,
+      "objectification": 0.6666666666666666,
+      "sexual_violence": 0.0,
+      "misogyny_non_sexual_violence": 0.0
+    },
+    "notes": "high-agreement sexist, direct-leaning intent"
+  },
+  {
+    "regression_id": "REG-EN-02",
+    "exist_item_id": "201329",
+    "language": "en",
+    "slot_type": "clear_sexist",
+    "text": "Little  girls  can't  have  shit  in  this  world  bc  boys  will  make  fun  of  themTired",
+    "gold_detect_dist": {
+      "not_sexist": 0.0,
+      "sexist": 1.0
+    },
+    "gold_intent_dist": {
+      "not_sexist": 0.0,
+      "direct": 0.3333333333333333,
+      "reported": 0.3333333333333333,
+      "judgemental": 0.3333333333333333
+    },
+    "gold_category_dist": {
+      "ideological_inequality": 0.6666666666666666,
+      "stereotyping_dominance": 0.6666666666666666,
+      "objectification": 0.16666666666666666,
+      "sexual_violence": 0.0,
+      "misogyny_non_sexual_violence": 0.0
+    },
+    "notes": "high-agreement sexist, reported-leaning intent"
+  },
+  {
+    "regression_id": "REG-EN-03",
+    "exist_item_id": "201920",
+    "language": "en",
+    "slot_type": "clear_sexist",
+    "text": "And if you're so worried about sex work propagating the objectification of women and commodifying women, are you so sure that's inherently the case with creator owned, creator controlled porn? /17",
+    "gold_detect_dist": {
+      "not_sexist": 0.16666666666666663,
+      "sexist": 0.8333333333333334
+    },
+    "gold_intent_dist": {
+      "not_sexist": 0.16666666666666666,
+      "direct": 0.0,
+      "reported": 0.0,
+      "judgemental": 0.8333333333333334
+    },
+    "gold_category_dist": {
+      "ideological_inequality": 0.3333333333333333,
+      "stereotyping_dominance": 0.16666666666666666,
+      "objectification": 0.3333333333333333,
+      "sexual_violence": 0.0,
+      "misogyny_non_sexual_violence": 0.0
+    },
+    "notes": "high-agreement sexist, judgemental-leaning intent"
+  },
+  {
+    "regression_id": "REG-EN-04",
+    "exist_item_id": "202419",
+    "language": "en",
+    "slot_type": "clear_not",
+    "text": "@tonypierson2 Social media. ‘Fans’ can’t wait to slag off their own after a defeat.",
+    "gold_detect_dist": {
+      "not_sexist": 1.0,
+      "sexist": 0.0
+    },
+    "gold_intent_dist": {
+      "not_sexist": 1.0,
+      "direct": 0.0,
+      "reported": 0.0,
+      "judgemental": 0.0
+    },
+    "gold_category_dist": {
+      "ideological_inequality": 0.0,
+      "stereotyping_dominance": 0.0,
+      "objectification": 0.0,
+      "sexual_violence": 0.0,
+      "misogyny_non_sexual_violence": 0.0
+    },
+    "notes": "high-agreement not sexist"
+  },
+  {
+    "regression_id": "REG-EN-05",
+    "exist_item_id": "203171",
+    "language": "en",
+    "slot_type": "clear_not",
+    "text": "It’s 100% okay for you to yell at your parents if they are messing up. Don’t let bigotry slide.",
+    "gold_detect_dist": {
+      "not_sexist": 1.0,
+      "sexist": 0.0
+    },
+    "gold_intent_dist": {
+      "not_sexist": 1.0,
+      "direct": 0.0,
+      "reported": 0.0,
+      "judgemental": 0.0
+    },
+    "gold_category_dist": {
+      "ideological_inequality": 0.0,
+      "stereotyping_dominance": 0.0,
+      "objectification": 0.0,
+      "sexual_violence": 0.0,
+      "misogyny_non_sexual_violence": 0.0
+    },
+    "notes": "high-agreement not sexist"
+  },
+  {
+    "regression_id": "REG-EN-06",
+    "exist_item_id": "400317",
+    "language": "en",
+    "slot_type": "clear_not",
+    "text": "@HEEEEEEEEEEE_ worse than shit coins pnd at least shitcoins can get out down 90%",
+    "gold_detect_dist": {
+      "not_sexist": 0.8333333333333334,
+      "sexist": 0.16666666666666666
+    },
+    "gold_intent_dist": {
+      "not_sexist": 0.8333333333333334,
+      "direct": 0.16666666666666666,
+      "reported": 0.0,
+      "judgemental": 0.0
+    },
+    "gold_category_dist": {
+      "ideological_inequality": 0.0,
+      "stereotyping_dominance": 0.0,
+      "objectification": 0.16666666666666666,
+      "sexual_violence": 0.0,
+      "misogyny_non_sexual_violence": 0.0
+    },
+    "notes": "high-agreement not sexist"
+  },
+  {
+    "regression_id": "REG-EN-07",
+    "exist_item_id": "202505",
+    "language": "en",
+    "slot_type": "hard",
+    "text": "you don’t have “daddy issues”, your dad has issues but society makes it your problem",
+    "gold_detect_dist": {
+      "not_sexist": 0.5,
+      "sexist": 0.5
+    },
+    "gold_intent_dist": {
+      "not_sexist": 0.5,
+      "direct": 0.0,
+      "reported": 0.3333333333333333,
+      "judgemental": 0.16666666666666666
+    },
+    "gold_category_dist": {
+      "ideological_inequality": 0.3333333333333333,
+      "stereotyping_dominance": 0.16666666666666666,
+      "objectification": 0.0,
+      "sexual_violence": 0.0,
+      "misogyny_non_sexual_violence": 0.0
+    },
+    "notes": "near-maximal detection disagreement (3-3)"
+  },
+  {
+    "regression_id": "REG-EN-08",
+    "exist_item_id": "200620",
+    "language": "en",
+    "slot_type": "hard",
+    "text": "Yo said “make room for the cock block, everybody” 😂😂😂😂",
+    "gold_detect_dist": {
+      "not_sexist": 0.5,
+      "sexist": 0.5
+    },
+    "gold_intent_dist": {
+      "not_sexist": 0.5,
+      "direct": 0.5,
+      "reported": 0.0,
+      "judgemental": 0.0
+    },
+    "gold_category_dist": {
+      "ideological_inequality": 0.0,
+      "stereotyping_dominance": 0.16666666666666666,
+      "objectification": 0.16666666666666666,
+      "sexual_violence": 0.3333333333333333,
+      "misogyny_non_sexual_violence": 0.16666666666666666
+    },
+    "notes": "near-maximal detection disagreement (3-3)"
+  },
+  {
+    "regression_id": "REG-EN-09",
+    "exist_item_id": "201063",
+    "language": "en",
+    "slot_type": "hard",
+    "text": "@nadaflower10 @ELLEUK Why does Meghan's title bother you so much? feminism is first and foremost the freedom for a woman to make her choices. if she wants the title for her children because the law of the monarchy allows it, what has that to do with her convictions? you're the lobotomized African.",
+    "gold_detect_dist": {
+      "not_sexist": 0.5,
+      "sexist": 0.5
+    },
+    "gold_intent_dist": {
+      "not_sexist": 0.5,
+      "direct": 0.0,
+      "reported": 0.16666666666666666,
+      "judgemental": 0.3333333333333333
+    },
+    "gold_category_dist": {
+      "ideological_inequality": 0.5,
+      "stereotyping_dominance": 0.0,
+      "objectification": 0.0,
+      "sexual_violence": 0.0,
+      "misogyny_non_sexual_violence": 0.16666666666666666
+    },
+    "notes": "near-maximal detection disagreement (3-3)"
+  },
+  {
+    "regression_id": "REG-EN-10",
+    "exist_item_id": "400069",
+    "language": "en",
+    "slot_type": "category_ideological_inequality",
+    "text": "I see this women bashing agenda going on too. So now all women are criminals and liars because of #AmberHeard. Those people are just as much psychos. 🚩🚩🚩🚩🚩they couldn't wait for ONE- woman to f*ck up, so they can blame ALL WOMEN. Yikes https://t.co/rEbJ0NnSSr",
+    "gold_detect_dist": {
+      "not_sexist": 0.0,
+      "sexist": 1.0
+    },
+    "gold_intent_dist": {
+      "not_sexist": 0.0,
+      "direct": 0.16666666666666666,
+      "reported": 0.16666666666666666,
+      "judgemental": 0.6666666666666666
+    },
+    "gold_category_dist": {
+      "ideological_inequality": 0.6666666666666666,
+      "stereotyping_dominance": 0.5,
+      "objectification": 0.5,
+      "sexual_violence": 0.16666666666666666,
+      "misogyny_non_sexual_violence": 0.6666666666666666
+    },
+    "notes": "high agreement on ideological_inequality"
+  },
+  {
+    "regression_id": "REG-EN-11",
+    "exist_item_id": "400456",
+    "language": "en",
+    "slot_type": "category_stereotyping_dominance",
+    "text": "@gambo_ii Women don’t have to work for their own money anymore?? Men have to momo them ?? Lmao .. monya nkwasia sika bia na moka ns3m fuu",
+    "gold_detect_dist": {
+      "not_sexist": 0.16666666666666663,
+      "sexist": 0.8333333333333334
+    },
+    "gold_intent_dist": {
+      "not_sexist": 0.16666666666666666,
+      "direct": 0.5,
+      "reported": 0.0,
+      "judgemental": 0.3333333333333333
+    },
+    "gold_category_dist": {
+      "ideological_inequality": 0.3333333333333333,
+      "stereotyping_dominance": 0.5,
+      "objectification": 0.16666666666666666,
+      "sexual_violence": 0.0,
+      "misogyny_non_sexual_violence": 0.16666666666666666
+    },
+    "notes": "high agreement on stereotyping_dominance"
+  },
+  {
+    "regression_id": "REG-EN-12",
+    "exist_item_id": "202912",
+    "language": "en",
+    "slot_type": "category_objectification",
+    "text": "Lately my twitter is saying, be a whore, move to london",
+    "gold_detect_dist": {
+      "not_sexist": 0.33333333333333337,
+      "sexist": 0.6666666666666666
+    },
+    "gold_intent_dist": {
+      "not_sexist": 0.3333333333333333,
+      "direct": 0.3333333333333333,
+      "reported": 0.16666666666666666,
+      "judgemental": 0.16666666666666666
+    },
+    "gold_category_dist": {
+      "ideological_inequality": 0.0,
+      "stereotyping_dominance": 0.0,
+      "objectification": 0.5,
+      "sexual_violence": 0.3333333333333333,
+      "misogyny_non_sexual_violence": 0.16666666666666666
+    },
+    "notes": "high agreement on objectification"
+  },
+  {
+    "regression_id": "REG-EN-13",
+    "exist_item_id": "202525",
+    "language": "en",
+    "slot_type": "category_sexual_violence",
+    "text": "@jjouvenal The saddest thing is this young MAN has LEARNED how to assault and sodomize.Very sad that he himself has probably endured who knows how much abuse,as research has shown many who struggle with identity issues have encountered abuse.And we wonder why all the confusion w/our youth😔",
+    "gold_detect_dist": {
+      "not_sexist": 0.5,
+      "sexist": 0.5
+    },
+    "gold_intent_dist": {
+      "not_sexist": 0.5,
+      "direct": 0.16666666666666666,
+      "reported": 0.3333333333333333,
+      "judgemental": 0.0
+    },
+    "gold_category_dist": {
+      "ideological_inequality": 0.0,
+      "stereotyping_dominance": 0.0,
+      "objectification": 0.0,
+      "sexual_violence": 0.5,
+      "misogyny_non_sexual_violence": 0.0
+    },
+    "notes": "high agreement on sexual_violence"
+  },
+  {
+    "regression_id": "REG-EN-14",
+    "exist_item_id": "201513",
+    "language": "en",
+    "slot_type": "category_misogyny_non_sexual_violence",
+    "text": "I hate women, its unnatural and uncivilized and high and it gets on the Wookie.",
+    "gold_detect_dist": {
+      "not_sexist": 0.0,
+      "sexist": 1.0
+    },
+    "gold_intent_dist": {
+      "not_sexist": 0.0,
+      "direct": 0.6666666666666666,
+      "reported": 0.0,
+      "judgemental": 0.3333333333333333
+    },
+    "gold_category_dist": {
+      "ideological_inequality": 0.3333333333333333,
+      "stereotyping_dominance": 0.16666666666666666,
+      "objectification": 0.16666666666666666,
+      "sexual_violence": 0.0,
+      "misogyny_non_sexual_violence": 0.5
+    },
+    "notes": "high agreement on misogyny_non_sexual_violence"
+  },
+  {
+    "regression_id": "REG-EN-15",
+    "exist_item_id": "202390",
+    "language": "en",
+    "slot_type": "definition_sensitive",
+    "text": "@ArtValley818_ U mean Barbera the 9th grade dropout?...just like that skank cher, another 9th grade dropout..Remember how they kept saying Pres Bush was dumb...oh the irony..she better get right w Jesus",
+    "gold_detect_dist": {
+      "not_sexist": 0.33333333333333337,
+      "sexist": 0.6666666666666666
+    },
+    "gold_intent_dist": {
+      "not_sexist": 0.3333333333333333,
+      "direct": 0.3333333333333333,
+      "reported": 0.0,
+      "judgemental": 0.3333333333333333
+    },
+    "gold_category_dist": {
+      "ideological_inequality": 0.5,
+      "stereotyping_dominance": 0.3333333333333333,
+      "objectification": 0.16666666666666666,
+      "sexual_violence": 0.0,
+      "misogyny_non_sexual_violence": 0.0
+    },
+    "needs_review": true,
+    "notes": "describes/criticises sexism: defined should pull SEXIST, bare may not"
+  },
+  {
+    "regression_id": "REG-EN-16",
+    "exist_item_id": "200413",
+    "language": "en",
+    "slot_type": "definition_sensitive",
+    "text": "@FaZeSway Sway you ain’t neva touched a bitch on yo life",
+    "gold_detect_dist": {
+      "not_sexist": 0.33333333333333337,
+      "sexist": 0.6666666666666666
+    },
+    "gold_intent_dist": {
+      "not_sexist": 0.3333333333333333,
+      "direct": 0.3333333333333333,
+      "reported": 0.0,
+      "judgemental": 0.3333333333333333
+    },
+    "gold_category_dist": {
+      "ideological_inequality": 0.0,
+      "stereotyping_dominance": 0.16666666666666666,
+      "objectification": 0.16666666666666666,
+      "sexual_violence": 0.16666666666666666,
+      "misogyny_non_sexual_violence": 0.3333333333333333
+    },
+    "needs_review": true,
+    "notes": "describes/criticises sexism: defined should pull SEXIST, bare may not"
+  }
+]

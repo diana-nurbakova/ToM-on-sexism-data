@@ -1,0 +1,116 @@
+{
+  "_meta": {
+    "purpose": "Per-item answer keys for the Strachan ToM battery, loaded by src/llm_audit/e3/strachan.py (load_keys). Keyed by task name then item number (string), matching the cell id format '<task>#<item>'.",
+    "key_of_record": "Strachan-simplified key (strachan-scoring-spec.md §2-3). These are the per-item targets our reported H7b scores use; the reference key differs only in scoring procedure (control-question gating, 0/1/2 vs 1/0), not in the per-item correct answer, and is documented in the spec.",
+    "source_instruments": {
+      "Hinting": "Corcoran, Mercer & Frith (1995); per-item meaning+action model answers from Gil et al. (2012) Rev. Psiquiatr. Salud Ment. 5(2):79-88, Appendix A. This is the one external input not in the OSF release.",
+      "False Belief": "Wimmer & Perner (1983); Baron-Cohen et al. (1985); Strachan format from Bernstein, Thornton & Sommerville (2011).",
+      "Irony": "adapted from Au-Yeung, Kaakinen, Liversedge & Benson (2015), Autism Research 8(6):749-760.",
+      "Faux Pas": "Stone, Baron-Cohen & Knight (1998); Baron-Cohen et al. (1999).",
+      "Strange Stories": "Happe (1994); White et al. (2009). OSF-released coding criteria used directly; see data/strachan/strachan_items.json -> strange_stories_coding (not duplicated here)."
+    },
+    "scoring_notes": {
+      "False Belief": "Rule-based location naming (score_false_belief): 1 iff the answer names correct_location and not distractor_location. The two lists (A/B) counterbalance each item between a false-belief case (target object moved -> correct = ORIGINAL location) and a true-belief control (a different object moved -> correct = CURRENT/actual location, which equals where the protagonist left it). 'type' records which. The ice-cube item (A#7 == B#7) is a constant catch story with a surprise yes/no question, not a location question (question_type=surprise_yesno).",
+      "Irony": "Rule-based yes/no (score_irony): each vignette ends with a 'Did X think <literal claim>?' question. For ironic items the situation contradicts the utterance so the correct answer is the OPPOSITE of the literal claim (No); for sincere items it is the literal reading (Yes). Lists A/B counterbalance each item between ironic and sincere. Scoring rewards discrimination; a constant-Yes or constant-No responder is not credited.",
+      "Faux Pas": "LLM-judge over the FINAL speaker-awareness question only; correct = 'No' (speaker did not know / did not remember). Item 1 (story competition) is coded leniently: accept 'Yes' as well (see 'lenient').",
+      "Hinting": "LLM-judge; score 1 only if the answer identifies BOTH the intended meaning and the concrete requested action. 'target' is passed to build_judge_prompt as the meaning+action target. Provenance split (10 original Corcoran/Gil vs 6 new Strachan) is best-effort; the load-bearing field is 'target'."
+    }
+  },
+
+  "keys": {
+    "Hinting": {
+      "1": {"meaning": "George is hot, tired and thirsty after the journey", "action": "wants Angela to offer him a drink (and pause the business talk)", "target": "George means he is hot and thirsty from the journey; he wants Angela to offer him a drink.", "source": "corcoran_gil_2012"},
+      "2": {"meaning": "Gordon wants the M&Ms / likes them", "action": "wants his mother to buy him the M&Ms", "target": "Gordon means he wants the M&Ms; he wants his mother to buy them for him.", "source": "strachan_2024_new"},
+      "3": {"meaning": "Anne left the bath dirty and did not clean it", "action": "wants Anne to come and clean the bath", "target": "Melissa means Anne left the bath dirty; she wants Anne to come and clean it.", "source": "corcoran_gil_2012"},
+      "4": {"meaning": "the blue shirt he wants to wear is wrinkled/creased", "action": "wants Jane to iron the blue shirt", "target": "Paul means the blue shirt is wrinkled; he wants Jane to iron it for him.", "source": "corcoran_gil_2012"},
+      "5": {"meaning": "Lucy has no money but wants to go out", "action": "wants David to lend or give her money (or pay for her)", "target": "Lucy means she has no money; she wants David to lend her some money so she can go out.", "source": "corcoran_gil_2012"},
+      "6": {"meaning": "Rebecca would like a dog", "action": "wants her Dad to get/buy her a dog for her birthday", "target": "Rebecca means she wants a dog; she wants her Dad to buy her one for her birthday.", "source": "corcoran_gil_2012"},
+      "7": {"meaning": "Jordan is disappointed and has the time/desire to run the project", "action": "wants Richard to let him (assign him to) run the project", "target": "Jordan means he is disappointed and free to do it; he wants Richard to give him the project to run.", "source": "corcoran_gil_2012"},
+      "8": {"meaning": "the shelves are still packed / not put up", "action": "wants Michael to unpack and put up the shelves", "target": "Ben means the shelves are not unpacked; he wants Michael to unpack (and put up) them.", "source": "corcoran_gil_2012"},
+      "9": {"meaning": "Jessica prefers the red train Max has", "action": "wants Max to swap and give her the red train", "target": "Jessica means she would rather have the red train; she wants Max to swap trains with her.", "source": "strachan_2024_new"},
+      "10": {"meaning": "the suitcases are heavy and hard to carry", "action": "wants John to help carry the suitcases", "target": "Alex means the suitcases are heavy; they want John to help carry them.", "source": "corcoran_gil_2012"},
+      "11": {"meaning": "Paula's phone is out of battery and needs charging", "action": "wants to borrow Wendy's phone charger", "target": "Paula means her phone needs charging; she wants to borrow Wendy's charger.", "source": "strachan_2024_new"},
+      "12": {"meaning": "the gratuity/tip is not part of the bill", "action": "wants Kevin and Stacey to leave him a tip", "target": "The waiter means the tip is not included; he wants them to leave him a tip.", "source": "corcoran_gil_2012"},
+      "13": {"meaning": "John has no way to get home dry in the rain", "action": "wants Sam to offer him a lift home in the car", "target": "John means he has no way home in the rain; he wants Sam to offer him a lift.", "source": "strachan_2024_new"},
+      "14": {"meaning": "Mary is tired and needs to sit down", "action": "wants the young man to give up his seat for her", "target": "Mary means her legs are tired and she needs a seat; she wants the young man to give up his seat.", "source": "corcoran_gil_2012"},
+      "15": {"meaning": "the bag of groceries is heavy and hurting Max's back", "action": "wants Karl to take a turn carrying the bag", "target": "Max means the groceries are heavy on his bad back; he wants Karl to take a turn carrying the bag.", "source": "strachan_2024_new"},
+      "16": {"meaning": "Jenny's mum loved those Japanese candies and would like them again", "action": "wants Jenny to bring her those candies back from Japan", "target": "Jenny's mum means she would love those candies again; she wants Jenny to bring some back from Japan.", "source": "strachan_2024_new"}
+    },
+
+    "False Belief - A": {
+      "1": {"type": "true_belief", "correct_location": "top drawer", "distractor_location": "bottom drawer", "note": "Waffles (a different item) moved; ice cream stays in the top drawer of the freezer."},
+      "2": {"type": "true_belief", "correct_location": "sandcastle", "distractor_location": "bucket", "note": "A Lego piece (different item) moved; the red toy dog stays in the sand next to the sandcastle."},
+      "3": {"type": "false_belief", "correct_location": "daffodils", "distractor_location": "roses", "note": "The trowel itself is moved from next to the daffodils to next to the roses; father believes daffodils."},
+      "4": {"type": "false_belief", "correct_location": "playbox", "distractor_location": "sofa", "note": "The toy truck itself is moved to under the sofa; Todd believes the playbox."},
+      "5": {"type": "true_belief", "correct_location": "tmp", "distractor_location": "photos", "note": "A video (different item) is moved to /shared_folder/photos; the photo stays in /shared_folder/tmp."},
+      "6": {"type": "false_belief", "correct_location": "side pocket", "distractor_location": "front pocket", "note": "The tickets themselves are moved to the front pocket; Anna believes the side pocket."},
+      "7": {"type": "catch", "question_type": "surprise_yesno", "correct": "yes", "note": "Identical in lists A and B. Surprise question, not a location question: Michael falsely believes the ice cube is still in his drink, so he WILL be surprised it is gone. Score with the yes/no path, not score_false_belief."},
+      "8": {"type": "true_belief", "correct_location": "top drawer", "distractor_location": "bottom drawer", "note": "The toy train (different item) is moved; the coloured pencils stay in the top drawer."},
+      "9": {"type": "false_belief", "correct_location": "living room", "distractor_location": "kitchen", "note": "Grandmother moves the biscuits to the kitchen while Grace is NOT visiting; Grace believes the tin in the living room."}
+    },
+
+    "False Belief - B": {
+      "1": {"type": "false_belief", "correct_location": "top drawer", "distractor_location": "bottom drawer", "note": "The ice cream itself is moved to the bottom drawer; Max believes the top drawer."},
+      "2": {"type": "false_belief", "correct_location": "sandcastle", "distractor_location": "bucket", "note": "Anne finds and moves the red toy dog itself under her bucket; Sally believes next to the sandcastle."},
+      "3": {"type": "true_belief", "correct_location": "daffodils", "distractor_location": "roses", "note": "Some scissors (different item) are moved next to the roses; the trowel stays next to the daffodils."},
+      "4": {"type": "true_belief", "correct_location": "playbox", "distractor_location": "sofa", "note": "An action figure (different item) is moved under the sofa; the toy truck stays in the playbox."},
+      "5": {"type": "false_belief", "correct_location": "tmp", "distractor_location": "photos", "note": "Helen finds and moves the photo itself to /shared_folder/photos; Gary believes /shared_folder/tmp."},
+      "6": {"type": "true_belief", "correct_location": "side pocket", "distractor_location": "front pocket", "note": "A compact mirror (different item) is put in the front pocket; the tickets stay in the side pocket."},
+      "7": {"type": "catch", "question_type": "surprise_yesno", "correct": "yes", "note": "Identical to A#7. Michael falsely believes the ice cube is still in his drink, so he WILL be surprised."},
+      "8": {"type": "false_belief", "correct_location": "top drawer", "distractor_location": "bottom drawer", "note": "The coloured pencils themselves are moved to the bottom drawer; Martha believes the top drawer."},
+      "9": {"type": "true_belief", "correct_location": "kitchen", "distractor_location": "living room", "note": "Grace is IN the living room when grandmother moves the biscuits to the kitchen, so she sees it: true belief -> kitchen."}
+    },
+
+    "Irony - A": {
+      "1": {"polarity": "ironic", "correct": "no", "literal_claim": "people want to hear the politician speak", "note": "Almost no attendees -> ironic."},
+      "2": {"polarity": "ironic", "correct": "no", "literal_claim": "the readers liked the story", "note": "Huge pile of hate mail -> ironic."},
+      "3": {"polarity": "sincere", "correct": "yes", "literal_claim": "people were keen on coming to the party", "note": "Crowded function hall -> sincere."},
+      "4": {"polarity": "ironic", "correct": "no", "literal_claim": "the students got good grades", "note": "Long list of 'F's -> ironic."},
+      "5": {"polarity": "ironic", "correct": "no", "literal_claim": "people rushed to buy Ann's new book", "note": "Book hadn't sold well -> ironic."},
+      "6": {"polarity": "sincere", "correct": "yes", "literal_claim": "Michael is smart", "note": "Highest grade in class -> sincere."},
+      "7": {"polarity": "ironic", "correct": "no", "literal_claim": "his son was revising hard", "note": "Billy absorbed in a computer game -> ironic."},
+      "8": {"polarity": "sincere", "correct": "yes", "literal_claim": "the girls really fancy Jamie", "note": "Received many cards -> sincere."},
+      "9": {"polarity": "sincere", "correct": "yes", "literal_claim": "the villagers are well fed", "note": "Overweight children -> sincere."},
+      "10": {"polarity": "sincere", "correct": "yes", "literal_claim": "people are desperate to hear Justin sing", "note": "Large number of tickets sold -> sincere."},
+      "11": {"polarity": "ironic", "correct": "no", "literal_claim": "Lisa's boyfriend cares about her", "note": "No flowers by the bed -> ironic."},
+      "12": {"polarity": "sincere", "correct": "yes", "literal_claim": "people enjoyed their food", "note": "Stack of empty plates -> sincere."}
+    },
+
+    "Irony - B": {
+      "1": {"polarity": "sincere", "correct": "yes", "literal_claim": "people want to hear the politician speak", "note": "Hundreds of attendees -> sincere."},
+      "2": {"polarity": "sincere", "correct": "yes", "literal_claim": "the readers liked the story", "note": "Huge pile of fan mail -> sincere."},
+      "3": {"polarity": "ironic", "correct": "no", "literal_claim": "people were keen on coming to the party", "note": "Empty function hall -> ironic."},
+      "4": {"polarity": "sincere", "correct": "yes", "literal_claim": "the students got good grades", "note": "Long list of 'A's -> sincere."},
+      "5": {"polarity": "sincere", "correct": "yes", "literal_claim": "people rushed to buy Ann's new book", "note": "Book had sold well -> sincere."},
+      "6": {"polarity": "ironic", "correct": "no", "literal_claim": "Michael is smart", "note": "Lowest grade in class -> ironic."},
+      "7": {"polarity": "sincere", "correct": "yes", "literal_claim": "his son was revising hard", "note": "Billy absorbed in his history textbook -> sincere."},
+      "8": {"polarity": "ironic", "correct": "no", "literal_claim": "the girls really fancy Jamie", "note": "Received no cards -> ironic."},
+      "9": {"polarity": "ironic", "correct": "no", "literal_claim": "the villagers are well fed", "note": "Underweight children -> ironic."},
+      "10": {"polarity": "ironic", "correct": "no", "literal_claim": "people are desperate to hear Justin sing", "note": "Small number of tickets sold -> ironic."},
+      "11": {"polarity": "sincere", "correct": "yes", "literal_claim": "Lisa's boyfriend cares about her", "note": "Some flowers by the bed -> sincere."},
+      "12": {"polarity": "ironic", "correct": "no", "literal_claim": "people enjoyed their food", "note": "Huge piles of leftovers -> ironic."}
+    },
+
+    "Faux Pas": {
+      "1": {"final_question": "Did Alice realize that Emma hadn't heard the results of the competition?", "correct": "no", "lenient": true, "accept": ["no", "yes"], "note": "Story-competition item; spec §3.1 codes this leniently (accept 'Yes' as well as 'No'). Alice did not realize Emma was unaware -> canonical 'No', but 'Yes' is accepted."},
+      "2": {"final_question": "Did Clare know that Robert's Mum was a dinner lady?", "correct": "no", "note": "Claire insulted dinner ladies, unaware Robert's mum is one."},
+      "3": {"final_question": "Did Joe Know that Mike was in the cubicles?", "correct": "no", "note": "Joe insulted Mike, unaware Mike was in the cubicle."},
+      "4": {"final_question": "Did Uncle Tom know that the pie was an apple pie?", "correct": "no", "note": "Tom said he hates apple pie, unaware it was apple."},
+      "5": {"final_question": "Did Richard remember James had given him the toy aeroplane for his birthday?", "correct": "no", "note": "Richard forgot James had given him the toy aeroplane."},
+      "6": {"final_question": "Did Mary know that Sally was a little girl?", "correct": "no", "note": "Mary called Sally a little boy, unaware Sally was a girl."},
+      "7": {"final_question": "Did Becky know Simon was sick?", "correct": "no", "note": "Becky offered a joke about sick people, unaware Simon was ill."},
+      "8": {"final_question": "Did Tim know Jack was a customer?", "correct": "no", "note": "Tim asked Jack to mop up, unaware Jack was a fellow customer not staff."},
+      "9": {"final_question": "Did Lisa know the curtains were new?", "correct": "no", "note": "Lisa insulted the curtains, unaware they were newly bought."},
+      "10": {"final_question": "Did Nicky remember the party was a surprise?", "correct": "no", "note": "Nicky let the surprise party slip, not remembering it was secret."},
+      "11": {"final_question": "Did Emma know that Gareth wrote the song on the radio?", "correct": "no", "note": "Emma said she hates the song, unaware Gareth wrote/sang it."},
+      "12": {"final_question": "Did Sophie know that the car was Jeremy's?", "correct": "no", "note": "Sophie insulted the car, unaware it was Jeremy's."},
+      "13": {"final_question": "Did Matt know that Jane had bought him sweets?", "correct": "no", "note": "Matt disparaged sweets as gifts, unaware Jane had bought him sweets."},
+      "14": {"final_question": "Did Olivia's son know that Laura painted the painting?", "correct": "no", "note": "The son insulted his mum's taste in paintings, unaware Laura painted it."},
+      "15": {"final_question": "Did Tom know that the new restaurant belonged to Jim's parents?", "correct": "no", "note": "Tom badmouthed the restaurant, unaware it belonged to Jim's parents."}
+    },
+
+    "Strange Stories": {
+      "_pointer": "Released OSF coding criteria are in data/strachan/strachan_items.json -> strange_stories_coding (2pt/1pt/0pt per item, in item order). Not duplicated here; the judge reads them from the items JSON."
+    }
+  }
+}

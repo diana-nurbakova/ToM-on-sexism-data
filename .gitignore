@@ -19,3 +19,8 @@ specs/
 .claude/
 
 soa/
+
+.env
+
+# LLM audit raw call logs (large, append-only). Derived metrics/regression set are kept.
+results/**/*.jsonl

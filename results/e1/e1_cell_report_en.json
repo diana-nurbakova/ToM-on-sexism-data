@@ -1,0 +1,87 @@
+{
+  "n": 195,
+  "per_cell_target": 13,
+  "shortfalls": [],
+  "cells": [
+    {
+      "strat_category": "ideological_inequality",
+      "agreement_bin": "high",
+      "n": 13
+    },
+    {
+      "strat_category": "ideological_inequality",
+      "agreement_bin": "low",
+      "n": 13
+    },
+    {
+      "strat_category": "ideological_inequality",
+      "agreement_bin": "mixed",
+      "n": 13
+    },
+    {
+      "strat_category": "misogyny_non_sexual_violence",
+      "agreement_bin": "high",
+      "n": 13
+    },
+    {
+      "strat_category": "misogyny_non_sexual_violence",
+      "agreement_bin": "low",
+      "n": 13
+    },
+    {
+      "strat_category": "misogyny_non_sexual_violence",
+      "agreement_bin": "mixed",
+      "n": 13
+    },
+    {
+      "strat_category": "objectification",
+      "agreement_bin": "high",
+      "n": 13
+    },
+    {
+      "strat_category": "objectification",
+      "agreement_bin": "low",
+      "n": 13
+    },
+    {
+      "strat_category": "objectification",
+      "agreement_bin": "mixed",
+      "n": 13
+    },
+    {
+      "strat_category": "sexual_violence",
+      "agreement_bin": "high",
+      "n": 13
+    },
+    {
+      "strat_category": "sexual_violence",
+      "agreement_bin": "low",
+      "n": 13
+    },
+    {
+      "strat_category": "sexual_violence",
+      "agreement_bin": "mixed",
+      "n": 13
+    },
+    {
+      "strat_category": "stereotyping_dominance",
+      "agreement_bin": "high",
+      "n": 13
+    },
+    {
+      "strat_category": "stereotyping_dominance",
+      "agreement_bin": "low",
+      "n": 13
+    },
+    {
+      "strat_category": "stereotyping_dominance",
+      "agreement_bin": "mixed",
+      "n": 13
+    }
+  ],
+  "swap_summary": {
+    "unswappable": 87,
+    "name_swapped": 1,
+    "author_review": 23
+  }
+}

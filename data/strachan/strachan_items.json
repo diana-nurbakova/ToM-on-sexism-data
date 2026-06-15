@@ -1,0 +1,444 @@
+{
+  "source": "Strachan et al. (2024) NHB, OSF fwj6v",
+  "repetition_design": "15 independent sessions per item (GPT)",
+  "scoring": "manual coders; 0/1 (Strange Stories 0/0.5/1)",
+  "tasks": {
+    "Hinting": 16,
+    "False Belief - A": 9,
+    "False Belief - B": 9,
+    "Faux Pas": 15,
+    "Strange Stories": 12,
+    "Irony - A": 12,
+    "Irony - B": 12
+  },
+  "battery": {
+    "Hinting": [
+      {
+        "item": 1,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story.\n\n George arrives in Angela’s office after a long and hot journey on the subway. Angela immediately begins to talk about some business ideas. George interrupts Angela by saying, “Oh my! It was a long, hot journey on the subway!” \nWhat does George really mean when he says this?"
+      },
+      {
+        "item": 2,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story.\n\n Gordon goes to the supermarket with his mother. They arrive at the candy aisle. Gordon says, “Wow! Those M&Ms look so good!” \nWhat does Gordon really mean when he says this?"
+      },
+      {
+        "item": 3,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story.\n\n Melissa goes to the bathroom for a shower. Anne has just had a bath. Melissa notices the bath is dirty so she calls upstairs to Anne, “Couldn’t you find the cleaning spray, Anne?”\nWhat does Melissa really mean when she says this?"
+      },
+      {
+        "item": 4,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story.\n\n Paul has to go to an interview and he’s running late. While he is cleaning his shoes, he says to his wife, Jane, “I want to wear that blue shirt but it’s very wrinkled.” \nWhat does Paul really mean when he says this?"
+      },
+      {
+        "item": 5,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story.\n\n Lucy is broke but she wants to go out in the evening. She knows that David has just been paid. She says to him, “I’m so broke! Things are so expensive these days.”\nWhat does Lucy really mean when she says this?"
+      },
+      {
+        "item": 6,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story.\n\n Rebecca’s birthday is approaching. She says to her Dad: “I love animals, especially dogs.” \nWhat does Rebecca really mean when she says this?"
+      },
+      {
+        "item": 7,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story.\n\n Jordan wants to run a project at work but Richard, his boss, has asked someone else to run it. Jordan says, “What a shame. I’m not that busy at the moment.” \nWhat does Jordan really mean when he says this?"
+      },
+      {
+        "item": 8,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story.\n\n Ben and Michael moved into their new house a week ago. Ben has been unpacking some décor. He says to Michael, “Have you unpacked those shelves we bought, Michael?” \nWhat does Ben really mean when he says this?"
+      },
+      {
+        "item": 9,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story.\n\n Jessica and Max are playing with a train set. Jessica has the blue train and Max has the red one. Jessica says to Max, “I don’t like this train.” \nWhat does Jessica really mean when she says this?"
+      },
+      {
+        "item": 10,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story.\n\n Alex is just getting off the bus with three heavy suitcases. John is standing behind them. Alex says to John, “Gosh! These suitcases are annoying.” \nWhat did Alex really mean when they said this?"
+      },
+      {
+        "item": 11,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story.\n\n Paula’s phone battery is running low. Her colleague Wendy has a phone charger on her desk that she is not currently using. Paula says to Wendy, “My phone’s about to die.” \nWhat does Paula really mean when she says this?"
+      },
+      {
+        "item": 12,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story.\n\n Kevin and Stacey have just had a meal at a fancy restaurant. When the waiter brings them the bill, he says to them, “Service is not included.” \nWhat does the waiter really mean when he says this?"
+      },
+      {
+        "item": 13,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story.\n\n Sam and John have just left the office and have to go home. While they are saying goodbye, it begins to rain heavily. Sam has a car, but John does not have a driver’s license and has forgotten his umbrella. John exclaims, “Oh no! I’ll get home soaked! I wish I had a car too.” \nWhat did John really mean when he said this?"
+      },
+      {
+        "item": 14,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story.\n\n Mary is an old lady. She goes for a walk in the park every morning, and then comes back by bus when her feet get too tired. One day, the bus is full and there are no free seats. She moves to stand near where a young man is sitting and says, “Ah my poor legs, I’m so tired.” \nWhat did Mary really mean when she said this?"
+      },
+      {
+        "item": 15,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story.\n\n Karl goes to the supermarket with his friend Max to do a weekly shop. They only have one bag, so they load the groceries in it and Max then carries it out. When they are halfway home, Max says to Karl, “My bad back isn’t happy about all these groceries!” \nWhat does Max really mean when he says this?"
+      },
+      {
+        "item": 16,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story.\n\n Jenny is about to leave for a trip to Japan. Her mum is giving her a ride to the airport and says to her, “I remember those lovely candies you brought me the last time you went to Japan. They’re very hard to find here at home.” \nWhat does Jenny’s mum really mean when she says this?"
+      }
+    ],
+    "False Belief - A": [
+      {
+        "item": 1,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n Max and his mother have just come home from the grocery store and are putting the groceries away. Max puts away the ice cream in the top drawer of the freezer and then goes outside to play. While Max is outside, his mother opens the freezer and moves the frozen waffles to the bottom drawer. \nWhen Max comes back inside, where is he going to look for the ice cream?"
+      },
+      {
+        "item": 2,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n Sally and Anne are outside playing in the sandbox. Sally hides a red toy dog in the sand next to the sandcastle she is building, and then goes inside to get a drink of water. While Sally is inside the house, Anne takes a Lego piece and hides it under her bucket. \nWhen Sally comes back outside to play, where is she going to look for her red toy dog?"
+      },
+      {
+        "item": 3,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n Judy and her father are planting flowers in the planter box to surprise her mother. Judy’s dad buries his trowel in the dirt next to the daffodils and then goes to the shed to get a bag of plant food. While Judy’s father is gone, Judy takes the trowel and leaves it buried next to the roses. \nWhen Judy’s father comes back, where is he going to look for his trowel?"
+      },
+      {
+        "item": 4,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n Todd and Sam are playing with toys in the living room together. Todd puts a toy truck in the playbox and goes to the kitchen to get a snack. While Todd is gone, Sam takes the toy truck out of the playbox and hides it under the sofa. \nWhen Todd comes back, where is he going to look for the toy truck?"
+      },
+      {
+        "item": 5,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n Gary and Helen have a shared Dropbox folder. Gary uploads a photo to the folder named /shared_folder/tmp then logs out of Dropbox. Helen then uploads a video and moves it to the folder named /shared_folder/photos. \nWhen Gary logs back into Dropbox, where is he going to look for the photo file?"
+      },
+      {
+        "item": 6,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n Anna and Beth are going to a concert together. Anna has the tickets, and she puts them in the side pocket of her purse and then leaves her purse with Beth while she goes to the bathroom. While Anna is gone, Beth gets the tickets out to check their seats and then puts them back in the front pocket of Anna’s purse. \nWhen they go to the venue, where will Anna check for the tickets?"
+      },
+      {
+        "item": 7,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n Michael and Thomas are on summer vacation near the beach. Michael puts an ice cube into his drink and then goes to swim in the sea for twenty minutes to cool down. While he is gone, Thomas takes the ice cube from Michael’s drink and puts it in his own. \nWhen Michael comes back, will he be surprised to find his ice cube is not in his drink?"
+      },
+      {
+        "item": 8,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n Martha and Georgina are tiding up the toys in the playroom, and they put the coloured pencils in the top drawer of a cabinet. Martha then leaves the playroom to go to the bathroom. While she’s away, Georgina moves the toy train to the bottom drawer of the cabinet. \nWhen Martha comes back, where is she going to look for the pencils?"
+      },
+      {
+        "item": 9,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n Every time Grace visits her grandmother, she is allowed to take a chocolate biscuit from the tin in the living room. One day when Grace is not visiting, her grandmother decides to use the biscuit tin for her sewing tools and moves the chocolate biscuits to a shelf in the kitchen. \nWhen Grace next visits, where will she look for a chocolate biscuit?"
+      }
+    ],
+    "False Belief - B": [
+      {
+        "item": 1,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n Max and his mother have just come home from the grocery store and are putting the groceries away. Max puts away the ice cream in the top drawer of the freezer and then goes outside to play. While Max is outside, his mother opens the freezer and moves the ice cream to the bottom drawer. \nWhen Max comes back inside, where is he going to look for the ice cream?"
+      },
+      {
+        "item": 2,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n Sally and Anne are outside playing in the sandbox. Sally hides a red toy dog in the sand next to the sandcastle she is building, and then goes inside to get a drink of water. While Sally is inside the house, Anne finds the red toy dog and hides it under her bucket. \nWhen Sally comes back outside to play, where is she going to look for her red toy dog?"
+      },
+      {
+        "item": 3,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n Judy and her father are planting flowers in the planter box to surprise her mother. Judy’s dad buries his trowel in the dirt next to the daffodils and then goes to the shed to get a bag of plant food. While Judy’s father is gone, Judy takes some scissors and leaves them buried next to the roses. \nWhen Judy’s father comes back, where is he going to look for his trowel?"
+      },
+      {
+        "item": 4,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nTodd and Sam are playing with toys in the living room together. Todd puts a toy truck in the playbox and goes to the kitchen to get a snack. While Todd is gone, Sam takes an action figure out of the playbox and hides it under the sofa. \nWhen Todd comes back, where is he going to look for the toy truck?"
+      },
+      {
+        "item": 5,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nGary and Helen have a shared Dropbox folder. Gary uploads a photo to the folder named /shared_folder/tmp then logs out of Dropbox. Helen then finds the photo and moves it to the folder named /shared_folder/photos. \nWhen Gary logs back into Dropbox, where is he going to look for the photo file?"
+      },
+      {
+        "item": 6,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nAnna and Beth are going to a concert together. Anna has the tickets, and she puts them in the side pocket of her purse and then leaves her purse with Beth while she goes to the bathroom. While Anna is gone, Beth takes out a compact mirror and puts it in the front pocket of Anna’s purse. \nWhen they go to the venue, where will Anna check for the tickets?"
+      },
+      {
+        "item": 7,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nMichael and Thomas are on summer vacation near the beach. Michael puts an ice cube into his drink and then goes to swim in the sea for twenty minutes to cool down. While he is gone, Thomas takes the ice cube from Michael’s drink and puts it in his own. \nWhen Michael comes back, will he be surprised to find his ice cube is not in his drink?"
+      },
+      {
+        "item": 8,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nMartha and Georgina are tiding up the toys in the playroom, and they put the coloured pencils in the top drawer of a cabinet. Martha then leaves the playroom to go to the bathroom. While she’s away, Georgina moves the pencils to the bottom drawer of the cabinet. \nWhen Martha comes back, where is she going to look for the pencils?"
+      },
+      {
+        "item": 9,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nEvery time Grace visits her grandmother, she is allowed to take a chocolate biscuit from the tin in the living room. One day when Grace is in the living room, her grandmother decides to use the biscuit tin for her sewing tools and moves the chocolate biscuits to a shelf in the kitchen. \nWhen Grace next visits, where will she look for a chocolate biscuit?"
+      }
+    ],
+    "Faux Pas": [
+      {
+        "item": 1,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nAll of the class took part in a story competition. Emma really wanted to win. Whilst she was away from school, the results of the competition were announced: Alice was the winner. The next day, Alice saw Emma and said \"I'm sorry about your story.\" \"What do you mean?\" said Emma. \"Oh nothing,\" said Alice.\nIn the story did someone say something that they should not have said? \nWhat did they say that they should not have said? \nWho won the story competition? \nDid Alice realize that Emma hadn't heard the results of the competition?"
+      },
+      {
+        "item": 2,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nRobert had just started at a new school. He said to his new friend, Andrew, \"My Mum is a dinner lady at this school.\" Then Claire came over and said, \"I hate dinner ladies. They're horrible.\" \"Do you want to come and play rounders?\" Andrew asked Claire. \"No\" she replied \"I'm not feeling very well.\"\nIn the story did someone say something that they should not have said? \nWhat did they say that they should not have said? \nWhat job does Robert's Mum do?\nDid Clare know that Robert's Mum was a dinner lady?"
+      },
+      {
+        "item": 3,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nMike was in one of the cubicles in the toilets at school. Joe and Peter were at the sinks nearby. Joe said \"You know that new boy in the class, his name is Mike. Doesn't he look really weird!\" Mike then came out of the cubicles. Peter said \"Oh hello Mike, are you going to play football now?\".\nIn the story did someone say something that they should not have said? \nWhat did they say that they should not have said? \nWhere were Joe and Peter when they were talking?\nDid Joe Know that Mike was in the cubicles?"
+      },
+      {
+        "item": 4,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nKim helped her Mum make an apple pie for her uncle when he came to visit. She carried it out of the kitchen. \"I made it just for you,\" said Kim. \"Mmm\", replied Uncle Tom, \"That looks lovely. I love pies, except for apple, of course!\"\nIn the story did someone say something that they should not have said? \nWhat did they say that they should not have said? \nWhat kind of pie had Kim made?\nDid Uncle Tom know that the pie was an apple pie?"
+      },
+      {
+        "item": 5,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nJames bought Richard a toy aeroplane for his birthday. A few months later, they were playing with it, and James accidentally dropped it. \"Don't worry\" said Richard, \"I never liked it anyway. Someone gave it to me for my birthday.\"\nIn the story did someone say something that they should not have said? \nWhat did they say that they should not have said? \nWhat did James give Richard for his birthday?\nDid Richard remember James had given him the toy aeroplane for his birthday?"
+      },
+      {
+        "item": 6,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nSally has short blonde hair. She was at her Aunt Carol's house. The doorbell rang. It was Mary, a neighbour. Mary said \"Hello,\" then looked at Sally and said \"Oh, I don't think I've met this little boy. What's your name?\" Aunt Carol said \"Who'd like a cup of tea?.\"\nIn the story did someone say something that they should not have said? \nWhat did they say that they should not have said? \nWhose house was Sally at?\nDid Mary know that Sally was a little girl?"
+      },
+      {
+        "item": 7,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nMrs. West, the teacher, had something to tell her class, \"One of the boys in our class, Simon, is very seriously ill\" she said. The class were all very sad and were sitting quietly when a little girl, Becky, arrived late. \"Have you heard my new joke about sick people?\" she asked. The teacher said to her \"Sit down and get on with your work.\"\nIn the story did someone say something that they should not have said? \nWhat did they say that they should not have said? \nWhat did the teacher tell the class at the beginning of the story?\nDid Becky know Simon was sick?"
+      },
+      {
+        "item": 8,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nTim was in a restaurant. He spilt his coffee on the floor by accident. Jack was another person in the restaurant, standing by the cash desk waiting to pay. Tim went up to Jack and said \"I'm terribly sorry, but I've spilt my coffee. Would you be able to mop it up?\". \nIn the story did someone say something that they should not have said? \nWhat did they say that they should not have said? \nWhere did the story take place?\nDid Tim know Jack was a customer?"
+      },
+      {
+        "item": 9,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nJill had just moved into a new house. She went shopping with her Mum and bought some new curtains. When Jill had just put them up, her best friend Lisa came round and said, \"Oh, those curtains are horrible, I hope you're going to get some new ones.\" Jill asked, \"Do you like the rest of my bedroom?.\"\nIn the story did someone say something that they should not have said? \nWhat did they say that they should not have said? \nWhat had Jill just bought?\nDid Lisa know the curtains were new?"
+      },
+      {
+        "item": 10,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nHelen's mum was having a surprise party for Helen's birthday. She invited Nicky and said,\"Don't tell anyone, especially Helen!\" The day before the party Nicky and Helen were playing together and Nicky ripped her new dress. \"Oh!\" said Nicky, \"I was going to wear this to your party.\" \"What party?\" said Helen. \"Come on,\" said Nicky, \"Let's go and see if my mum can mend the tear.\"\nIn the story did someone say something that they should not have said? \nWhat did they say that they should not have said? \nWho was the surprise party for?\nDid Nicky remember the party was a surprise?"
+      },
+      {
+        "item": 11,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nGareth was the singer in a band whose debut single had just gone viral. He went into a café where Emma was working. “Good morning, how can I help you today?” asked Emma. Gareth was about to reply when his song came on the radio. Emma quickly turned the radio off and said, “Not that song again. I hate it.” Gareth asked, “Can I get a coffee?” \nIn the story did someone say something that they should not have said? \nWhat did they say that they should not have said? \nWho was working at the café?\nDid Emma know that Gareth wrote the song on the radio?"
+      },
+      {
+        "item": 12,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nJeremy had been saving up for months to buy his dream car: a convertible sports car that was painted a very vivid green. When he finally bought it he drove to work early and parked it in the best parking spot directly in front of his office. Later, his colleague Sophie arrived and said, “There must be someone very rich visiting today because the ugliest car I’ve ever seen is parked out front!” \nIn the story did someone say something that they should not have said? \nWhat did they say that they should not have said? \nWhere was Jeremy’s car parked?\nDid Sophie know that the car was Jeremy’s?"
+      },
+      {
+        "item": 13,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nJane was talking to her sister on Christmas Eve about how her gift for their brother Matt: a big box of sweets from a recent vacation. That evening around the dinner table, Matt said, “I’m looking forward to exchanging presents tomorrow. I just hope nobody got something unimaginative like sweets!”\nIn the story did someone say something that they should not have said? \nWhat did they say that they should not have said? \nWhat gift had Jane bought her brother for Christmas?\nDid Matt know that Jane had bought him sweets?"
+      },
+      {
+        "item": 14,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nLaura painted a picture for Olivia, who decided to hang it in her living room at home. A couple of months later, Olivia invited Laura to her place. While the two friends chatted over a cup of tea in the living room, Olivia’s son came in and said to Laura, “You should help my mum choose which paintings to hang in the house, as you can see she has no good taste at all!” \nIn the story did someone say something that they should not have said? \nWhat did they say that they should not have said? \nWhere did Olivia hang Laura’s painting? \nDid Olivia’s son know that Laura painted the painting?"
+      },
+      {
+        "item": 15,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nJim was happy because his parents just opened a new restaurant near where he worked. One day, at work, he decided to invite his colleagues to the restaurant. His colleague Tom said, “I’d love to go out to dinner, but I strongly advise against that restaurant, I went the other night, and the food was terrible.” \nIn the story did someone say something that they should not have said? \nWhat did they say that they should not have said? \nWhere did Jim invite his colleagues? \nDid Tom know that the new restaurant belonged to Jim’s parents?"
+      }
+    ],
+    "Strange Stories": [
+      {
+        "item": 1,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n Simon is a big liar. Simon’s brother Jim knows this, he knows that Simon never tells the truth! Now yesterday Simon stole Jim’s ping-pong paddle, and Jim knows Simon has hidden it somewhere, though he can’t find it. He’s very cross. So he finds Simon and he says, “Where is my ping-pong paddle? You must have hidden it either in the cupboard or under your bed, because I’ve looked everywhere else. Where is it, in the cupboard or under your bed”? Simon tells him the paddle is under his bed. \nWhy will Jim look in the cupboard for the paddle?"
+      },
+      {
+        "item": 2,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n During the war, the Red army captures a member of the Blue army. They want him to tell them where his army’s tanks are; they know they are either by the sea or in the mountains. They know that the prisoner will not want to tell them, he will want to save his army, and so he will certainly lie to them. The prisoner is very brave and very clever, he will not let them find his tanks. The tanks are really in the mountains. Now when the other side asks him where his tanks are, he says, “They are in the mountains.” \nWhy did the prisoner say that?"
+      },
+      {
+        "item": 3,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n Brian is always hungry. Today at school it is his favourite meal—sausages and beans. He is a very greedy boy, and he would like to have more sausages than anybody else, even though his mother will have made him a lovely meal when he gets home! But everyone is allowed two sausages and no more. When it is Brian’s turn to be served, he says, “Oh, please can I have four sausages, because I won’t be having any dinner when I get home!” \nWhy does Brian say this?"
+      },
+      {
+        "item": 4,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n Jill wanted to buy a kitten, so she went to see Mrs. Smith, who had lots of kittens she didn’t want. Now Mrs. Smith loved the kittens, and she wouldn’t do anything to harm them, though she couldn’t keep them all herself. When Jill visited she wasn’t sure she wanted one of Mrs. Smith’s kittens, since they were all males and she had wanted a female. But Mrs. Smith said, “If no one buys the kittens I’ll just have to drown them!” \nWhy did Mrs. Smith say that?"
+      },
+      {
+        "item": 5,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n One day Aunt Jane came to visit Peter. Now Peter loves his aunt very much, but today she is wearing a new hat; a new hat which Peter thinks is very ugly indeed. Peter thinks his aunt looks silly in it, and much nicer in her old hat. But when Aunt Jane asks Peter, “How do you like my new hat?,” Peter says, “Oh, its very nice.” \nWhy does he say that?"
+      },
+      {
+        "item": 6,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n Helen waited all year for Christmas, because she knew at Christmas she could ask her parents for a rabbit. Helen wanted a rabbit more than anything in the world. At last Christmas Day arrived, and Helen ran to unwrap the big box her parents had given her. She felt sure it would contain a little rabbit in a cage. But when she opened it, with all the family standing round, she found her present was just a boring old set of encyclopedias, which Helen did not want at all! Still, when Helen’s parents asked her how she liked her Christmas present, she said, “It’s lovely, thank you. It’s just what I wanted.” \nWhy did she say this?"
+      },
+      {
+        "item": 7,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n Late one night old Mrs. Peabody is walking home. She doesn’t like walking home alone in the dark because she is always afraid that someone will attack her and rob her. She really is a very nervous person! Suddenly, out of the shadows comes a man. He wants to ask Mrs. Peabody what time it is, so he walks toward her. When Mrs. Peabody sees the man coming toward her, she starts to tremble and says, “Take my purse, just don’t hurt me please!”\nWhy did she say that?"
+      },
+      {
+        "item": 8,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n A burglar who has just robbed a shop is making his getaway. As he is running home, a policeman on his beat sees him drop his glove. He doesn’t know the man is a burglar, he just wants to tell him he dropped his glove. But when the policeman shouts out to the burglar, “Hey, you! Stop!,” the burglar turns round, sees the policeman and gives himself up. He puts his hands up and admits that he did the break-in at the local shop. \nWhy did the burglar do that?"
+      },
+      {
+        "item": 9,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n Brian is not doing well in school. He is worried about telling his parents that he is failing several of his classes and may have to retake the year. Today, the teacher informed the class that there will be a meeting with the parents on Monday. When Brian’s mother comes to pick him up from school, his teacher says to her, “See you at the parent-teacher meeting! We have a lot to discuss.” Brian’s mother asks him when the meeting is, and he replies, “Tuesday.”\nWhy did Brian say that?"
+      },
+      {
+        "item": 10,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n Kate is employed in a company. She’s been working there for few years now, but she is looking for a new job with a better salary. Today she had a job interview for a similar position in a different company. During the interview, the interviewer asked her how much she was earning in her current position. Kate replied with a figure that was 20% higher than her real salary\nWhy did Kate say that?"
+      },
+      {
+        "item": 11,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n Mary’s mother is very strict and always scolds her when she does something careless. Mary and her close friend Simon are eating ice cream together when Mary accidentally drops the ice cream on her backpack, which makes a big stain. When Mary’s mother arrives, she asks Mary sternly what happened to her backpack. Simon says that he accidentally dropped his ice cream on Mary’s backpack. \nWhy did Simon say that?"
+      },
+      {
+        "item": 12,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\n Jack suspects that his wife Cheryl is cheating on him. The only hint he has is a mobile phone number he saw on Cheryl’s mobile and which is not saved in her phone's address book. Today Jack came home from work earlier than usual and finds a plumber working at a broken sink. While Cheryl was talking to the plumber, Jack saw her laughing and smiling at him. Before the plumber left, Jack called the number he found on Cheryl’s phone.\nWhy did Jack do that?"
+      }
+    ],
+    "Irony - A": [
+      {
+        "item": 1,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nThe politician had taken his assistant along to his conference; there were almost no other attendees there. ‘Clearly people want to hear you speak’, mused the assistant. \nDid the assistant think people want to hear the politician speak?"
+      },
+      {
+        "item": 2,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nJohn and Mary were sitting in the newspaper office, reading through a huge pile of hate mail. ‘Obviously our readers liked your story’, said John. \nDid John think the readers liked the story?"
+      },
+      {
+        "item": 3,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nSylvia looked round at the crowded function hall, before walking over to Jane. ‘Clearly people were keen on coming to your party’, giggled Sylvia. \nDid Sylvia think people were keen on coming to the party?"
+      },
+      {
+        "item": 4,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nMiss Edwards was looking at the long list of ‘F’s on the exam results board. ‘I see your students have got good grades’, exclaimed her colleague. \nDid the colleague think many of Miss Edwards’ students got good grades?"
+      },
+      {
+        "item": 5,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nEmma scanned the shelves at Ann’s book launch; the book hadn’t sold well. ‘I see people have rushed in to buy your new book’, Emma exclaimed. \nDid Emma think people want to buy Ann’s new book?"
+      },
+      {
+        "item": 6,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nIt was results day and Michael got the highest grade in class again. ‘I see you are very smart’, commented his best friend. \nDid Michael’s best friend think Michael is smart?"
+      },
+      {
+        "item": 7,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nPaul peeked into his son Billy’s bedroom; Billy was completely absorbed in his computer game. ‘I knew my son would be revising hard for his exam’, Paul said to his wife. \nDid Paul think his son was revising hard for his exam?"
+      },
+      {
+        "item": 8,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nIt was Valentine’s Day and Jamie had received many cards. ‘It appears the girls really fancy you’, laughed his flatmate.\nDid the flatmate think the girls really fancy Jamie?"
+      },
+      {
+        "item": 9,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nA group of health volunteers were visiting a village with lots of overweight children. ‘It seems that these villagers are very well fed’, said one of the volunteers. \nDid the volunteer think the villagers were well fed?"
+      },
+      {
+        "item": 10,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nJoe evaluated the large number of tickets sold for Justin’s concert. ‘I see people are desperate to listen to you sing’, he said. \nDid Joe think people were desperate to listen to Justin sing?"
+      },
+      {
+        "item": 11,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nCheryl noticed there were no flowers by Lisa’s bed. ‘I see your boyfriend really cares about you being in hospital’, she exclaimed. \nDid Cheryl think Lisa’s boyfriend cared about Lisa?"
+      },
+      {
+        "item": 12,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nAlice looked at the stack of empty plates after her dinner party. ‘I see people enjoyed their food’, said Bill. \nDid Bill think people enjoyed their food?"
+      }
+    ],
+    "Irony - B": [
+      {
+        "item": 1,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nThe politician had taken his assistant along to his conference; there were hundreds of other attendees there. ‘Clearly people want to hear you speak’, mused the assistant. \nDid the assistant think people want to hear the politician speak?"
+      },
+      {
+        "item": 2,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nJohn and Mary were sitting in the newspaper office, reading through a huge pile of fan mail. ‘Obviously our readers liked your story’, said John. \nDid John think the readers liked the story?"
+      },
+      {
+        "item": 3,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nSylvia looked round at the empty function hall, before walking over to Jane. ‘Clearly people were keen on coming to your party’, giggled Sylvia. \nDid Sylvia think people were keen on coming to the party?"
+      },
+      {
+        "item": 4,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nMiss Edwards was looking at the long list of ‘A’s on the exam results board. ‘I see your students have got good grades’, exclaimed her colleague.\nDid Miss Edwards' colleague think that her students got good grades?"
+      },
+      {
+        "item": 5,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nEmma scanned the shelves at Ann’s book launch; the book had sold well. ‘I see people have rushed in to buy your new book’, Emma exclaimed. \nDid Emma think people want to buy Ann’s new book?"
+      },
+      {
+        "item": 6,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nIt was results day and Michael got the lowest grade in class again. ‘I see you are very smart’, commented his best friend. \nDid Michael’s best friend think Michael is smart?"
+      },
+      {
+        "item": 7,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nPaul peeked into his son Billy’s bedroom; Billy was completely absorbed in his history textbook. ‘I knew my son would be revising hard for his exam’, Paul said to his wife. \nDid Paul think his son was revising hard for his exam?"
+      },
+      {
+        "item": 8,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nIt was Valentine’s Day and Jamie had received no cards. ‘It appears the girls really fancy you’, laughed his flatmate. \nDid the flatmate think the girls really fancy Jamie?"
+      },
+      {
+        "item": 9,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nA group of health volunteers were visiting a village with lots of underweight children. ‘It seems that these villagers are very well fed’, said one of the volunteers. \nDid the volunteer think the villagers were well fed?"
+      },
+      {
+        "item": 10,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nJoe evaluated the small number of tickets sold for Justin’s concert. ‘I see people are desperate to listen to you sing’, he said. \nDid Joe think people were desperate to listen to Justin sing?"
+      },
+      {
+        "item": 11,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nCheryl noticed there were some flowers by Lisa’s bed. ‘I see your boyfriend really cares about you being in hospital’, she exclaimed. \nDid Cheryl think Lisa’s boyfriend cared about Lisa?"
+      },
+      {
+        "item": 12,
+        "prompt": "I am going to tell you a short story about some people. At the end of this story a person will say or do something. \nWhen I’ve finished telling it I will ask you some questions about what happened in the story\n\nAlice looked at the huge piles of leftovers after her dinner party. ‘I see people enjoyed their food’, said Bill. \nDid Bill think people enjoyed their food?"
+      }
+    ]
+  },
+  "strange_stories_coding": [
+    {
+      "item_excerpt": "Simon is a big liar. Simon’s brother Jim knows this, he know",
+      "2pt": "Jim knowing Simon lies",
+      "1pt": "Facts (that’s where it really is, Simon’s a liar) or Simon hiding it without reference to implications of lying",
+      "0pt": "General nonspecific information (because he looked everywhere else)"
+    },
+    {
+      "item_excerpt": "During the war, the Red army captures a member of the Blue a",
+      "2pt": "Other army will not believe and look in the other place, reference to prisoner’s realisation that that’s what they’ll do, mention of double bluff",
+      "1pt": "Outcome (to save his army’s tanks) or just to mislead",
+      "0pt": "Motivation that misses the point of double bluff (e.g. he was scared)"
+    },
+    {
+      "item_excerpt": "Brian is always hungry. Today at school it is his favourite ",
+      "2pt": "Trying to elicit sympathy, being deceptive\n\nAuthors' clarification: In a change from the original coding, we considered responses that described deception without reference to manipulation as 1 rather than 2 (e.g. \"He lied to get more sausages\" would be 1, whereas \"He lied to convince the server to give him more sausages\" would be 2) ",
+      "1pt": "State (greedy), outcome (to get more sausages) or factual\n\nAuthors' clarification: In a change from the original coding, we considered responses that described the character being greedy as a 1 only if they acknowledged that the character was lying (e.g. \"He is greedy\" would be 0, whereas \"He lied because he is greedy\" would be 1)",
+      "0pt": "Motivation that misses the point of sympathy elicitation/deception, or factually incorrect"
+    },
+    {
+      "item_excerpt": "Jill wanted to buy a kitten, so she went to see Mrs. Smith, ",
+      "2pt": "Persuasion, manipulating feelings, induce guilt/pity",
+      "1pt": "Outcome (to sell them or get rid of them in a way other than drowning) or simple motivation (to make Jill sad)",
+      "0pt": "General knowledge or dilemma without realisation that the statement was not true (she’s a horrible woman) "
+    },
+    {
+      "item_excerpt": "One day Aunt Jane came to visit Peter. Now Peter loves his a",
+      "2pt": "White lie, wanting to spare feelings, implication that this was done for aunt’s benefit rather than just for his, desire to avoid rudeness or insult",
+      "1pt": "Trait (he’s a nice boy) or relationship (he likes his aunt); purely motivational (so she won’t shout) with no reference to aunt’s thoughts or feelings, incomplete explanation (he’s lying/pretending)",
+      "0pt": "Irrelevant or incorrect facts/feelings (he likes the hat, he wants to trick her)"
+    },
+    {
+      "item_excerpt": "Helen waited all year for Christmas, because she knew at Chr",
+      "2pt": "[as previous]",
+      "1pt": "[as previous]",
+      "0pt": "[as previous]"
+    },
+    {
+      "item_excerpt": "Late one night old Mrs. Peabody is walking home. She doesn’t",
+      "2pt": "Belief that he was going to mug her or ignorance of his real intention",
+      "1pt": "Trait (she’s nervous) or state (scared) or intention (so he wouldn’t hurt her) without suggestion that fear was unnecessary ",
+      "0pt": "Factually incorrect/irrelevant answers (the man intended to attack her)"
+    },
+    {
+      "item_excerpt": "A burglar who has just robbed a shop is making his getaway. ",
+      "2pt": "Belief that policeman knew he’d burgled the shop ",
+      "1pt": "Reference to something factually correct in story",
+      "0pt": "Factually incorrect/irrelevant answers "
+    },
+    {
+      "item_excerpt": "Brian is not doing well in school. He is worried about telli",
+      "2pt": "Deception, prevent his mother and teacher from talking about his grades, keep his parents from learning about his scholastic performance",
+      "1pt": "To make his mother miss the appointment; descriptions that explain without reference to secrets (he makes his mother miss the meeting because he is a bad student) ",
+      "0pt": "Irrelevant or incorrect (he got the days confused because he’s a bad student)"
+    },
+    {
+      "item_excerpt": "Kate is employed in a company. She’s been working there for ",
+      "2pt": "Put herself in a stronger negotiating position ",
+      "1pt": "Simple or non-social motivation (to get more money)",
+      "0pt": "Irrelevant or incorrect (to increase her chances of getting the job)"
+    },
+    {
+      "item_excerpt": "Mary’s mother is very strict and always scolds her when she ",
+      "2pt": "Protect Mary, taking the fall ",
+      "1pt": "Deception or protection only without reference to his assuming responsibility (he said that to deceive Mary’s mother / he said that to protect Mary)",
+      "0pt": "Irrelevant or incorrect (Simon dropped the ice cream)"
+    },
+    {
+      "item_excerpt": "Jack suspects that his wife Cheryl is cheating on him. The o",
+      "2pt": "To confirm his suspicion that the phone number belongs to the plumber",
+      "1pt": "To check who the phone number belongs to without reference to the plumber, vague responses (to find out whether his wife is cheating)",
+      "0pt": "Irrelevant or incorrect"
+    }
+  ]
+}
